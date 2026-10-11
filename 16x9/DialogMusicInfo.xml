@@ -15,7 +15,7 @@
         </control>
         <control type="image">
             <posx>96</posx><posy>96</posy><width>480</width><height>480</height>
-            <texture border="10">ui/rim_ember.png</texture>
+            <texture border="16" infill="false">ui/rim_ember.png</texture>
         </control>
         <control type="label">
             <posx>640</posx><posy>96</posy><width>1180</width><height>64</height>

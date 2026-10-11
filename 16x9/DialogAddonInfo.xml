@@ -2,7 +2,7 @@
 <!-- Add-on info, Program Card pattern. Required: id=300 grouplist, id=6 Install, id=7 Disable,
     id=8 Update, id=13 Auto-update toggle, id=9 Settings, id=10 Dependencies, id=12 Use this version. -->
 <window>
-    <defaultcontrol always="true">300</defaultcontrol>
+    <defaultcontrol always="true">6</defaultcontrol>
     <controls>
         <control type="image">
             <width>$CONST[hf_canvas_w]</width><height>$CONST[hf_canvas_h]</height>
@@ -15,7 +15,7 @@
         </control>
         <control type="image">
             <posx>96</posx><posy>96</posy><width>400</width><height>400</height>
-            <texture border="10">ui/rim_ember.png</texture>
+            <texture border="16" infill="false">ui/rim_ember.png</texture>
         </control>
         <control type="label">
             <posx>560</posx><posy>96</posy><width>1260</width><height>64</height>
@@ -31,13 +31,14 @@
         </control>
         <control type="grouplist" id="300">
             <posx>560</posx><posy>460</posy><orientation>horizontal</orientation><itemgap>16</itemgap><width>1260</width><height>72</height>
-            <include content="hf_ButtonPrimary"><param name="id">6</param><param name="label">1024</param><param name="onclick">Addon.Install</param></include>
+            <control type="button" id="6"><width>180</width><height>64</height><label></label><font>hf_label</font><align>center</align><aligny>center</aligny><textcolor>hf_char</textcolor><focusedcolor>hf_char</focusedcolor><texturefocus colordiffuse="hf_flame" border="10">ui/rounded6.png</texturefocus><texturenofocus colordiffuse="hf_ember" border="10">ui/rounded6.png</texturenofocus></control>
             <control type="button" id="8"><width>180</width><height>64</height><label>24068</label><font>hf_label</font><align>center</align><aligny>center</aligny><texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus><texturenofocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturenofocus></control>
             <control type="button" id="9"><width>180</width><height>64</height><label>24021</label><font>hf_label</font><align>center</align><aligny>center</aligny><texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus><texturenofocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturenofocus></control>
             <control type="button" id="10"><width>180</width><height>64</height><label>39024</label><font>hf_label</font><align>center</align><aligny>center</aligny><texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus><texturenofocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturenofocus></control>
             <control type="button" id="12"><width>180</width><height>64</height><label>21362</label><font>hf_label</font><align>center</align><aligny>center</aligny><texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus><texturenofocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturenofocus></control>
             <control type="button" id="7"><width>180</width><height>64</height><label>24021</label><font>hf_label</font><align>center</align><aligny>center</aligny><texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus><texturenofocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturenofocus></control>
             <control type="radiobutton" id="13"><width>180</width><height>64</height><label>24066</label><font>hf_meta</font><align>left</align><aligny>center</aligny><texturenofocus colordiffuse="00FFFFFF">ui/white.png</texturenofocus><texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus></control>
+            <control type="button" id="14"><width>180</width><height>64</height><label></label><font>hf_label</font><align>center</align><aligny>center</aligny><texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus><texturenofocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturenofocus></control>
         </control>
     </controls>
 </window>

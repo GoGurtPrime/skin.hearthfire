@@ -38,7 +38,7 @@
                 <control type="image">
                     <width>$CONST[hf_landscape_w]</width>
                     <height>$CONST[hf_landscape_h]</height>
-                    <texture border="10">ui/rim_ember.png</texture>
+                    <texture border="16" infill="false">ui/rim_ember.png</texture>
                 </control>
             </focusedlayout>
         </control>

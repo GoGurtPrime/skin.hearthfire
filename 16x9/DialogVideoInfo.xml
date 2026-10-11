@@ -21,7 +21,7 @@
             <posy>96</posy>
             <width>480</width>
             <height>720</height>
-            <texture border="10">ui/rim_ember.png</texture>
+            <texture border="16" infill="false">ui/rim_ember.png</texture>
         </control>
         <control type="label">
             <posx>640</posx>
@@ -124,7 +124,7 @@
                 <control type="image">
                     <width>$CONST[hf_cast_sq]</width>
                     <height>$CONST[hf_cast_sq]</height>
-                    <texture border="10">ui/rim_ember.png</texture>
+                    <texture border="16" infill="false">ui/rim_ember.png</texture>
                 </control>
                 <control type="label">
                     <posy>164</posy>

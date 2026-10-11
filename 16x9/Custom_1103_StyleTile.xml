@@ -56,7 +56,7 @@
             <control type="image">
                 <width>$CONST[hf_poster_w]</width>
                 <height>$CONST[hf_poster_h]</height>
-                <texture border="10">ui/rim_ember.png</texture>
+                <texture border="16" infill="false">ui/rim_ember.png</texture>
             </control>
         </control>
         <!-- Busy ring -->
@@ -74,7 +74,7 @@
             <control type="image">
                 <width>360</width>
                 <height>200</height>
-                <texture colordiffuse="hf_walnut" border="24">ui/rounded10.png</texture>
+                <texture colordiffuse="hf_walnut" border="16">ui/rounded10.png</texture>
             </control>
             <control type="image">
                 <width>360</width>

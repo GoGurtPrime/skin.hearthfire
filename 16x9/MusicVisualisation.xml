@@ -17,7 +17,7 @@
             <posy>220</posy>
             <width>640</width>
             <height>640</height>
-            <texture border="10">ui/rim_ember.png</texture>
+            <texture border="16" infill="false">ui/rim_ember.png</texture>
         </control>
         <control type="label">
             <posx>880</posx>

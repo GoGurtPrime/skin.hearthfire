@@ -15,7 +15,7 @@
             </itemlayout>
             <focusedlayout height="320" width="252">
                 <control type="image"><width>$CONST[hf_album_sq]</width><height>$CONST[hf_album_sq]</height><aspectratio>scale</aspectratio><texture fallback="defaults/DefaultAddon.png">$INFO[ListItem.Icon]</texture></control>
-                <control type="image"><width>$CONST[hf_album_sq]</width><height>$CONST[hf_album_sq]</height><texture border="10">ui/rim_ember.png</texture></control>
+                <control type="image"><width>$CONST[hf_album_sq]</width><height>$CONST[hf_album_sq]</height><texture border="16" infill="false">ui/rim_ember.png</texture></control>
                 <control type="label"><posy>260</posy><width>$CONST[hf_album_sq]</width><height>32</height><align>center</align><font>hf_card_title</font><textcolor>hf_flame</textcolor><label>$INFO[ListItem.Label]</label></control>
             </focusedlayout>
         </control>

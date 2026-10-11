@@ -41,6 +41,7 @@
                 <texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus>
                 <textcolor>hf_cream</textcolor>
                 <focusedcolor>hf_flame</focusedcolor>
+                <label></label>
             </control>
             <control type="button" id="11">
                 <width>160</width>
@@ -52,6 +53,7 @@
                 <texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus>
                 <textcolor>hf_cream</textcolor>
                 <focusedcolor>hf_flame</focusedcolor>
+                <label></label>
             </control>
             <control type="button" id="10">
                 <width>160</width>
@@ -63,6 +65,7 @@
                 <texturefocus colordiffuse="hf_flame" border="10">ui/rounded6.png</texturefocus>
                 <textcolor>hf_char</textcolor>
                 <focusedcolor>hf_char</focusedcolor>
+                <label></label>
             </control>
         </control>
     </controls>

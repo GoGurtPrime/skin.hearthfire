@@ -27,7 +27,7 @@
                 <control type="image">
                     <width>$PARAM[width]</width>
                     <height>$PARAM[height]</height>
-                    <texture border="10">ui/rim_ember.png</texture>
+                    <texture border="16" infill="false">ui/rim_ember.png</texture>
                 </control>
             </control>
         </definition>
@@ -56,7 +56,7 @@
                     <texture colordiffuse="hf_ember">ui/white.png</texture>
                 </control>
                 <control type="image">
-                    <texture border="10" colordiffuse="60FFFFFF">ui/rim_ember.png</texture>
+                    <texture border="16" infill="false" colordiffuse="60FFFFFF">ui/rim_ember.png</texture>
                 </control>
             </control>
         </definition>
@@ -66,8 +66,10 @@
         <param name="id" />
         <param name="label" />
         <param name="onclick" />
+        <param name="width" default="200" />
         <definition>
             <control type="button" id="$PARAM[id]">
+                <width>$PARAM[width]</width>
                 <height>72</height>
                 <label>$PARAM[label]</label>
                 <font>hf_label</font>
@@ -86,8 +88,10 @@
         <param name="id" />
         <param name="label" />
         <param name="onclick" />
+        <param name="width" default="200" />
         <definition>
             <control type="button" id="$PARAM[id]">
+                <width>$PARAM[width]</width>
                 <height>64</height>
                 <label>$PARAM[label]</label>
                 <font>hf_label</font>
@@ -105,8 +109,10 @@
         <param name="id" />
         <param name="label" />
         <param name="onclick" />
+        <param name="width" default="200" />
         <definition>
             <control type="button" id="$PARAM[id]">
+                <width>$PARAM[width]</width>
                 <height>64</height>
                 <label>$PARAM[label]</label>
                 <font>hf_label</font>
@@ -125,19 +131,22 @@
         <param name="icon" />
         <param name="onclick" />
         <definition>
-            <control type="button" id="$PARAM[id]">
+            <control type="group">
                 <width>72</width>
                 <height>72</height>
-                <texturenofocus colordiffuse="hf_timber">ui/circle.png</texturenofocus>
-                <texturefocus colordiffuse="hf_ember">ui/circle.png</texturefocus>
-                <onclick>$PARAM[onclick]</onclick>
+                <control type="button" id="$PARAM[id]">
+                    <width>72</width>
+                    <height>72</height>
+                    <label></label>
+                    <texturenofocus colordiffuse="hf_timber">ui/circle.png</texturenofocus>
+                    <texturefocus colordiffuse="hf_ember">ui/circle.png</texturefocus>
+                    <onclick>$PARAM[onclick]</onclick>
+                </control>
                 <control type="image">
+                    <posx>20</posx>
+                    <posy>20</posy>
                     <width>32</width>
                     <height>32</height>
-                    <align>center</align>
-                    <aligny>center</aligny>
-                    <centerleft>36</centerleft>
-                    <centertop>36</centertop>
                     <texture colordiffuse="hf_cream">icons/$PARAM[icon].png</texture>
                 </control>
             </control>
@@ -146,15 +155,25 @@
     <!-- ============================== 7.8 Chips ("ticket stubs") ============================== -->
     <include name="hf_Chip">
         <param name="label" />
+        <param name="width" default="360" />
         <definition>
-            <control type="label">
+            <control type="group">
+                <width>$PARAM[width]</width>
                 <height>40</height>
-                <font>hf_meta</font>
-                <textcolor>hf_cream</textcolor>
-                <align>center</align>
-                <aligny>center</aligny>
-                <texturebg colordiffuse="hf_timber" border="12">ui/chip_notch.png</texturebg>
-                <label>$PARAM[label]</label>
+                <control type="image">
+                    <width>$PARAM[width]</width>
+                    <height>40</height>
+                    <texture colordiffuse="hf_timber" border="12">ui/chip_notch.png</texture>
+                </control>
+                <control type="label">
+                    <width>$PARAM[width]</width>
+                    <height>40</height>
+                    <font>hf_meta</font>
+                    <textcolor>hf_cream</textcolor>
+                    <align>center</align>
+                    <aligny>center</aligny>
+                    <label>$PARAM[label]</label>
+                </control>
             </control>
         </definition>
     </include>
@@ -202,7 +221,7 @@
                     <control type="image">
                         <width>$PARAM[width]</width>
                         <height>$PARAM[height]</height>
-                        <texture colordiffuse="hf_walnut" border="24">ui/rounded10.png</texture>
+                        <texture colordiffuse="hf_walnut" border="16">ui/rounded10.png</texture>
                     </control>
                     <control type="image">
                         <width>$PARAM[width]</width>
@@ -212,7 +231,7 @@
                     <control type="image">
                         <width>$PARAM[width]</width>
                         <height>$PARAM[height]</height>
-                        <texture border="24" colordiffuse="hf_hair">ui/panel_inner_stroke.png</texture>
+                        <texture border="16" infill="false" colordiffuse="hf_hair">ui/panel_inner_stroke.png</texture>
                     </control>
                 </control>
             </control>
@@ -290,12 +309,13 @@
     <!-- ============================== Lists / settings rows (7.12) ============================== -->
     <include name="hf_ListRow">
         <param name="height" default="$CONST[hf_row_h]" />
+        <param name="separator_y" default="71" />
         <definition>
             <control type="group">
                 <height>$PARAM[height]</height>
                 <control type="image">
                     <height>1</height>
-                    <posy>$PARAM[height]-1</posy>
+                    <posy>$PARAM[separator_y]</posy>
                     <texture colordiffuse="hf_bark">ui/white.png</texture>
                 </control>
             </control>

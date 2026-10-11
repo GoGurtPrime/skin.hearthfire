@@ -41,7 +41,7 @@ def main() -> None:
     # rounded6.png: card/poster/button radius, 9-slice friendly
     save(rounded_rect((48, 48), radius=10), UI / "rounded6.png")
 
-    # rounded10.png: dialog radius, larger canvas so border=24 reads cleanly
+    # rounded10.png: dialog radius, sliced at 16px by the XML.
     save(rounded_rect((64, 64), radius=14), UI / "rounded10.png")
 
     # rounded6_outline.png: ghost button stroke only
@@ -52,7 +52,7 @@ def main() -> None:
     ImageDraw.Draw(img).ellipse([(0, 0), (71, 71)], fill=WHITE)
     save(img, UI / "circle.png")
 
-    # rim_ember.png: hairline focus ring. Baked ember->flame diagonal gradient, alpha ring only.
+    # rim_ember.png: hairline focus ring. Its complete 14px corner is preserved by a 16px nine-slice.
     size = 96
     ember = (228, 103, 43)
     flame = (245, 163, 59)

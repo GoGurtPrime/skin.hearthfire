@@ -24,7 +24,7 @@
                     <ondown>5002</ondown>
                     <onleft>5001</onleft>
                     <onright>5001</onright>
-                    <content target="videodb">$VAR[hf_ShelfAPath]</content>
+                    <content>$VAR[hf_ShelfAPath]</content>
                     <itemlayout height="324" width="240">
                         <control type="image">
                             <width>$CONST[hf_poster_w]</width>
@@ -43,7 +43,7 @@
                         <control type="image">
                             <width>$CONST[hf_poster_w]</width>
                             <height>$CONST[hf_poster_h]</height>
-                            <texture border="10">ui/rim_ember.png</texture>
+                            <texture border="16" infill="false">ui/rim_ember.png</texture>
                         </control>
                         <control type="label">
                             <posy>332</posy>
@@ -83,7 +83,7 @@
                     <ondown>9000</ondown>
                     <onleft>5002</onleft>
                     <onright>5002</onright>
-                    <content target="videodb">$VAR[hf_ShelfBPath]</content>
+                    <content>$VAR[hf_ShelfBPath]</content>
                     <itemlayout height="56" width="240">
                         <control type="label">
                             <width>240</width>

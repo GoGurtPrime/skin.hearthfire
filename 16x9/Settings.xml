@@ -32,7 +32,7 @@
                     <posy>10</posy>
                     <width>212</width>
                     <height>320</height>
-                    <texture border="10">ui/rim_ember.png</texture>
+                    <texture border="16" infill="false">ui/rim_ember.png</texture>
                     <colordiffuse>50FFFFFF</colordiffuse>
                 </control>
                 <control type="label">
@@ -65,7 +65,7 @@
                     <posy>10</posy>
                     <width>212</width>
                     <height>320</height>
-                    <texture border="10">ui/rim_ember.png</texture>
+                    <texture border="16" infill="false">ui/rim_ember.png</texture>
                 </control>
                 <control type="label">
                     <posy>336</posy>

@@ -45,7 +45,7 @@
                     <height>720</height>
                     <aspectratio>scale</aspectratio>
                     <texture border="6" fallback="defaults/DefaultVideo.png">$INFO[Container(54).ListItem.Art(poster)]</texture>
-                    <texture border="10">ui/rim_ember.png</texture>
+                    <texture border="16" infill="false">ui/rim_ember.png</texture>
                 </control>
                 <control type="textbox">
                     <posx>1340</posx>

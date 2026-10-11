@@ -13,7 +13,7 @@
             </itemlayout>
             <focusedlayout height="220" width="240">
                 <control type="image"><width>160</width><height>160</height><align>center</align><posx>40</posx><texture fallback="defaults/DefaultUser.png">$INFO[ListItem.Icon]</texture></control>
-                <control type="image"><width>160</width><height>160</height><posx>40</posx><texture border="10">ui/rim_ember.png</texture></control>
+                <control type="image"><width>160</width><height>160</height><posx>40</posx><texture border="16" infill="false">ui/rim_ember.png</texture></control>
                 <control type="label"><posy>168</posy><width>240</width><height>32</height><align>center</align><font>hf_label</font><textcolor>hf_flame</textcolor><label>$INFO[ListItem.Label]</label></control>
             </focusedlayout>
         </control>

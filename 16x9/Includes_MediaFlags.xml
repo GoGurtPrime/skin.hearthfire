@@ -4,6 +4,12 @@
     <include name="hf_MediaFlags">
         <definition>
             <control type="group">
+                <control type="image">
+                    <visible>!String.IsEmpty(ListItem.VideoResolution)</visible>
+                    <width>80</width>
+                    <height>32</height>
+                    <texture colordiffuse="hf_timber" border="10">ui/rounded6.png</texture>
+                </control>
                 <control type="label">
                     <visible>!String.IsEmpty(ListItem.VideoResolution)</visible>
                     <width>80</width>
@@ -12,8 +18,14 @@
                     <aligny>center</aligny>
                     <font>hf_caption</font>
                     <textcolor>hf_parchment</textcolor>
-                    <texturebg colordiffuse="hf_timber" border="10">ui/rounded6.png</texturebg>
                     <label>$INFO[ListItem.VideoResolution]</label>
+                </control>
+                <control type="image">
+                    <posx>88</posx>
+                    <visible>!String.IsEmpty(ListItem.VideoHdrType)</visible>
+                    <width>100</width>
+                    <height>32</height>
+                    <texture colordiffuse="hf_timber" border="10">ui/rounded6.png</texture>
                 </control>
                 <control type="label">
                     <posx>88</posx>
@@ -24,8 +36,14 @@
                     <aligny>center</aligny>
                     <font>hf_caption</font>
                     <textcolor>hf_parchment</textcolor>
-                    <texturebg colordiffuse="hf_timber" border="10">ui/rounded6.png</texturebg>
                     <label>$INFO[ListItem.VideoHdrType]</label>
+                </control>
+                <control type="image">
+                    <posx>196</posx>
+                    <visible>!String.IsEmpty(ListItem.AudioCodec)</visible>
+                    <width>140</width>
+                    <height>32</height>
+                    <texture colordiffuse="hf_timber" border="10">ui/rounded6.png</texture>
                 </control>
                 <control type="label">
                     <posx>196</posx>
@@ -36,7 +54,6 @@
                     <aligny>center</aligny>
                     <font>hf_caption</font>
                     <textcolor>hf_parchment</textcolor>
-                    <texturebg colordiffuse="hf_timber" border="10">ui/rounded6.png</texturebg>
                     <label>$INFO[ListItem.AudioCodec] $INFO[ListItem.AudioChannels]</label>
                 </control>
             </control>

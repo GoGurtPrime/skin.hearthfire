@@ -7,6 +7,8 @@ Checks, across 16x9/*.xml:
   [HARD] Every <include>Name</include> / <include content="Name"> reference resolves to a named <include> block.
   [HARD] Every static (non-$-expression) texture-like value resolves to a real file under media/ or extras/
          (fallback="..." attributes are checked the same way).
+    [HARD] Font.xml has Kodi's required fonts/fontset structure, font13 fallback, and existing font files.
+    [HARD] Every static font and named color reference resolves.
   [WARN] Duplicate control ids within the same window file (excluding template/default controls, which Kodi
          intentionally reuses across dynamically generated rows).
   [WARN] Raw hex color literals outside the small documented utility list (00FFFFFF/00000000/FFFFFFFF and
@@ -129,6 +131,71 @@ def check_textures(trees):
                     hard_errors.append(f"[TEXTURE] {path.name}: <{el.tag}>{val}</{el.tag}> not found under media/ or extras/")
 
 
+def check_fonts_and_colors(trees):
+    font_path = XML_DIR / "Font.xml"
+    font_tree = trees.get(font_path)
+    if font_tree is None:
+        hard_errors.append("[FONT] Font.xml is missing or could not be parsed")
+        return
+
+    root = font_tree.getroot()
+    if root.tag != "fonts":
+        hard_errors.append(f"[FONT] Font.xml root must be <fonts>, found <{root.tag}>")
+    fontsets = root.findall("fontset")
+    if not fontsets:
+        hard_errors.append("[FONT] Font.xml does not contain a <fontset>")
+
+    font_names: set[str] = set()
+    for fontset in fontsets:
+        for font in fontset.findall("font"):
+            name = (font.findtext("name") or "").strip()
+            filename = (font.findtext("filename") or "").strip()
+            if name:
+                font_names.add(name)
+            if filename and not (SKIN / "fonts" / filename).is_file():
+                hard_errors.append(f"[FONT] Font.xml: font file '{filename}' does not exist under fonts/")
+    if "font13" not in font_names:
+        hard_errors.append("[FONT] Font.xml must define Kodi's font13 fallback")
+
+    color_names: set[str] = set()
+    colors_path = SKIN / "colors" / "defaults.xml"
+    try:
+        colors_root = ET.parse(colors_path).getroot()
+        color_names = {el.attrib["name"] for el in colors_root.findall("color") if "name" in el.attrib}
+    except (ET.ParseError, OSError) as e:
+        hard_errors.append(f"[COLOR] Could not parse colors/defaults.xml: {e}")
+
+    for path, tree in trees.items():
+        for el in tree.iter():
+            if el.tag == "font":
+                value = (el.text or "").strip()
+                if value and "$" not in value and value not in font_names:
+                    hard_errors.append(f"[FONT] {path.name}: font '{value}' is not defined in Font.xml")
+            if el.tag in COLOR_ATTR_TAGS:
+                value = (el.text or "").strip()
+                if value and "$" not in value and not HEX_RE.match(value) and value not in color_names:
+                    hard_errors.append(f"[COLOR] {path.name}: color '{value}' is not defined in colors/defaults.xml")
+            colordiffuse = el.attrib.get("colordiffuse", "").strip()
+            if colordiffuse and "$" not in colordiffuse and not HEX_RE.match(colordiffuse) and colordiffuse not in color_names:
+                hard_errors.append(f"[COLOR] {path.name}: colordiffuse '{colordiffuse}' is not defined in colors/defaults.xml")
+
+
+def check_invalid_control_markup(trees):
+    arithmetic = re.compile(r"\$PARAM\[[^\]]+\]\s*[+\-*/]")
+    for path, tree in trees.items():
+        for el in tree.iter():
+            if arithmetic.search((el.text or "").strip()):
+                hard_errors.append(f"[PARAM] {path.name}: arithmetic on $PARAM is not supported by Kodi")
+            for value in el.attrib.values():
+                if arithmetic.search(value):
+                    hard_errors.append(f"[PARAM] {path.name}: arithmetic on $PARAM is not supported by Kodi")
+        for label in tree.iter("control"):
+            if label.attrib.get("type") == "label" and label.find("texturebg") is not None:
+                hard_errors.append(f"[CONTROL] {path.name}: label controls do not support <texturebg>")
+            if label.attrib.get("type") == "button" and label.find("control") is not None:
+                hard_errors.append(f"[CONTROL] {path.name}: button controls cannot contain child controls")
+
+
 def check_duplicate_ids(trees):
     for path, tree in trees.items():
         seen: dict[str, int] = {}
@@ -187,6 +254,8 @@ def main() -> int:
     trees, includes, variables, expressions, constants, files_ok = collect_definitions()
     check_references(trees, includes, variables, expressions, constants)
     check_textures(trees)
+    check_fonts_and_colors(trees)
+    check_invalid_control_markup(trees)
     check_duplicate_ids(trees)
     check_hardcoded_colors(trees)
     check_literal_strings(trees)

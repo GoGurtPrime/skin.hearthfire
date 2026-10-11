@@ -26,11 +26,10 @@
         <value>$INFO[ListItem.Icon]</value>
     </variable>
     <variable name="hf_HeroTitle">
-        <value condition="$EXP[hf_HasClearlogo]">$INFO[Container(5001).ListItem.Art(clearlogo), [hf_clearlogo]]</value>
         <value>$INFO[Container(5001).ListItem.Label]</value>
     </variable>
     <variable name="hf_RuntimeLabel">
-        <value condition="!String.IsEmpty(ListItem.Duration)">$INFO[ListItem.Duration,h]</value>
+        <value condition="!String.IsEmpty(Container(5001).ListItem.Duration)">$INFO[Container(5001).ListItem.Duration,, min]</value>
         <value></value>
     </variable>
     <!-- Time-of-day veil -->
@@ -51,7 +50,7 @@
         <value condition="String.IsEqual(Container(9000).ListItem.Property(section),tvshows)">videodb://inprogresstvshows/</value>
         <value condition="String.IsEqual(Container(9000).ListItem.Property(section),music)">musicdb://recentlyaddedalbums/</value>
         <value condition="String.IsEqual(Container(9000).ListItem.Property(section),addons)">addons://user/</value>
-        <value condition="String.IsEqual(Container(9000).ListItem.Property(section),pictures)">special://skin/extras/genres/</value>
+        <value condition="String.IsEqual(Container(9000).ListItem.Property(section),pictures)">special://skin/extras/empty/</value>
         <value>videodb://recentlyaddedmovies/</value>
     </variable>
     <variable name="hf_ShelfBPath">

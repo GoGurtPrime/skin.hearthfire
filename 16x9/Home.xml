@@ -38,11 +38,15 @@
                 <textcolor>hf_parchment</textcolor>
                 <label>31041</label>
             </control>
-            <include content="hf_ButtonPrimary">
-                <param name="id">5020</param>
-                <param name="label">31042</param>
-                <param name="onclick">ActivateWindow(AddonBrowser)</param>
-            </include>
+            <control type="group">
+                <posy>372</posy>
+                <include content="hf_ButtonPrimary">
+                    <param name="id">5020</param>
+                    <param name="label">31042</param>
+                    <param name="onclick">ActivateWindow(AddonBrowser)</param>
+                    <param name="width">280</param>
+                </include>
+            </control>
         </control>
     </controls>
 </window>
