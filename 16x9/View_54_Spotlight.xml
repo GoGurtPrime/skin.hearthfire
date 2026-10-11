@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- Spotlight: left list of titles + right giant poster + plot. Quick pick from a short list. -->
+<includes>
+    <include name="View_54">
+        <definition>
+            <control type="group">
+                <visible>Control.IsVisible(54)</visible>
+                <control type="list" id="54">
+                    <posx>$CONST[hf_margin_x]</posx>
+                    <posy>200</posy>
+                    <width>640</width>
+                    <height>800</height>
+                    <onleft>9000</onleft>
+                    <onup>54</onup>
+                    <ondown>54</ondown>
+                    <viewtype label="31054">list</viewtype>
+                    <itemlayout height="72" width="640">
+                        <include content="hf_ListRow"><param name="height">72</param></include>
+                        <control type="label">
+                            <posx>16</posx>
+                            <width>600</width>
+                            <height>72</height>
+                            <aligny>center</aligny>
+                            <font>hf_label</font>
+                            <label>$INFO[ListItem.Label]</label>
+                        </control>
+                    </itemlayout>
+                    <focusedlayout height="72" width="640">
+                        <include content="hf_FocusFill" />
+                        <control type="label">
+                            <posx>16</posx>
+                            <width>600</width>
+                            <height>72</height>
+                            <aligny>center</aligny>
+                            <font>hf_label</font>
+                            <textcolor>hf_flame</textcolor>
+                            <label>$INFO[ListItem.Label]</label>
+                        </control>
+                    </focusedlayout>
+                </control>
+                <control type="image">
+                    <posx>800</posx>
+                    <posy>160</posy>
+                    <width>480</width>
+                    <height>720</height>
+                    <aspectratio>scale</aspectratio>
+                    <texture border="6" fallback="defaults/DefaultVideo.png">$INFO[Container(54).ListItem.Art(poster)]</texture>
+                    <texture border="10">ui/rim_ember.png</texture>
+                </control>
+                <control type="textbox">
+                    <posx>1340</posx>
+                    <posy>160</posy>
+                    <width>484</width>
+                    <height>600</height>
+                    <font>hf_body</font>
+                    <textcolor>hf_parchment</textcolor>
+                    <label>$INFO[Container(54).ListItem.Plot]</label>
+                </control>
+            </control>
+        </definition>
+    </include>
+</includes>

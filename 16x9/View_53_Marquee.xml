@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- Marquee: landscape-thumbnail shelf + large fanart preview. Episodes/music videos/trailers. -->
+<includes>
+    <include name="View_53">
+        <definition>
+            <control type="group">
+                <visible>Control.IsVisible(53)</visible>
+                <control type="image">
+                    <posx>$CONST[hf_margin_x]</posx>
+                    <posy>160</posy>
+                    <width>1180</width>
+                    <height>664</height>
+                    <aspectratio>scale</aspectratio>
+                    <texture border="6" fallback="defaults/DefaultVideo.png">$INFO[Container(53).ListItem.Art(thumb)]</texture>
+                </control>
+                <control type="list" id="53">
+                    <posx>1316</posx>
+                    <posy>160</posy>
+                    <width>508</width>
+                    <height>800</height>
+                    <onleft>9000</onleft>
+                    <onup>53</onup>
+                    <ondown>53</ondown>
+                    <viewtype label="31053">biglist</viewtype>
+                    <itemlayout height="96" width="508">
+                        <include content="hf_ListRow"><param name="height">96</param></include>
+                        <control type="label">
+                            <posx>16</posx>
+                            <width>480</width>
+                            <height>96</height>
+                            <aligny>center</aligny>
+                            <font>hf_card_title</font>
+                            <label>$INFO[ListItem.Label]</label>
+                        </control>
+                    </itemlayout>
+                    <focusedlayout height="96" width="508">
+                        <include content="hf_FocusFill" />
+                        <control type="label">
+                            <posx>16</posx>
+                            <width>480</width>
+                            <height>96</height>
+                            <aligny>center</aligny>
+                            <font>hf_card_title</font>
+                            <textcolor>hf_flame</textcolor>
+                            <scroll>true</scroll>
+                            <label>$INFO[ListItem.Label]</label>
+                        </control>
+                    </focusedlayout>
+                </control>
+            </control>
+        </definition>
+    </include>
+</includes>

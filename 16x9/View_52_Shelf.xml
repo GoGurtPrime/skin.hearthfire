@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- Shelf: Home-style hero + a single large poster shelf. -->
+<includes>
+    <include name="View_52">
+        <definition>
+            <control type="group">
+                <visible>Control.IsVisible(52)</visible>
+                <control type="list" id="52">
+                    <posx>$CONST[hf_margin_x]</posx>
+                    <posy>608</posy>
+                    <width>1824</width>
+                    <height>324</height>
+                    <orientation>horizontal</orientation>
+                    <onleft>9000</onleft>
+                    <onup>52</onup>
+                    <ondown>52</ondown>
+                    <viewtype label="31052">icon</viewtype>
+                    <itemlayout height="324" width="240">
+                        <control type="image">
+                            <width>$CONST[hf_poster_w]</width>
+                            <height>$CONST[hf_poster_h]</height>
+                            <aspectratio>scale</aspectratio>
+                            <texture border="6" fallback="defaults/DefaultVideo.png">$VAR[hf_PosterImage]</texture>
+                        </control>
+                    </itemlayout>
+                    <focusedlayout height="324" width="240">
+                        <control type="image">
+                            <width>$CONST[hf_poster_w]</width>
+                            <height>$CONST[hf_poster_h]</height>
+                            <aspectratio>scale</aspectratio>
+                            <texture border="6" fallback="defaults/DefaultVideo.png">$VAR[hf_PosterImage]</texture>
+                        </control>
+                        <control type="image">
+                            <width>$CONST[hf_poster_w]</width>
+                            <height>$CONST[hf_poster_h]</height>
+                            <texture border="10">ui/rim_ember.png</texture>
+                        </control>
+                    </focusedlayout>
+                </control>
+            </control>
+        </definition>
+    </include>
+</includes>

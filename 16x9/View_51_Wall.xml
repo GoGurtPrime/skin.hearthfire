@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- Wall: 7-column poster grid. Poster 216x324, titles under (1 line), row pitch 380. -->
+<includes>
+    <include name="View_51">
+        <definition>
+            <control type="group">
+                <visible>Control.IsVisible(51)</visible>
+                <control type="panel" id="51">
+                    <posx>$CONST[hf_margin_x]</posx>
+                    <posy>200</posy>
+                    <width>$CONST[hf_content_w]</width>
+                    <height>800</height>
+                    <onleft>9000</onleft>
+                    <onup>51</onup>
+                    <ondown>51</ondown>
+                    <viewtype label="31051">bigicon</viewtype>
+                    <itemlayout height="380" width="240">
+                        <control type="image">
+                            <width>$CONST[hf_poster_w]</width>
+                            <height>$CONST[hf_poster_h]</height>
+                            <aspectratio>scale</aspectratio>
+                            <texture border="6" fallback="defaults/DefaultVideo.png">$VAR[hf_PosterImage]</texture>
+                        </control>
+                        <control type="label">
+                            <posy>332</posy>
+                            <width>$CONST[hf_poster_w]</width>
+                            <height>34</height>
+                            <align>center</align>
+                            <font>hf_card_title</font>
+                            <label>$INFO[ListItem.Label]</label>
+                        </control>
+                    </itemlayout>
+                    <focusedlayout height="380" width="240">
+                        <control type="image">
+                            <posx>-14</posx>
+                            <posy>-10</posy>
+                            <width>244</width>
+                            <height>344</height>
+                            <texture colordiffuse="hf_glow_ember">ui/bloom_ember.png</texture>
+                        </control>
+                        <control type="image">
+                            <width>$CONST[hf_poster_w]</width>
+                            <height>$CONST[hf_poster_h]</height>
+                            <aspectratio>scale</aspectratio>
+                            <texture border="6" fallback="defaults/DefaultVideo.png">$VAR[hf_PosterImage]</texture>
+                        </control>
+                        <control type="image">
+                            <width>$CONST[hf_poster_w]</width>
+                            <height>$CONST[hf_poster_h]</height>
+                            <texture border="10">ui/rim_ember.png</texture>
+                        </control>
+                        <control type="label">
+                            <posy>332</posy>
+                            <width>$CONST[hf_poster_w]</width>
+                            <height>34</height>
+                            <align>center</align>
+                            <font>hf_card_title</font>
+                            <textcolor>hf_flame</textcolor>
+                            <scroll>true</scroll>
+                            <label>$INFO[ListItem.Label]</label>
+                        </control>
+                    </focusedlayout>
+                </control>
+            </control>
+        </definition>
+    </include>
+</includes>

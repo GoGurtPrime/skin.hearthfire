@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- Aggregates the view family. Library windows declare <views>50,51,52,53,54</views> and
+    <include>View_50</include> ... for each. -->
+<includes>
+    <include file="View_50_Ledger.xml" />
+    <include file="View_51_Wall.xml" />
+    <include file="View_52_Shelf.xml" />
+    <include file="View_53_Marquee.xml" />
+    <include file="View_54_Spotlight.xml" />
+</includes>

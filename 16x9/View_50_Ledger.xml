@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- Ledger: rich list view. 96px rows: thumb, title, year, runtime, rating, watched. -->
+<includes>
+    <include name="View_50">
+        <definition>
+            <control type="group">
+                <visible>Control.IsVisible(50)</visible>
+                <control type="list" id="50">
+                    <posx>$CONST[hf_margin_x]</posx>
+                    <posy>200</posy>
+                    <width>$CONST[hf_content_w]</width>
+                    <height>800</height>
+                    <onleft>9000</onleft>
+                    <onup>50</onup>
+                    <ondown>50</ondown>
+                    <scrolltime>200</scrolltime>
+                    <viewtype label="31050">list</viewtype>
+                    <itemlayout height="96" width="1728">
+                        <include content="hf_ListRow"><param name="height">96</param></include>
+                        <control type="image">
+                            <width>128</width>
+                            <height>80</height>
+                            <posy>8</posy>
+                            <aspectratio>scale</aspectratio>
+                            <texture fallback="defaults/DefaultVideo.png">$VAR[hf_PosterImage]</texture>
+                        </control>
+                        <control type="label">
+                            <posx>152</posx>
+                            <width>1100</width>
+                            <height>96</height>
+                            <aligny>center</aligny>
+                            <font>hf_card_title</font>
+                            <label>$INFO[ListItem.Label]</label>
+                        </control>
+                        <control type="label">
+                            <posx>1300</posx>
+                            <width>120</width>
+                            <height>96</height>
+                            <aligny>center</aligny>
+                            <font>hf_meta</font>
+                            <textcolor>hf_parchment</textcolor>
+                            <label>$INFO[ListItem.Year]</label>
+                        </control>
+                        <control type="label">
+                            <posx>1440</posx>
+                            <width>160</width>
+                            <height>96</height>
+                            <aligny>center</aligny>
+                            <font>hf_meta</font>
+                            <textcolor>hf_parchment</textcolor>
+                            <label>$VAR[hf_RuntimeLabel]</label>
+                        </control>
+                        <control type="image">
+                            <posx>1620</posx>
+                            <width>28</width>
+                            <height>28</height>
+                            <aligny>center</aligny>
+                            <visible>Integer.IsGreater(ListItem.PlayCount,0)</visible>
+                            <texture colordiffuse="hf_moss">icons/check.png</texture>
+                        </control>
+                    </itemlayout>
+                    <focusedlayout height="96" width="1728">
+                        <include content="hf_FocusFill" />
+                        <control type="image">
+                            <width>128</width>
+                            <height>80</height>
+                            <posy>8</posy>
+                            <aspectratio>scale</aspectratio>
+                            <texture fallback="defaults/DefaultVideo.png">$VAR[hf_PosterImage]</texture>
+                        </control>
+                        <control type="label">
+                            <posx>152</posx>
+                            <width>1100</width>
+                            <height>96</height>
+                            <aligny>center</aligny>
+                            <font>hf_card_title</font>
+                            <textcolor>hf_cream</textcolor>
+                            <scroll>true</scroll>
+                            <label>$INFO[ListItem.Label]</label>
+                        </control>
+                        <control type="label">
+                            <posx>1300</posx>
+                            <width>120</width>
+                            <height>96</height>
+                            <aligny>center</aligny>
+                            <font>hf_meta</font>
+                            <textcolor>hf_flame</textcolor>
+                            <label>$INFO[ListItem.Year]</label>
+                        </control>
+                        <control type="label">
+                            <posx>1440</posx>
+                            <width>160</width>
+                            <height>96</height>
+                            <aligny>center</aligny>
+                            <font>hf_meta</font>
+                            <textcolor>hf_flame</textcolor>
+                            <label>$VAR[hf_RuntimeLabel]</label>
+                        </control>
+                    </focusedlayout>
+                </control>
+            </control>
+        </definition>
+    </include>
+</includes>
