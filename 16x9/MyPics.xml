@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- Pictures wall. -->
+<window>
+    <defaultcontrol always="true">51</defaultcontrol>
+    <views>51</views>
+    <controls>
+        <include>hf_BackdropStack</include>
+        <control type="label">
+            <posx>$CONST[hf_margin_x]</posx>
+            <posy>$CONST[hf_margin_top]</posy>
+            <width>1200</width>
+            <height>64</height>
+            <font>hf_page</font>
+            <textcolor>hf_cream</textcolor>
+            <label>$INFO[Container.FolderName]</label>
+        </control>
+        <control type="panel" id="51">
+            <posx>$CONST[hf_margin_x]</posx>
+            <posy>200</posy>
+            <width>$CONST[hf_content_w]</width>
+            <height>800</height>
+            <viewtype label="31051">bigicon</viewtype>
+            <itemlayout height="240" width="384">
+                <control type="image">
+                    <width>$CONST[hf_landscape_w]</width>
+                    <height>$CONST[hf_landscape_h]</height>
+                    <aspectratio>scale</aspectratio>
+                    <texture fallback="defaults/DefaultPicture.png">$INFO[ListItem.Icon]</texture>
+                </control>
+            </itemlayout>
+            <focusedlayout height="240" width="384">
+                <control type="image">
+                    <width>$CONST[hf_landscape_w]</width>
+                    <height>$CONST[hf_landscape_h]</height>
+                    <aspectratio>scale</aspectratio>
+                    <texture fallback="defaults/DefaultPicture.png">$INFO[ListItem.Icon]</texture>
+                </control>
+                <control type="image">
+                    <width>$CONST[hf_landscape_w]</width>
+                    <height>$CONST[hf_landscape_h]</height>
+                    <texture border="10">ui/rim_ember.png</texture>
+                </control>
+            </focusedlayout>
+        </control>
+    </controls>
+</window>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- Dual-pane file manager, Ledger shell. -->
+<window>
+    <defaultcontrol always="true">20</defaultcontrol>
+    <controls>
+        <include>hf_BackdropStack</include>
+        <control type="panel" id="20">
+            <posx>$CONST[hf_margin_x]</posx><posy>160</posy><width>848</width><height>840</height>
+            <onright>21</onright>
+            <itemlayout height="56" width="848"><control type="label"><width>848</width><height>56</height><aligny>center</aligny><font>hf_label</font><label>$INFO[ListItem.Label]</label></control></itemlayout>
+            <focusedlayout height="56" width="848"><include content="hf_FocusFill" /><control type="label"><posx>16</posx><width>832</width><height>56</height><aligny>center</aligny><font>hf_label</font><textcolor>hf_flame</textcolor><label>$INFO[ListItem.Label]</label></control></focusedlayout>
+        </control>
+        <control type="panel" id="21">
+            <posx>976</posx><posy>160</posy><width>848</width><height>840</height>
+            <onleft>20</onleft>
+            <itemlayout height="56" width="848"><control type="label"><width>848</width><height>56</height><aligny>center</aligny><font>hf_label</font><label>$INFO[ListItem.Label]</label></control></itemlayout>
+            <focusedlayout height="56" width="848"><include content="hf_FocusFill" /><control type="label"><posx>16</posx><width>832</width><height>56</height><aligny>center</aligny><font>hf_label</font><textcolor>hf_flame</textcolor><label>$INFO[ListItem.Label]</label></control></focusedlayout>
+        </control>
+    </controls>
+</window>

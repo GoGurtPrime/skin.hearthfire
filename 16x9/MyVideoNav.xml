@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- Library shell hosting the view family. Shared by Movies/TV Shows/Music Videos navigation. -->
+<window>
+    <defaultcontrol always="true">50</defaultcontrol>
+    <views>50,51,52,53,54</views>
+    <controls>
+        <include>hf_BackdropStack</include>
+        <control type="label">
+            <posx>$CONST[hf_margin_x]</posx>
+            <posy>$CONST[hf_margin_top]</posy>
+            <width>1200</width>
+            <height>64</height>
+            <font>hf_page</font>
+            <textcolor>hf_cream</textcolor>
+            <label>$INFO[Container.FolderName]</label>
+        </control>
+        <control type="label">
+            <posx>1600</posx>
+            <posy>$CONST[hf_margin_top]</posy>
+            <width>224</width>
+            <align>right</align>
+            <height>64</height>
+            <font>hf_numeral</font>
+            <textcolor>hf_smoke</textcolor>
+            <label>$INFO[Container.NumItems]</label>
+        </control>
+        <include>View_50</include>
+        <include>View_51</include>
+        <include>View_52</include>
+        <include>View_53</include>
+        <include>View_54</include>
+        <control type="label">
+            <visible>Container.NumItems(0)</visible>
+            <posx>$CONST[hf_margin_x]</posx>
+            <posy>400</posy>
+            <width>900</width>
+            <height>48</height>
+            <font>hf_section</font>
+            <textcolor>hf_cream</textcolor>
+            <label>31043</label>
+        </control>
+    </controls>
+</window>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<window>
+    <defaultcontrol always="true">51</defaultcontrol>
+    <views>51</views>
+    <controls>
+        <include>hf_BackdropStack</include>
+        <include content="hf_SettingsTitle"><param name="label">$INFO[Container.FolderName]</param></include>
+        <include>View_51</include>
+    </controls>
+</window>

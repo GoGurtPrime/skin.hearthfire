@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- Program Card. Poster left + title/meta/plot/buttons right, cast shelf, related shelf. -->
+<window>
+    <defaultcontrol always="true">50</defaultcontrol>
+    <controls>
+        <control type="image">
+            <width>$CONST[hf_canvas_w]</width>
+            <height>$CONST[hf_canvas_h]</height>
+            <texture colordiffuse="hf_scrim_90">ui/white.png</texture>
+        </control>
+        <control type="image">
+            <posx>96</posx>
+            <posy>96</posy>
+            <width>480</width>
+            <height>720</height>
+            <aspectratio>scale</aspectratio>
+            <texture fallback="defaults/DefaultVideo.png">$INFO[ListItem.Art(poster)]</texture>
+        </control>
+        <control type="image">
+            <posx>96</posx>
+            <posy>96</posy>
+            <width>480</width>
+            <height>720</height>
+            <texture border="10">ui/rim_ember.png</texture>
+        </control>
+        <control type="label">
+            <posx>640</posx>
+            <posy>96</posy>
+            <width>1180</width>
+            <height>72</height>
+            <font>hf_page</font>
+            <textcolor>hf_cream</textcolor>
+            <label>$INFO[ListItem.Label]</label>
+        </control>
+        <control type="label">
+            <visible>!String.IsEmpty(ListItem.Tagline)</visible>
+            <posx>640</posx>
+            <posy>168</posy>
+            <width>1180</width>
+            <height>36</height>
+            <font>hf_tagline</font>
+            <textcolor>hf_parchment</textcolor>
+            <label>$INFO[ListItem.Tagline]</label>
+        </control>
+        <control type="label">
+            <posx>640</posx>
+            <posy>212</posy>
+            <width>1180</width>
+            <height>32</height>
+            <font>hf_meta</font>
+            <textcolor>hf_parchment</textcolor>
+            <label>$INFO[ListItem.Year] · $VAR[hf_RuntimeLabel] · $INFO[ListItem.Mpaa] · ★ $INFO[ListItem.Rating] · $INFO[ListItem.Genre]</label>
+        </control>
+        <control type="textbox">
+            <posx>640</posx>
+            <posy>256</posy>
+            <width>900</width>
+            <height>180</height>
+            <font>hf_body</font>
+            <textcolor>hf_parchment</textcolor>
+            <label>$INFO[ListItem.Plot]</label>
+        </control>
+        <control type="label">
+            <posx>640</posx>
+            <posy>444</posy>
+            <width>1180</width>
+            <height>60</height>
+            <font>hf_meta</font>
+            <textcolor>hf_smoke</textcolor>
+            <label>$INFO[ListItem.Director,31080:,] $INFO[ListItem.Studio,31081:,]</label>
+        </control>
+        <control type="grouplist" id="50">
+            <posx>640</posx>
+            <posy>520</posy>
+            <width>1180</width>
+            <height>72</height>
+            <orientation>horizontal</orientation>
+            <itemgap>$CONST[hf_sp_3]</itemgap>
+            <include content="hf_ButtonPrimary"><param name="id">51</param><param name="label">31020</param><param name="onclick">PlayMedia(ListItem)</param></include>
+            <include content="hf_ButtonSecondary"><param name="id">52</param><param name="label">31082</param><param name="onclick">PlayMedia(ListItem,trailer)</param></include>
+            <include content="hf_ButtonGhost"><param name="id">53</param><param name="label">31083</param><param name="onclick">Action(ToggleWatched)</param></include>
+            <include content="hf_ButtonGhost"><param name="id">54</param><param name="label">31084</param><param name="onclick">Action(ToggleFavourite)</param></include>
+        </control>
+        <control type="label">
+            <posx>96</posx>
+            <posy>860</posy>
+            <width>400</width>
+            <height>36</height>
+            <font>hf_section</font>
+            <textcolor>hf_cream</textcolor>
+            <label>31085</label>
+        </control>
+        <control type="list" id="60">
+            <posx>96</posx>
+            <posy>908</posy>
+            <width>1728</width>
+            <height>160</height>
+            <orientation>horizontal</orientation>
+            <onup>50</onup>
+            <itemlayout height="160" width="140">
+                <control type="image">
+                    <width>$CONST[hf_cast_sq]</width>
+                    <height>$CONST[hf_cast_sq]</height>
+                    <aspectratio>scale</aspectratio>
+                    <texture fallback="defaults/DefaultActor.png">$INFO[ListItem.Art(thumb)]</texture>
+                </control>
+                <control type="label">
+                    <posy>164</posy>
+                    <width>$CONST[hf_cast_sq]</width>
+                    <height>28</height>
+                    <align>center</align>
+                    <font>hf_caption</font>
+                    <textcolor>hf_parchment</textcolor>
+                    <label>$INFO[ListItem.Label]</label>
+                </control>
+            </itemlayout>
+            <focusedlayout height="160" width="140">
+                <control type="image">
+                    <width>$CONST[hf_cast_sq]</width>
+                    <height>$CONST[hf_cast_sq]</height>
+                    <aspectratio>scale</aspectratio>
+                    <texture fallback="defaults/DefaultActor.png">$INFO[ListItem.Art(thumb)]</texture>
+                </control>
+                <control type="image">
+                    <width>$CONST[hf_cast_sq]</width>
+                    <height>$CONST[hf_cast_sq]</height>
+                    <texture border="10">ui/rim_ember.png</texture>
+                </control>
+                <control type="label">
+                    <posy>164</posy>
+                    <width>$CONST[hf_cast_sq]</width>
+                    <height>28</height>
+                    <align>center</align>
+                    <font>hf_caption</font>
+                    <textcolor>hf_flame</textcolor>
+                    <label>$INFO[ListItem.Label]</label>
+                </control>
+            </focusedlayout>
+        </control>
+    </controls>
+</window>

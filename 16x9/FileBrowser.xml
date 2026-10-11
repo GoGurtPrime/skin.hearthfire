@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- Ledger file browser. Required ids: 450 panel (list), 411 heading label, 413 OK, 414 Cancel,
+    415 Create Folder, 416 Horizontal Flip toggle (picture mode only). -->
+<window>
+    <defaultcontrol always="true">450</defaultcontrol>
+    <controls>
+        <include content="hf_HearthCard_Info"><param name="height">820</param><param name="posy">130</param></include>
+        <control type="label" id="411">
+            <posx>360</posx><posy>170</posy><width>1200</width><height>40</height>
+            <font>hf_section</font><textcolor>hf_cream</textcolor>
+        </control>
+        <control type="panel" id="450">
+            <posx>360</posx><posy>230</posy><width>1200</width><height>540</height>
+            <scrolltime>200</scrolltime>
+            <itemlayout height="72" width="1200">
+                <include content="hf_ListRow" />
+                <control type="label"><posx>16</posx><width>1168</width><height>72</height><aligny>center</aligny><font>hf_label</font><label>$INFO[ListItem.Label]</label></control>
+            </itemlayout>
+            <focusedlayout height="72" width="1200">
+                <include content="hf_FocusFill" />
+                <control type="label"><posx>16</posx><width>1168</width><height>72</height><aligny>center</aligny><font>hf_label</font><textcolor>hf_flame</textcolor><label>$INFO[ListItem.Label]</label></control>
+            </focusedlayout>
+        </control>
+        <control type="grouplist">
+            <posx>360</posx><posy>792</posy><orientation>horizontal</orientation><itemgap>16</itemgap><width>1200</width><height>56</height><align>right</align>
+            <control type="radiobutton" id="416"><width>220</width><height>56</height><label>31074</label><font>hf_meta</font><align>left</align><aligny>center</aligny><texturenofocus colordiffuse="00FFFFFF">ui/white.png</texturenofocus><texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus></control>
+            <control type="button" id="415"><width>220</width><height>56</height><label>20309</label><font>hf_label</font><align>center</align><aligny>center</aligny><texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus><texturenofocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturenofocus></control>
+            <control type="button" id="414"><width>160</width><height>56</height><label>222</label><font>hf_label</font><align>center</align><aligny>center</aligny><texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus><texturenofocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturenofocus></control>
+            <control type="button" id="413"><width>160</width><height>56</height><label>186</label><font>hf_label</font><align>center</align><aligny>center</aligny><textcolor>hf_char</textcolor><focusedcolor>hf_char</focusedcolor><texturefocus colordiffuse="hf_flame" border="10">ui/rounded6.png</texturefocus><texturenofocus colordiffuse="hf_ember" border="10">ui/rounded6.png</texturenofocus></control>
+        </control>
+    </controls>
+</window>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- Album/Artist info, Program Card pattern. Required ids: id=300 action grouplist,
+    id=11 Close, id=15 Increase Rating, id=14 Decrease Rating, id=12 Album Info, id=10 Get Thumb, id=6 Refresh. -->
+<window>
+    <defaultcontrol always="true">300</defaultcontrol>
+    <controls>
+        <control type="image">
+            <width>$CONST[hf_canvas_w]</width><height>$CONST[hf_canvas_h]</height>
+            <texture colordiffuse="hf_scrim_90">ui/white.png</texture>
+        </control>
+        <control type="image">
+            <posx>96</posx><posy>96</posy><width>480</width><height>480</height>
+            <aspectratio>scale</aspectratio>
+            <texture fallback="defaults/DefaultMusicAlbums.png">$INFO[ListItem.Art(thumb)]</texture>
+        </control>
+        <control type="image">
+            <posx>96</posx><posy>96</posy><width>480</width><height>480</height>
+            <texture border="10">ui/rim_ember.png</texture>
+        </control>
+        <control type="label">
+            <posx>640</posx><posy>96</posy><width>1180</width><height>64</height>
+            <font>hf_page</font><textcolor>hf_cream</textcolor><label>$INFO[ListItem.Album]</label>
+        </control>
+        <control type="label">
+            <posx>640</posx><posy>164</posy><width>1180</width><height>48</height>
+            <font>hf_section</font><textcolor>hf_parchment</textcolor><label>$INFO[ListItem.Artist]</label>
+        </control>
+        <control type="label">
+            <posx>640</posx><posy>220</posy><width>1180</width><height>32</height>
+            <font>hf_meta</font><textcolor>hf_smoke</textcolor><label>$INFO[ListItem.Year] · $INFO[ListItem.Genre]</label>
+        </control>
+        <control type="textbox">
+            <posx>640</posx><posy>272</posy><width>900</width><height>200</height>
+            <font>hf_body</font><textcolor>hf_parchment</textcolor><label>$INFO[ListItem.Property(album_description)]</label>
+        </control>
+        <control type="grouplist" id="300">
+            <posx>640</posx><posy>520</posy><orientation>horizontal</orientation><itemgap>16</itemgap><width>1180</width><height>72</height>
+            <control type="button" id="10"><width>200</width><height>64</height><label>13511</label><font>hf_label</font><align>center</align><aligny>center</aligny><texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus><texturenofocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturenofocus></control>
+            <control type="button" id="12"><width>200</width><height>64</height><label>13433</label><font>hf_label</font><align>center</align><aligny>center</aligny><texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus><texturenofocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturenofocus></control>
+            <control type="button" id="14"><width>64</width><height>64</height><label>-</label><font>hf_label</font><align>center</align><aligny>center</aligny><texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus><texturenofocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturenofocus></control>
+            <control type="button" id="15"><width>64</width><height>64</height><label>+</label><font>hf_label</font><align>center</align><aligny>center</aligny><texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus><texturenofocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturenofocus></control>
+            <control type="button" id="6"><width>64</width><height>64</height><label>184</label><font>hf_caption</font><align>center</align><aligny>center</aligny><texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus><texturenofocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturenofocus></control>
+            <control type="button" id="11"><width>160</width><height>64</height><label>222</label><font>hf_label</font><align>center</align><aligny>center</aligny><texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus><texturenofocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturenofocus></control>
+        </control>
+    </controls>
+</window>

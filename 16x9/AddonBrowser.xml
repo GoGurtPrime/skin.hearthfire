@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- Required: id=50 fixedlist (addon list, matches views/defaultcontrol). §10.7 Wall of squares. -->
+<window>
+    <defaultcontrol always="true">50</defaultcontrol>
+    <views>50</views>
+    <controls>
+        <include>hf_BackdropStack</include>
+        <include content="hf_SettingsTitle"><param name="label">24001</param></include>
+        <control type="fixedlist" id="50">
+            <posx>$CONST[hf_margin_x]</posx><posy>200</posy><width>$CONST[hf_content_w]</width><height>800</height>
+            <orientation>horizontal</orientation>
+            <itemlayout height="320" width="252">
+                <control type="image"><width>$CONST[hf_album_sq]</width><height>$CONST[hf_album_sq]</height><aspectratio>scale</aspectratio><texture fallback="defaults/DefaultAddon.png">$INFO[ListItem.Icon]</texture></control>
+                <control type="label"><posy>260</posy><width>$CONST[hf_album_sq]</width><height>32</height><align>center</align><font>hf_card_title</font><label>$INFO[ListItem.Label]</label></control>
+            </itemlayout>
+            <focusedlayout height="320" width="252">
+                <control type="image"><width>$CONST[hf_album_sq]</width><height>$CONST[hf_album_sq]</height><aspectratio>scale</aspectratio><texture fallback="defaults/DefaultAddon.png">$INFO[ListItem.Icon]</texture></control>
+                <control type="image"><width>$CONST[hf_album_sq]</width><height>$CONST[hf_album_sq]</height><texture border="10">ui/rim_ember.png</texture></control>
+                <control type="label"><posy>260</posy><width>$CONST[hf_album_sq]</width><height>32</height><align>center</align><font>hf_card_title</font><textcolor>hf_flame</textcolor><label>$INFO[ListItem.Label]</label></control>
+            </focusedlayout>
+        </control>
+    </controls>
+</window>
