@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- Required: id=52 fixedlist (profile avatar carousel). id=11 Quit button is convention. -->
+<window>
+    <defaultcontrol always="true">52</defaultcontrol>
+    <controls>
+        <include>hf_BackdropStack</include>
+        <control type="label">
+            <width>$CONST[hf_canvas_w]</width><align>center</align><posy>300</posy><height>64</height>
+            <font>hf_hero</font><textcolor>hf_cream</textcolor><label>20022</label>
+        </control>
+        <control type="fixedlist" id="52">
+            <posx>460</posx><posy>440</posy><width>1000</width><height>280</height>
+            <movement>1</movement><orientation>horizontal</orientation>
+            <itemlayout height="280" width="240">
+                <control type="image"><width>160</width><height>160</height><align>center</align><posx>40</posx><texture fallback="defaults/DefaultUser.png">$INFO[ListItem.Icon]</texture></control>
+                <control type="label"><posy>168</posy><width>240</width><height>32</height><align>center</align><font>hf_label</font><label>$INFO[ListItem.Label]</label></control>
+            </itemlayout>
+            <focusedlayout height="280" width="240">
+                <control type="image"><width>160</width><height>160</height><align>center</align><posx>40</posx><texture fallback="defaults/DefaultUser.png">$INFO[ListItem.Icon]</texture></control>
+                <control type="image"><width>160</width><height>160</height><posx>40</posx><texture border="10">ui/rim_ember.png</texture></control>
+                <control type="label"><posy>168</posy><width>240</width><height>32</height><align>center</align><font>hf_label</font><textcolor>hf_flame</textcolor><label>$INFO[ListItem.Label]</label></control>
+            </focusedlayout>
+        </control>
+        <control type="button" id="11">
+            <posx>1728</posx><posy>984</posy><width>96</width><height>64</height>
+            <label>13013</label><font>hf_meta</font><align>center</align><aligny>center</aligny>
+            <texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus>
+            <texturenofocus colordiffuse="00000000">ui/white.png</texturenofocus>
+            <onclick>Quit</onclick>
+        </control>
+    </controls>
+</window>

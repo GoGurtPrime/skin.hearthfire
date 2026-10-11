@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+    Hearthfire Settings category picker. Metropolis-pattern: one reused image control bound
+    to each item's ListItem.Icon, framed by a single static decorative texture; per-category description text
+    (not imagery) is the only thing gated by Container(60).HasFocus(N). Icons here are small abstract firelight
+    glyph tiles (extras/genres-style abstract art), not literal photographic scenes. -->
+<window>
+    <defaultcontrol always="true">60</defaultcontrol>
+    <controls>
+        <include>hf_BackdropStack</include>
+        <include content="hf_SettingsTitle"><param name="label">10004</param></include>
+        <control type="wraplist" id="60">
+            <posx>$CONST[hf_margin_x]</posx>
+            <posy>200</posy>
+            <width>1728</width>
+            <height>420</height>
+            <orientation>horizontal</orientation>
+            <itemgap>$CONST[hf_sp_4]</itemgap>
+            <scrolltime>200</scrolltime>
+            <onup>60</onup>
+            <ondown>60</ondown>
+            <itemlayout width="220" height="420">
+                <control type="image">
+                    <posx>14</posx>
+                    <posy>20</posy>
+                    <width>192</width>
+                    <height>300</height>
+                    <texture fallback="defaults/DefaultAddon.png">$INFO[ListItem.Icon]</texture>
+                </control>
+                <control type="image">
+                    <posx>4</posx>
+                    <posy>10</posy>
+                    <width>212</width>
+                    <height>320</height>
+                    <texture border="10">ui/rim_ember.png</texture>
+                    <colordiffuse>50FFFFFF</colordiffuse>
+                </control>
+                <control type="label">
+                    <posy>336</posy>
+                    <width>220</width>
+                    <height>32</height>
+                    <align>center</align>
+                    <font>hf_label</font>
+                    <textcolor>hf_smoke</textcolor>
+                    <label>$INFO[ListItem.Label]</label>
+                </control>
+            </itemlayout>
+            <focusedlayout width="220" height="420">
+                <control type="image">
+                    <posx>-10</posx>
+                    <posy>-4</posy>
+                    <width>244</width>
+                    <height>344</height>
+                    <texture colordiffuse="hf_glow_ember">ui/bloom_ember.png</texture>
+                </control>
+                <control type="image">
+                    <posx>14</posx>
+                    <posy>20</posy>
+                    <width>192</width>
+                    <height>300</height>
+                    <texture fallback="defaults/DefaultAddon.png">$INFO[ListItem.Icon]</texture>
+                </control>
+                <control type="image">
+                    <posx>4</posx>
+                    <posy>10</posy>
+                    <width>212</width>
+                    <height>320</height>
+                    <texture border="10">ui/rim_ember.png</texture>
+                </control>
+                <control type="label">
+                    <posy>336</posy>
+                    <width>220</width>
+                    <height>32</height>
+                    <align>center</align>
+                    <font>hf_label</font>
+                    <textcolor>hf_flame</textcolor>
+                    <label>$INFO[ListItem.Label]</label>
+                </control>
+            </focusedlayout>
+            <content>
+                <item id="1"><label>14200</label><icon>settings/settings_player.png</icon><onclick>ActivateWindow(PlayerSettings)</onclick></item>
+                <item id="2"><label>14211</label><icon>settings/settings_media.png</icon><onclick>ActivateWindow(MediaSettings)</onclick></item>
+                <item id="3"><label>19020</label><icon>settings/settings_pvr.png</icon><visible>System.HasPVRAddon</visible><onclick>ActivateWindow(PVRSettings)</onclick></item>
+                <item id="4"><label>14206</label><icon>settings/settings_interface.png</icon><onclick>ActivateWindow(InterfaceSettings)</onclick></item>
+                <item id="5"><label>14036</label><icon>settings/settings_services.png</icon><onclick>ActivateWindow(ServiceSettings)</onclick></item>
+                <item id="6"><label>13000</label><icon>settings/settings_system.png</icon><onclick>ActivateWindow(SystemSettings)</onclick></item>
+                <item id="7"><label>13200</label><icon>settings/settings_profiles.png</icon><onclick>ActivateWindow(SettingsProfile)</onclick></item>
+                <item id="8"><label>166</label><icon>settings/settings_skin.png</icon><onclick>ActivateWindow(SkinSettings)</onclick></item>
+            </content>
+        </control>
+        <!-- Per-category description, gated by focus (Metropolis pattern, D13) -->
+        <control type="group">
+            <posx>$CONST[hf_margin_x]</posx>
+            <posy>660</posy>
+            <control type="label" id="1001"><visible>Container(60).HasFocus(1)</visible><width>1200</width><height>40</height><font>hf_section</font><textcolor>hf_cream</textcolor><label>14200</label></control>
+            <control type="label" id="1002"><visible>Container(60).HasFocus(1)</visible><posy>48</posy><width>1200</width><height>60</height><font>hf_body</font><textcolor>hf_parchment</textcolor><label>31200</label></control>
+            <control type="label"><visible>Container(60).HasFocus(2)</visible><width>1200</width><height>40</height><font>hf_section</font><textcolor>hf_cream</textcolor><label>14211</label></control>
+            <control type="label"><visible>Container(60).HasFocus(2)</visible><posy>48</posy><width>1200</width><height>60</height><font>hf_body</font><textcolor>hf_parchment</textcolor><label>31201</label></control>
+            <control type="label"><visible>Container(60).HasFocus(3)</visible><width>1200</width><height>40</height><font>hf_section</font><textcolor>hf_cream</textcolor><label>19020</label></control>
+            <control type="label"><visible>Container(60).HasFocus(3)</visible><posy>48</posy><width>1200</width><height>60</height><font>hf_body</font><textcolor>hf_parchment</textcolor><label>31202</label></control>
+            <control type="label"><visible>Container(60).HasFocus(4)</visible><width>1200</width><height>40</height><font>hf_section</font><textcolor>hf_cream</textcolor><label>14206</label></control>
+            <control type="label"><visible>Container(60).HasFocus(4)</visible><posy>48</posy><width>1200</width><height>60</height><font>hf_body</font><textcolor>hf_parchment</textcolor><label>31203</label></control>
+            <control type="label"><visible>Container(60).HasFocus(5)</visible><width>1200</width><height>40</height><font>hf_section</font><textcolor>hf_cream</textcolor><label>14036</label></control>
+            <control type="label"><visible>Container(60).HasFocus(5)</visible><posy>48</posy><width>1200</width><height>60</height><font>hf_body</font><textcolor>hf_parchment</textcolor><label>31204</label></control>
+            <control type="label"><visible>Container(60).HasFocus(6)</visible><width>1200</width><height>40</height><font>hf_section</font><textcolor>hf_cream</textcolor><label>13000</label></control>
+            <control type="label"><visible>Container(60).HasFocus(6)</visible><posy>48</posy><width>1200</width><height>60</height><font>hf_body</font><textcolor>hf_parchment</textcolor><label>31205</label></control>
+            <control type="label"><visible>Container(60).HasFocus(7)</visible><width>1200</width><height>40</height><font>hf_section</font><textcolor>hf_cream</textcolor><label>13200</label></control>
+            <control type="label"><visible>Container(60).HasFocus(7)</visible><posy>48</posy><width>1200</width><height>60</height><font>hf_body</font><textcolor>hf_parchment</textcolor><label>31206</label></control>
+            <control type="label"><visible>Container(60).HasFocus(8)</visible><width>1200</width><height>40</height><font>hf_section</font><textcolor>hf_cream</textcolor><label>166</label></control>
+            <control type="label"><visible>Container(60).HasFocus(8)</visible><posy>48</posy><width>1200</width><height>60</height><font>hf_body</font><textcolor>hf_parchment</textcolor><label>31207</label></control>
+        </control>
+    </controls>
+</window>

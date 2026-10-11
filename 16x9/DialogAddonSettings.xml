@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- Required: id=2 heading, id=3 left category grouplist, id=8999 OK/Cancel/Defaults grouplist (28 OK,
+    29 Cancel, 30 Defaults), id=10 category button template, id=5 right settings grouplist,
+    id=7/8/9/11/12/13/14/15 per-type templates (same scheme as SettingsCategory.xml). -->
+<window>
+    <defaultcontrol always="true">3</defaultcontrol>
+    <controls>
+        <include content="hf_HearthCard_Info"><param name="height">860</param><param name="posy">110</param></include>
+        <control type="label" id="2">
+            <posx>360</posx><posy>140</posy><width>1200</width><height>40</height>
+            <font>hf_section</font><textcolor>hf_cream</textcolor>
+        </control>
+        <control type="grouplist" id="3">
+            <posx>360</posx><posy>200</posy><width>340</width><height>680</height>
+            <itemgap>8</itemgap><orientation>vertical</orientation><onright>5</onright>
+        </control>
+        <control type="button" id="10">
+            <height>56</height><label></label><font>hf_label</font><align>left</align><aligny>center</aligny>
+            <textoffsetx>16</textoffsetx>
+            <texturenofocus colordiffuse="00FFFFFF">ui/white.png</texturenofocus>
+            <texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus>
+            <textcolor>hf_parchment</textcolor><focusedcolor>hf_flame</focusedcolor>
+        </control>
+        <control type="grouplist" id="5">
+            <posx>720</posx><posy>200</posy><width>820</width><height>680</height>
+            <itemgap>0</itemgap><onleft>3</onleft><orientation>vertical</orientation>
+        </control>
+        <control type="button" id="7" description="Button"><height>56</height><width>820</width><font>hf_label</font><align>left</align><aligny>center</aligny><textcolor>hf_cream</textcolor><focusedcolor>hf_flame</focusedcolor><texturenofocus colordiffuse="00FFFFFF">ui/white.png</texturenofocus><texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus></control>
+        <control type="radiobutton" id="8" description="Radio Button"><height>56</height><width>820</width><font>hf_label</font><align>left</align><aligny>center</aligny><textcolor>hf_cream</textcolor><focusedcolor>hf_flame</focusedcolor><texturenofocus colordiffuse="00FFFFFF">ui/white.png</texturenofocus><texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus></control>
+        <control type="spincontrolex" id="9" description="Spin"><height>56</height><width>820</width><font>hf_label</font><spinwidth>200</spinwidth><spinposx>600</spinposx><texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus><texturenofocus colordiffuse="00FFFFFF">ui/white.png</texturenofocus></control>
+        <control type="image" id="11" description="Separator"><height>1</height><width>820</width><texture colordiffuse="hf_bark">ui/white.png</texture></control>
+        <control type="edit" id="12" description="Edit"><height>56</height><width>820</width><font>hf_body</font><textcolor>hf_cream</textcolor><texturefocus colordiffuse="hf_soot" border="10">ui/rounded6.png</texturefocus><texturenofocus colordiffuse="hf_soot" border="10">ui/rounded6.png</texturenofocus></control>
+        <control type="sliderex" id="13" description="Slider"><height>56</height><width>820</width><font>hf_label</font><texturenofocus colordiffuse="00FFFFFF">ui/white.png</texturenofocus><texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus></control>
+        <control type="label" id="14" description="Separator label"><height>40</height><width>820</width><font>hf_meta</font><textcolor>hf_smoke</textcolor></control>
+        <control type="colorbutton" id="15" description="Colour button"><height>56</height><width>820</width><texturenofocus colordiffuse="00FFFFFF">ui/white.png</texturenofocus><texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus></control>
+        <control type="grouplist" id="8999">
+            <posx>720</posx><posy>900</posy><orientation>horizontal</orientation><itemgap>16</itemgap><width>820</width><height>56</height><align>right</align>
+            <control type="button" id="30"><width>160</width><height>56</height><label>20410</label><font>hf_label</font><align>center</align><aligny>center</aligny><texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus><texturenofocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturenofocus></control>
+            <control type="button" id="29"><width>160</width><height>56</height><label>222</label><font>hf_label</font><align>center</align><aligny>center</aligny><texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus><texturenofocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturenofocus></control>
+            <control type="button" id="28"><width>160</width><height>56</height><label>186</label><font>hf_label</font><align>center</align><aligny>center</aligny><textcolor>hf_char</textcolor><focusedcolor>hf_char</focusedcolor><texturefocus colordiffuse="hf_flame" border="10">ui/rounded6.png</texturefocus><texturenofocus colordiffuse="hf_ember" border="10">ui/rounded6.png</texturenofocus></control>
+        </control>
+    </controls>
+</window>

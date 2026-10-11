@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- Shared "Ledger" settings shell chrome. Settings.xml / SettingsCategory.xml / SkinSettings.xml
+    each add their own required Kodi control ids around this; this file supplies only the decorative chrome
+    (title, hint bar, pill toggle visuals) that is purely cosmetic and safe to share. -->
+<includes>
+    <include name="hf_SettingsTitle">
+        <param name="label" />
+        <definition>
+            <control type="label">
+                <posx>$CONST[hf_margin_x]</posx>
+                <posy>$CONST[hf_margin_top]</posy>
+                <width>900</width>
+                <height>64</height>
+                <font>hf_page</font>
+                <textcolor>hf_cream</textcolor>
+                <label>$PARAM[label]</label>
+            </control>
+        </definition>
+    </include>
+    <!-- Bottom hint bar showing the focused setting's description. -->
+    <include name="hf_HintBar">
+        <definition>
+            <control type="group">
+                <posy>984</posy>
+                <height>64</height>
+                <control type="image">
+                    <width>$CONST[hf_canvas_w]</width>
+                    <height>64</height>
+                    <texture colordiffuse="hf_soot">ui/white.png</texture>
+                </control>
+                <control type="label">
+                    <posx>$CONST[hf_margin_x]</posx>
+                    <width>1728</width>
+                    <height>64</height>
+                    <aligny>center</aligny>
+                    <font>hf_body</font>
+                    <textcolor>hf_parchment</textcolor>
+                    <label>$INFO[System.CurrentControl]</label>
+                </control>
+            </control>
+        </definition>
+    </include>
+    <!-- Pill toggle visual (on=ember+"On", off=timber+"Off") used by radiobutton-as-toggle rows. -->
+    <include name="hf_PillOn">
+        <definition>
+            <control type="image">
+                <width>96</width>
+                <height>48</height>
+                <texture colordiffuse="hf_ember" border="16">ui/rounded6.png</texture>
+            </control>
+        </definition>
+    </include>
+    <include name="hf_PillOff">
+        <definition>
+            <control type="image">
+                <width>96</width>
+                <height>48</height>
+                <texture colordiffuse="hf_timber" border="16">ui/rounded6.png</texture>
+            </control>
+        </definition>
+    </include>
+</includes>

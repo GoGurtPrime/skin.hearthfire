@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+    Hearthfire Ledger settings shell. Shared by SystemSettings/PlayerSettings/MediaSettings/
+    InterfaceSettings/ServiceSettings/PVRSettings/GameSettings - Kodi core loads this one file for all of them
+    and expects the specific control ids below (2,3,5,6,7,8,9,10,13,14,15,20); this is Kodi's required settings
+    API, not skin-specific content (confirmed against every reference skin's SettingsCategory.xml). -->
+<window>
+    <defaultcontrol always="true">3</defaultcontrol>
+    <controls>
+        <include>hf_BackdropStack</include>
+        <include content="hf_SettingsTitle"><param name="label">$INFO[System.CurrentWindow]</param></include>
+        <!-- 2: category label (Kodi sets this internally for the header) -->
+        <control type="label" id="2">
+            <posx>$CONST[hf_margin_x]</posx>
+            <posy>84</posy>
+            <width>900</width>
+            <height>32</height>
+            <font>hf_meta</font>
+            <textcolor>hf_smoke</textcolor>
+        </control>
+        <!-- 3: left category grouplist -->
+        <control type="grouplist" id="3">
+            <posx>$CONST[hf_margin_x]</posx>
+            <posy>160</posy>
+            <width>440</width>
+            <height>820</height>
+            <itemgap>$CONST[hf_sp_2]</itemgap>
+            <orientation>vertical</orientation>
+            <onright>5</onright>
+            <onleft>5</onleft>
+            <onup>20</onup>
+            <ondown>20</ondown>
+        </control>
+        <!-- 10: category button template, cloned for each item in grouplist 3 -->
+        <control type="button" id="10" description="Category Button">
+            <height>$CONST[hf_row_h]</height>
+            <label></label>
+            <font>hf_label</font>
+            <textoffsetx>$CONST[hf_sp_3]</textoffsetx>
+            <align>left</align>
+            <aligny>center</aligny>
+            <texturenofocus colordiffuse="00FFFFFF">ui/white.png</texturenofocus>
+            <texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus>
+            <textcolor>hf_parchment</textcolor>
+            <focusedcolor>hf_flame</focusedcolor>
+        </control>
+        <!-- 20: settings level (basic/standard/advanced/expert) -->
+        <control type="button" id="20" description="Settings level">
+            <posx>$CONST[hf_margin_x]</posx>
+            <posy>$CONST[hf_margin_top]</posy>
+            <width>300</width>
+            <height>48</height>
+            <onup>noop</onup>
+            <onleft>noop</onleft>
+            <onright>3</onright>
+            <ondown>3</ondown>
+            <label></label>
+            <font>hf_meta</font>
+            <align>right</align>
+            <aligny>center</aligny>
+            <texturenofocus colordiffuse="00FFFFFF">ui/white.png</texturenofocus>
+            <texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus>
+            <textcolor>hf_smoke</textcolor>
+            <focusedcolor>hf_flame</focusedcolor>
+            <onclick>SettingsLevelChange</onclick>
+        </control>
+        <!-- 5: right settings grouplist (the actual controls for the current category) -->
+        <control type="grouplist" id="5">
+            <posx>560</posx>
+            <posy>160</posy>
+            <width>1264</width>
+            <height>760</height>
+            <itemgap>0</itemgap>
+            <onleft>3</onleft>
+            <onright>61</onright>
+            <onup>5</onup>
+            <ondown>5</ondown>
+            <pagecontrol>61</pagecontrol>
+            <orientation>vertical</orientation>
+        </control>
+        <control type="scrollbar" id="61">
+            <posx>1824</posx>
+            <posy>160</posy>
+            <height>760</height>
+            <width>4</width>
+            <onleft>5</onleft>
+            <texturesliderbar colordiffuse="hf_bark">ui/white.png</texturesliderbar>
+            <texturesliderbarfocus colordiffuse="hf_bark">ui/white.png</texturesliderbarfocus>
+            <texturenib colordiffuse="hf_smoke">ui/white.png</texturenib>
+            <texturenibfocus colordiffuse="hf_flame">ui/white.png</texturenibfocus>
+        </control>
+        <!-- 7-15: per-type control templates Kodi clones for each setting item -->
+        <control type="button" id="7" description="Button">
+            <height>$CONST[hf_row_h]</height>
+            <width>1264</width>
+            <font>hf_label</font>
+            <align>left</align>
+            <aligny>center</aligny>
+            <textoffsetx>0</textoffsetx>
+            <textcolor>hf_cream</textcolor>
+            <focusedcolor>hf_flame</focusedcolor>
+            <texturenofocus colordiffuse="00FFFFFF">ui/white.png</texturenofocus>
+            <texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus>
+        </control>
+        <control type="radiobutton" id="8" description="Radio Button (toggle)">
+            <height>$CONST[hf_row_h]</height>
+            <width>1264</width>
+            <font>hf_label</font>
+            <align>left</align>
+            <aligny>center</aligny>
+            <textcolor>hf_cream</textcolor>
+            <focusedcolor>hf_flame</focusedcolor>
+            <texturenofocus colordiffuse="00FFFFFF">ui/white.png</texturenofocus>
+            <texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus>
+            <radioposx>1180</radioposx>
+            <radioposy>12</radioposy>
+            <radiowidth>96</radiowidth>
+            <radioheight>48</radioheight>
+            <texturenofocusradioon colordiffuse="hf_ember" border="16">ui/rounded6.png</texturenofocusradioon>
+            <texturefocusradioon colordiffuse="hf_ember" border="16">ui/rounded6.png</texturefocusradioon>
+            <texturenofocusradiooff colordiffuse="hf_timber" border="16">ui/rounded6.png</texturenofocusradiooff>
+            <texturefocusradiooff colordiffuse="hf_timber" border="16">ui/rounded6.png</texturefocusradiooff>
+        </control>
+        <control type="spincontrolex" id="9" description="Spin control">
+            <height>$CONST[hf_row_h]</height>
+            <width>1264</width>
+            <font>hf_label</font>
+            <align>left</align>
+            <aligny>center</aligny>
+            <textcolor>hf_cream</textcolor>
+            <spinwidth>240</spinwidth>
+            <spinposx>1024</spinposx>
+            <texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus>
+            <texturenofocus colordiffuse="00FFFFFF">ui/white.png</texturenofocus>
+            <textureup>ui/scrollbar_thumb.png</textureup>
+            <texturedown>ui/scrollbar_thumb.png</texturedown>
+        </control>
+        <control type="sliderex" id="13" description="Slider control">
+            <height>$CONST[hf_row_h]</height>
+            <width>1264</width>
+            <font>hf_label</font>
+            <align>left</align>
+            <textcolor>hf_cream</textcolor>
+            <texturenofocus colordiffuse="00FFFFFF">ui/white.png</texturenofocus>
+            <texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus>
+        </control>
+        <control type="label" id="14" description="Section separator label">
+            <height>48</height>
+            <width>1264</width>
+            <font>hf_meta</font>
+            <textcolor>hf_smoke</textcolor>
+            <align>left</align>
+            <aligny>center</aligny>
+        </control>
+        <control type="colorbutton" id="15" description="Colour button">
+            <height>$CONST[hf_row_h]</height>
+            <width>1264</width>
+            <texturenofocus colordiffuse="00FFFFFF">ui/white.png</texturenofocus>
+            <texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus>
+        </control>
+        <!-- 6: focused setting's description, hint bar -->
+        <control type="group">
+            <posy>984</posy>
+            <height>64</height>
+            <control type="image">
+                <width>$CONST[hf_canvas_w]</width>
+                <height>64</height>
+                <texture colordiffuse="hf_soot">ui/white.png</texture>
+            </control>
+            <control type="textbox" id="6" description="Settings description">
+                <posx>$CONST[hf_margin_x]</posx>
+                <width>1728</width>
+                <height>64</height>
+                <font>hf_body</font>
+                <textcolor>hf_parchment</textcolor>
+                <align>justify</align>
+                <autoscroll time="3000" delay="4000" repeat="5000">true</autoscroll>
+            </control>
+        </control>
+    </controls>
+</window>

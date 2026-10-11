@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- Hearthfire Skin Settings. Kodi resolves the window name "SkinSettings" to this file
+    automatically; no custom window id is needed. -->
+<window>
+    <defaultcontrol always="true">100</defaultcontrol>
+    <controls>
+        <include>hf_BackdropStack</include>
+        <include content="hf_SettingsTitle"><param name="label">166</param></include>
+        <control type="grouplist" id="100">
+            <posx>$CONST[hf_margin_x]</posx>
+            <posy>200</posy>
+            <width>440</width>
+            <height>700</height>
+            <itemgap>$CONST[hf_sp_2]</itemgap>
+            <orientation>vertical</orientation>
+            <onright>200</onright>
+            <onleft>200</onleft>
+            <control type="button" id="101">
+                <height>$CONST[hf_row_h]</height>
+                <label>31210</label>
+                <font>hf_label</font>
+                <align>left</align>
+                <aligny>center</aligny>
+                <textoffsetx>$CONST[hf_sp_3]</textoffsetx>
+                <texturenofocus colordiffuse="00FFFFFF">ui/white.png</texturenofocus>
+                <texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus>
+                <textcolor>hf_cream</textcolor>
+                <focusedcolor>hf_flame</focusedcolor>
+                <onclick>Skin.SetString(hf.settingstab,menu)</onclick>
+            </control>
+            <control type="button" id="102">
+                <height>$CONST[hf_row_h]</height>
+                <label>31211</label>
+                <font>hf_label</font>
+                <align>left</align>
+                <aligny>center</aligny>
+                <textoffsetx>$CONST[hf_sp_3]</textoffsetx>
+                <texturenofocus colordiffuse="00FFFFFF">ui/white.png</texturenofocus>
+                <texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus>
+                <textcolor>hf_cream</textcolor>
+                <focusedcolor>hf_flame</focusedcolor>
+                <onclick>Skin.SetString(hf.settingstab,atmosphere)</onclick>
+            </control>
+            <control type="button" id="103">
+                <height>$CONST[hf_row_h]</height>
+                <label>31212</label>
+                <font>hf_label</font>
+                <align>left</align>
+                <aligny>center</aligny>
+                <textoffsetx>$CONST[hf_sp_3]</textoffsetx>
+                <texturenofocus colordiffuse="00FFFFFF">ui/white.png</texturenofocus>
+                <texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus>
+                <textcolor>hf_cream</textcolor>
+                <focusedcolor>hf_flame</focusedcolor>
+                <onclick>Skin.SetString(hf.settingstab,performance)</onclick>
+            </control>
+            <control type="button" id="104">
+                <height>$CONST[hf_row_h]</height>
+                <label>31213</label>
+                <font>hf_label</font>
+                <align>left</align>
+                <aligny>center</aligny>
+                <textoffsetx>$CONST[hf_sp_3]</textoffsetx>
+                <texturenofocus colordiffuse="00FFFFFF">ui/white.png</texturenofocus>
+                <texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus>
+                <textcolor>hf_cream</textcolor>
+                <focusedcolor>hf_flame</focusedcolor>
+                <onclick>Skin.SetString(hf.settingstab,accent)</onclick>
+            </control>
+        </control>
+        <!-- Panel 1: Menu & Widgets -->
+        <control type="group" id="200">
+            <posx>560</posx>
+            <posy>200</posy>
+            <visible>String.IsEqual(Skin.String(hf.settingstab),menu) | String.IsEmpty(Skin.String(hf.settingstab))</visible>
+            <control type="label"><width>1200</width><height>40</height><font>hf_section</font><textcolor>hf_cream</textcolor><label>31210</label></control>
+            <control type="radiobutton" id="201"><posy>56</posy><height>$CONST[hf_row_h]</height><width>1200</width><font>hf_label</font><align>left</align><aligny>center</aligny><label>31010</label><textcolor>hf_cream</textcolor><onclick>Skin.ToggleSetting(hf.menu.movies.hide)</onclick><selected>!Skin.HasSetting(hf.menu.movies.hide)</selected><texturenofocus colordiffuse="00FFFFFF">ui/white.png</texturenofocus><texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus></control>
+            <control type="radiobutton" id="202"><posy>128</posy><height>$CONST[hf_row_h]</height><width>1200</width><font>hf_label</font><align>left</align><aligny>center</aligny><label>31011</label><textcolor>hf_cream</textcolor><onclick>Skin.ToggleSetting(hf.menu.tvshows.hide)</onclick><selected>!Skin.HasSetting(hf.menu.tvshows.hide)</selected><texturenofocus colordiffuse="00FFFFFF">ui/white.png</texturenofocus><texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus></control>
+            <control type="radiobutton" id="203"><posy>200</posy><height>$CONST[hf_row_h]</height><width>1200</width><font>hf_label</font><align>left</align><aligny>center</aligny><label>31012</label><textcolor>hf_cream</textcolor><onclick>Skin.ToggleSetting(hf.menu.music.hide)</onclick><selected>!Skin.HasSetting(hf.menu.music.hide)</selected><texturenofocus colordiffuse="00FFFFFF">ui/white.png</texturenofocus><texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus></control>
+            <control type="radiobutton" id="204"><posy>272</posy><height>$CONST[hf_row_h]</height><width>1200</width><font>hf_label</font><align>left</align><aligny>center</aligny><label>31014</label><textcolor>hf_cream</textcolor><onclick>Skin.ToggleSetting(hf.menu.addons.hide)</onclick><selected>!Skin.HasSetting(hf.menu.addons.hide)</selected><texturenofocus colordiffuse="00FFFFFF">ui/white.png</texturenofocus><texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus></control>
+            <control type="radiobutton" id="205"><posy>344</posy><height>$CONST[hf_row_h]</height><width>1200</width><font>hf_label</font><align>left</align><aligny>center</aligny><label>31015</label><textcolor>hf_cream</textcolor><onclick>Skin.ToggleSetting(hf.menu.pictures.hide)</onclick><selected>!Skin.HasSetting(hf.menu.pictures.hide)</selected><texturenofocus colordiffuse="00FFFFFF">ui/white.png</texturenofocus><texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus></control>
+            <control type="radiobutton" id="206"><posy>416</posy><height>$CONST[hf_row_h]</height><width>1200</width><font>hf_label</font><align>left</align><aligny>center</aligny><label>31016</label><textcolor>hf_cream</textcolor><onclick>Skin.ToggleSetting(hf.menu.weather.hide)</onclick><selected>!Skin.HasSetting(hf.menu.weather.hide)</selected><texturenofocus colordiffuse="00FFFFFF">ui/white.png</texturenofocus><texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus></control>
+        </control>
+        <!-- Panel 2: Atmosphere -->
+        <control type="group" id="210">
+            <posx>560</posx>
+            <posy>200</posy>
+            <visible>String.IsEqual(Skin.String(hf.settingstab),atmosphere)</visible>
+            <control type="label"><width>1200</width><height>40</height><font>hf_section</font><textcolor>hf_cream</textcolor><label>31211</label></control>
+            <control type="radiobutton" id="211"><posy>56</posy><height>$CONST[hf_row_h]</height><width>1200</width><font>hf_label</font><align>left</align><aligny>center</aligny><label>31220</label><textcolor>hf_cream</textcolor><onclick>Skin.ToggleSetting(hf.timeofday_off)</onclick><selected>!Skin.HasSetting(hf.timeofday_off)</selected><texturenofocus colordiffuse="00FFFFFF">ui/white.png</texturenofocus><texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus></control>
+            <control type="radiobutton" id="212"><posy>128</posy><height>$CONST[hf_row_h]</height><width>1200</width><font>hf_label</font><align>left</align><aligny>center</aligny><label>31221</label><textcolor>hf_cream</textcolor><onclick>Skin.ToggleSetting(hf.grain_off)</onclick><selected>!Skin.HasSetting(hf.grain_off)</selected><texturenofocus colordiffuse="00FFFFFF">ui/white.png</texturenofocus><texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus></control>
+            <control type="radiobutton" id="213"><posy>200</posy><height>$CONST[hf_row_h]</height><width>1200</width><font>hf_label</font><align>left</align><aligny>center</aligny><label>31222</label><textcolor>hf_cream</textcolor><onclick>Skin.ToggleSetting(hf.ember_specks)</onclick><selected>Skin.HasSetting(hf.ember_specks)</selected><texturenofocus colordiffuse="00FFFFFF">ui/white.png</texturenofocus><texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus></control>
+            <control type="radiobutton" id="214"><posy>272</posy><height>$CONST[hf_row_h]</height><width>1200</width><font>hf_label</font><align>left</align><aligny>center</aligny><label>31223</label><textcolor>hf_cream</textcolor><onclick>Skin.ToggleSetting(hf.lights_off)</onclick><selected>!Skin.HasSetting(hf.lights_off)</selected><texturenofocus colordiffuse="00FFFFFF">ui/white.png</texturenofocus><texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus></control>
+            <control type="radiobutton" id="215"><posy>344</posy><height>$CONST[hf_row_h]</height><width>1200</width><font>hf_label</font><align>left</align><aligny>center</aligny><label>31224</label><textcolor>hf_cream</textcolor><onclick>Skin.ToggleSetting(hf.devtools)</onclick><selected>Skin.HasSetting(hf.devtools)</selected><texturenofocus colordiffuse="00FFFFFF">ui/white.png</texturenofocus><texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus></control>
+            <control type="button" id="216"><posy>416</posy><height>$CONST[hf_row_h]</height><width>400</width><font>hf_label</font><align>left</align><aligny>center</aligny><textoffsetx>16</textoffsetx><label>31225</label><textcolor>hf_cream</textcolor><visible>Skin.HasSetting(hf.devtools)</visible><onclick>ActivateWindow(1103)</onclick><texturenofocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturenofocus><texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus></control>
+        </control>
+        <!-- Panel 3: Performance & Info density -->
+        <control type="group" id="220">
+            <posx>560</posx>
+            <posy>200</posy>
+            <visible>String.IsEqual(Skin.String(hf.settingstab),performance)</visible>
+            <control type="label"><width>1200</width><height>40</height><font>hf_section</font><textcolor>hf_cream</textcolor><label>31212</label></control>
+            <control type="radiobutton" id="221"><posy>56</posy><height>$CONST[hf_row_h]</height><width>1200</width><font>hf_label</font><align>left</align><aligny>center</aligny><label>31230</label><textcolor>hf_cream</textcolor><onclick>Skin.ToggleSetting(hf.performance_mode)</onclick><selected>Skin.HasSetting(hf.performance_mode)</selected><texturenofocus colordiffuse="00FFFFFF">ui/white.png</texturenofocus><texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus></control>
+            <control type="radiobutton" id="222"><posy>128</posy><height>$CONST[hf_row_h]</height><width>1200</width><font>hf_label</font><align>left</align><aligny>center</aligny><label>31231</label><textcolor>hf_cream</textcolor><onclick>Skin.ToggleSetting(hf.hide_ratings)</onclick><selected>!Skin.HasSetting(hf.hide_ratings)</selected><texturenofocus colordiffuse="00FFFFFF">ui/white.png</texturenofocus><texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus></control>
+            <control type="radiobutton" id="223"><posy>200</posy><height>$CONST[hf_row_h]</height><width>1200</width><font>hf_label</font><align>left</align><aligny>center</aligny><label>31232</label><textcolor>hf_cream</textcolor><onclick>Skin.ToggleSetting(hf.themed_labels)</onclick><selected>Skin.HasSetting(hf.themed_labels)</selected><texturenofocus colordiffuse="00FFFFFF">ui/white.png</texturenofocus><texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus></control>
+        </control>
+        <!-- Panel 4: Accent preset -->
+        <control type="group" id="230">
+            <posx>560</posx>
+            <posy>200</posy>
+            <visible>String.IsEqual(Skin.String(hf.settingstab),accent)</visible>
+            <control type="label"><width>1200</width><height>40</height><font>hf_section</font><textcolor>hf_cream</textcolor><label>31213</label></control>
+            <control type="radiobutton" id="231"><posy>56</posy><height>$CONST[hf_row_h]</height><width>1200</width><font>hf_label</font><align>left</align><aligny>center</aligny><label>31240</label><textcolor>hf_cream</textcolor><onclick>Skin.SetString(hf.accent,ember)</onclick><selected>String.IsEqual(Skin.String(hf.accent),ember) | String.IsEmpty(Skin.String(hf.accent))</selected><texturenofocus colordiffuse="00FFFFFF">ui/white.png</texturenofocus><texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus></control>
+            <control type="radiobutton" id="232"><posy>128</posy><height>$CONST[hf_row_h]</height><width>1200</width><font>hf_label</font><align>left</align><aligny>center</aligny><label>31241</label><textcolor>hf_cream</textcolor><onclick>Skin.SetString(hf.accent,amber)</onclick><selected>String.IsEqual(Skin.String(hf.accent),amber)</selected><texturenofocus colordiffuse="00FFFFFF">ui/white.png</texturenofocus><texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus></control>
+            <control type="radiobutton" id="233"><posy>200</posy><height>$CONST[hf_row_h]</height><width>1200</width><font>hf_label</font><align>left</align><aligny>center</aligny><label>31242</label><textcolor>hf_cream</textcolor><onclick>Skin.SetString(hf.accent,copper)</onclick><selected>String.IsEqual(Skin.String(hf.accent),copper)</selected><texturenofocus colordiffuse="00FFFFFF">ui/white.png</texturenofocus><texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus></control>
+        </control>
+        <include>hf_HintBar</include>
+    </controls>
+</window>

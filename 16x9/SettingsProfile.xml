@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<window>
+    <defaultcontrol always="true">2</defaultcontrol>
+    <controls>
+        <include>hf_BackdropStack</include>
+        <include content="hf_SettingsTitle"><param name="label">13200</param></include>
+        <control type="panel" id="2">
+            <posx>$CONST[hf_margin_x]</posx><posy>200</posy><width>$CONST[hf_content_w]</width><height>600</height>
+            <onup>4</onup>
+            <itemlayout height="220" width="240">
+                <control type="image"><width>160</width><height>160</height><align>center</align><posx>40</posx><texture fallback="defaults/DefaultUser.png">$INFO[ListItem.Icon]</texture></control>
+                <control type="label"><posy>168</posy><width>240</width><height>32</height><align>center</align><font>hf_label</font><label>$INFO[ListItem.Label]</label></control>
+            </itemlayout>
+            <focusedlayout height="220" width="240">
+                <control type="image"><width>160</width><height>160</height><align>center</align><posx>40</posx><texture fallback="defaults/DefaultUser.png">$INFO[ListItem.Icon]</texture></control>
+                <control type="image"><width>160</width><height>160</height><posx>40</posx><texture border="10">ui/rim_ember.png</texture></control>
+                <control type="label"><posy>168</posy><width>240</width><height>32</height><align>center</align><font>hf_label</font><textcolor>hf_flame</textcolor><label>$INFO[ListItem.Label]</label></control>
+            </focusedlayout>
+        </control>
+        <control type="radiobutton" id="4">
+            <posx>$CONST[hf_margin_x]</posx><posy>840</posy><width>500</width><height>56</height>
+            <label>20426</label><font>hf_label</font><align>left</align><aligny>center</aligny>
+            <ondown>5</ondown>
+            <texturenofocus colordiffuse="00FFFFFF">ui/white.png</texturenofocus>
+            <texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus>
+        </control>
+        <control type="radiobutton" id="5">
+            <posx>$CONST[hf_margin_x]</posx><posy>900</posy><width>500</width><height>56</height>
+            <label>20427</label><font>hf_label</font><align>left</align><aligny>center</aligny>
+            <onup>4</onup>
+            <texturenofocus colordiffuse="00FFFFFF">ui/white.png</texturenofocus>
+            <texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus>
+        </control>
+    </controls>
+</window>

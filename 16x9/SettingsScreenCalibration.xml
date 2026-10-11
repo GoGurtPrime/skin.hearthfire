@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- Required (CGUIWindowScreenCalibration hard-coded, must not be changed): id=20 videowindow background,
+    id=8/9 movers, id=10 mover (pixel ratio), id=11 resize (subtitle position), id=2/3 labels. -->
+<window>
+    <defaultcontrol always="true">8</defaultcontrol>
+    <controls>
+        <control type="videowindow" id="20" />
+        <control type="image">
+            <width>$CONST[hf_canvas_w]</width><height>$CONST[hf_canvas_h]</height>
+            <texture colordiffuse="hf_scrim_40">ui/white.png</texture>
+        </control>
+        <control type="label" id="2">
+            <posx>$CONST[hf_margin_x]</posx><posy>$CONST[hf_margin_top]</posy><width>900</width><height>32</height>
+            <font>hf_meta</font><textcolor>hf_parchment</textcolor>
+        </control>
+        <control type="label" id="3">
+            <posx>$CONST[hf_margin_x]</posx><posy>100</posy><width>900</width><height>64</height>
+            <font>hf_body</font><textcolor>hf_cream</textcolor>
+        </control>
+        <control type="mover" id="8">
+            <width>32</width><height>32</height>
+            <texturefocus colordiffuse="hf_flame">ui/circle.png</texturefocus>
+            <texturenofocus colordiffuse="hf_ember">ui/circle.png</texturenofocus>
+        </control>
+        <control type="mover" id="9">
+            <width>32</width><height>32</height>
+            <texturefocus colordiffuse="hf_flame">ui/circle.png</texturefocus>
+            <texturenofocus colordiffuse="hf_ember">ui/circle.png</texturenofocus>
+        </control>
+        <control type="mover" id="10">
+            <width>32</width><height>32</height>
+            <texturefocus colordiffuse="hf_flame">ui/circle.png</texturefocus>
+            <texturenofocus colordiffuse="hf_ember">ui/circle.png</texturenofocus>
+        </control>
+        <control type="resize" id="11">
+            <width>200</width><height>8</height>
+            <texturefocus colordiffuse="hf_flame">ui/white.png</texturefocus>
+            <texturenofocus colordiffuse="hf_ember">ui/white.png</texturenofocus>
+        </control>
+    </controls>
+</window>

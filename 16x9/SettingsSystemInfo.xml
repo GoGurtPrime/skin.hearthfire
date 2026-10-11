@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<window>
+    <defaultcontrol always="true">95</defaultcontrol>
+    <controls>
+        <include>hf_BackdropStack</include>
+        <include content="hf_SettingsTitle"><param name="label">130</param></include>
+        <control type="grouplist" id="9000">
+            <posx>$CONST[hf_margin_x]</posx><posy>200</posy><orientation>vertical</orientation><itemgap>8</itemgap><width>380</width><height>400</height>
+            <control type="button" id="95"><height>56</height><label>13283</label><font>hf_label</font><align>left</align><aligny>center</aligny><textoffsetx>16</textoffsetx><texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus><texturenofocus colordiffuse="00FFFFFF">ui/white.png</texturenofocus></control>
+            <control type="button" id="96"><height>56</height><label>12390</label><font>hf_label</font><align>left</align><aligny>center</aligny><textoffsetx>16</textoffsetx><texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus><texturenofocus colordiffuse="00FFFFFF">ui/white.png</texturenofocus></control>
+            <control type="button" id="97"><height>56</height><label>13282</label><font>hf_label</font><align>left</align><aligny>center</aligny><textoffsetx>16</textoffsetx><texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus><texturenofocus colordiffuse="00FFFFFF">ui/white.png</texturenofocus></control>
+            <control type="button" id="98"><height>56</height><label>12390</label><font>hf_label</font><align>left</align><aligny>center</aligny><textoffsetx>16</textoffsetx><texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus><texturenofocus colordiffuse="00FFFFFF">ui/white.png</texturenofocus></control>
+            <control type="button" id="99"><height>56</height><label>798</label><font>hf_label</font><align>left</align><aligny>center</aligny><textoffsetx>16</textoffsetx><texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus><texturenofocus colordiffuse="00FFFFFF">ui/white.png</texturenofocus></control>
+        </control>
+        <control type="textbox" id="30">
+            <posx>640</posx><posy>200</posy><width>1180</width><height>600</height>
+            <font>hf_mono</font><textcolor>hf_parchment</textcolor>
+        </control>
+    </controls>
+</window>
