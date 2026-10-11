@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- Seek-time bubble over the OSD playhead. Not core-hardcoded; defaultcontrol=901 is a
+    reference-skin convention this skin also follows for consistency. -->
+<window>
+    <defaultcontrol always="true">901</defaultcontrol>
+    <controls>
+        <control type="group">
+            <visible>Player.Seeking | Player.DisplayAfterSeek</visible>
+            <posx>820</posx>
+            <posy>820</posy>
+            <control type="image">
+                <width>280</width><height>56</height>
+                <texture colordiffuse="hf_walnut" border="16">ui/rounded6.png</texture>
+            </control>
+            <control type="label">
+                <width>280</width><height>56</height>
+                <align>center</align><aligny>center</aligny>
+                <font>hf_label</font><textcolor>hf_flame</textcolor>
+                <label>$INFO[Player.SeekTime]</label>
+            </control>
+        </control>
+    </controls>
+</window>

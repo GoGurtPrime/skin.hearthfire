@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- Required: id=3 controller-type grouplist, id=31 gamecontroller (feature-mapping diagram control),
+    id=5 feature-type grouplist, id=10/7/8 item templates, id=9001 action grouplist (18 OK/19 Reset/
+    20 Get More/21 Ignore Input/17 Help). -->
+<window>
+    <defaultcontrol always="true">3</defaultcontrol>
+    <controls>
+        <include content="hf_HearthCard_Info"><param name="height">860</param><param name="posy">110</param></include>
+        <control type="grouplist" id="3">
+            <posx>360</posx><posy>140</posy><width>340</width><height>700</height>
+            <itemgap>8</itemgap><orientation>vertical</orientation><onright>5</onright>
+        </control>
+        <control type="button" id="10">
+            <height>56</height><label></label><font>hf_label</font><align>left</align><aligny>center</aligny><textoffsetx>16</textoffsetx>
+            <texturenofocus colordiffuse="00FFFFFF">ui/white.png</texturenofocus>
+            <texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus>
+        </control>
+        <control type="scrollbar" id="30"><posx>710</posx><posy>140</posy><height>700</height><width>4</width><texturesliderbar colordiffuse="hf_bark">ui/white.png</texturesliderbar><texturenib colordiffuse="hf_smoke">ui/white.png</texturenib></control>
+        <control type="gamecontroller" id="31">
+            <posx>730</posx><posy>140</posy><width>500</width><height>400</height>
+        </control>
+        <control type="grouplist" id="5">
+            <posx>730</posx><posy>560</posy><width>770</width><height>280</height>
+            <itemgap>4</itemgap><orientation>vertical</orientation><onleft>3</onleft>
+        </control>
+        <control type="button" id="7">
+            <height>48</height><width>600</width><label></label><font>hf_label</font><align>left</align><aligny>center</aligny>
+            <texturenofocus colordiffuse="00FFFFFF">ui/white.png</texturenofocus>
+            <texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus>
+        </control>
+        <control type="label" id="8"><height>48</height><width>170</width><font>hf_meta</font><textcolor>hf_parchment</textcolor><align>right</align><aligny>center</aligny></control>
+        <control type="scrollbar" id="50"><posx>1500</posx><posy>560</posy><height>280</height><width>4</width><texturesliderbar colordiffuse="hf_bark">ui/white.png</texturesliderbar><texturenib colordiffuse="hf_smoke">ui/white.png</texturenib></control>
+        <control type="grouplist" id="9001">
+            <posx>730</posx><posy>860</posy><orientation>horizontal</orientation><itemgap>12</itemgap><width>770</width><height>48</height>
+            <control type="button" id="17"><width>100</width><height>48</height><label>19112</label><font>hf_caption</font><align>center</align><aligny>center</aligny><texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus><texturenofocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturenofocus></control>
+            <control type="button" id="21"><width>140</width><height>48</height><label>35014</label><font>hf_caption</font><align>center</align><aligny>center</aligny><texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus><texturenofocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturenofocus></control>
+            <control type="button" id="20"><width>140</width><height>48</height><label>35015</label><font>hf_caption</font><align>center</align><aligny>center</aligny><texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus><texturenofocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturenofocus></control>
+            <control type="button" id="19"><width>100</width><height>48</height><label>409</label><font>hf_caption</font><align>center</align><aligny>center</aligny><texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus><texturenofocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturenofocus></control>
+            <control type="button" id="18"><width>100</width><height>48</height><label>186</label><font>hf_caption</font><align>center</align><aligny>center</aligny><textcolor>hf_char</textcolor><focusedcolor>hf_char</focusedcolor><texturefocus colordiffuse="hf_flame" border="10">ui/rounded6.png</texturefocus><texturenofocus colordiffuse="hf_ember" border="10">ui/rounded6.png</texturenofocus></control>
+        </control>
+    </controls>
+</window>

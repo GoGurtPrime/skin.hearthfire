@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- Required/structural: id=5550 tab grouplist, id=5551/5552 tab buttons (visibility of the two info panels
+    is keyed to Control.HasFocus on these). Monospace-feel via Figtree tabular figures. -->
+<window>
+    <defaultcontrol always="true">5550</defaultcontrol>
+    <controls>
+        <include content="hf_HearthCard_Select"><param name="height">600</param><param name="posy">240</param></include>
+        <control type="grouplist" id="5550">
+            <posx>520</posx><posy>272</posy><orientation>horizontal</orientation><itemgap>8</itemgap><width>880</width><height>48</height>
+            <control type="button" id="5551"><width>200</width><height>48</height><label>12390</label><font>hf_label</font><align>center</align><aligny>center</aligny><texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus><texturenofocus colordiffuse="00FFFFFF">ui/white.png</texturenofocus></control>
+            <control type="button" id="5552"><width>200</width><height>48</height><label>12391</label><font>hf_label</font><align>center</align><aligny>center</aligny><texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus><texturenofocus colordiffuse="00FFFFFF">ui/white.png</texturenofocus></control>
+        </control>
+        <control type="textbox">
+            <visible>Control.HasFocus(5551)</visible>
+            <posx>520</posx><posy>336</posy><width>880</width><height>440</height>
+            <font>hf_mono</font><textcolor>hf_parchment</textcolor>
+            <label>$INFO[Player.Process(VideoDecoder)]
+                $INFO[Player.Process(VideoWidth)]x$INFO[Player.Process(VideoHeight)]
+                $INFO[Player.Process(VideoFPS)] fps
+                $INFO[Player.Process(AudioDecoder)]
+                $INFO[Player.Process(AudioChannels)] ch $INFO[Player.Process(AudioSampleRate)]</label>
+        </control>
+        <control type="textbox">
+            <visible>Control.HasFocus(5552)</visible>
+            <posx>520</posx><posy>336</posy><width>880</width><height>440</height>
+            <font>hf_mono</font><textcolor>hf_parchment</textcolor>
+            <label>$INFO[Player.Process(VideoDAR)]
+                $INFO[Player.Process(VideoDeintMethod)]
+                $INFO[Player.Process(VideoScalingMethod)]</label>
+        </control>
+    </controls>
+</window>

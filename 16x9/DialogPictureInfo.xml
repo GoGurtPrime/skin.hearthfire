@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- Required: id=5 panel (EXIF/IPTC info list). -->
+<window>
+    <defaultcontrol always="true">5</defaultcontrol>
+    <controls>
+        <include content="hf_HearthCard_Select"><param name="height">680</param><param name="posy">200</param></include>
+        <control type="label">
+            <posx>520</posx><posy>232</posy><width>880</width><height>40</height>
+            <font>hf_section</font><textcolor>hf_cream</textcolor><label>12340</label>
+        </control>
+        <control type="panel" id="5">
+            <posx>520</posx><posy>288</posy><width>880</width><height>580</height>
+            <itemlayout height="48" width="880"><control type="label"><width>440</width><height>48</height><aligny>center</aligny><font>hf_meta</font><textcolor>hf_smoke</textcolor><label>$INFO[ListItem.Label]</label></control><control type="label"><posx>440</posx><width>440</width><height>48</height><aligny>center</aligny><font>hf_meta</font><textcolor>hf_parchment</textcolor><label>$INFO[ListItem.Label2]</label></control></itemlayout>
+        </control>
+    </controls>
+</window>

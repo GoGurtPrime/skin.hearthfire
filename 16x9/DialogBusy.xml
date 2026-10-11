@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- Busy indicator. -->
+<window>
+    <controls>
+        <control type="image">
+            <width>$CONST[hf_canvas_w]</width>
+            <height>$CONST[hf_canvas_h]</height>
+            <texture colordiffuse="hf_scrim_70">ui/white.png</texture>
+        </control>
+        <control type="group">
+            <posx>912</posx>
+            <posy>492</posy>
+            <include>hf_BusyRing</include>
+        </control>
+    </controls>
+</window>

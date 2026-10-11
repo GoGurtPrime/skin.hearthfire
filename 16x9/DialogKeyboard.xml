@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- On-screen keyboard. Kodi draws the actual key grid natively via DialogKeyboard's required
+    control ids (2-6 edit field, 300+ key buttons per Kodi's internal numbering); we only style the frame and
+    the input field here, matching every reference skin's approach of leaving key layout to Kodi's defaults
+    with skin-level texture/font/color overrides applied through <default type="button"> (Defaults.xml). -->
+<window>
+    <defaultcontrol always="true">311</defaultcontrol>
+    <controls>
+        <include content="hf_HearthCard_Select"><param name="height">560</param><param name="posy">260</param></include>
+        <control type="edit" id="311">
+            <posx>520</posx>
+            <posy>300</posy>
+            <width>880</width>
+            <height>72</height>
+            <font>hf_section</font>
+            <textcolor>hf_flame</textcolor>
+            <texturefocus colordiffuse="hf_soot" border="10">ui/rounded6.png</texturefocus>
+            <texturenofocus colordiffuse="hf_soot" border="10">ui/rounded6.png</texturenofocus>
+        </control>
+    </controls>
+</window>

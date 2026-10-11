@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- Required ids: 10 header label, 11 slider (required control), 12 value label. -->
+<window>
+    <defaultcontrol always="true">11</defaultcontrol>
+    <controls>
+        <include content="hf_HearthCard_Confirm"><param name="height">260</param><param name="posy">410</param></include>
+        <control type="label" id="10">
+            <posx>648</posx><posy>442</posy><width>624</width><height>40</height>
+            <font>hf_section</font><textcolor>hf_cream</textcolor>
+        </control>
+        <control type="sliderex" id="11">
+            <posx>648</posx><posy>500</posy><width>624</width><height>40</height>
+            <texturenofocus colordiffuse="hf_timber" border="3">ui/rounded6.png</texturenofocus>
+            <texturefocus colordiffuse="hf_timber" border="3">ui/rounded6.png</texturefocus>
+        </control>
+        <control type="label" id="12">
+            <posx>648</posx><posy>548</posy><width>624</width><height>32</height>
+            <align>center</align><font>hf_meta</font><textcolor>hf_flame</textcolor>
+        </control>
+    </controls>
+</window>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- Hearth Card context menu. Required id: list id=11. Destructive items use hf_coal
+    text via the standard Kodi "bold"/color property on certain context items is not automatic - this skin
+    relies on label text alone (Kodi core doesn't flag which context items are destructive to the skin). -->
+<window>
+    <defaultcontrol always="true">11</defaultcontrol>
+    <controls>
+        <control type="group">
+            <control type="image">
+                <width>$CONST[hf_canvas_w]</width>
+                <height>$CONST[hf_canvas_h]</height>
+                <texture colordiffuse="00000000">ui/white.png</texture>
+            </control>
+            <control type="list" id="11">
+                <posx>660</posx>
+                <posy>340</posy>
+                <width>600</width>
+                <height>400</height>
+                <scrolltime>200</scrolltime>
+                <itemlayout height="56" width="600">
+                    <control type="image">
+                        <texture colordiffuse="hf_walnut" border="16">ui/rounded6.png</texture>
+                    </control>
+                    <control type="label">
+                        <posx>24</posx>
+                        <width>552</width>
+                        <height>56</height>
+                        <aligny>center</aligny>
+                        <font>hf_label</font>
+                        <textcolor>hf_cream</textcolor>
+                        <label>$INFO[ListItem.Label]</label>
+                    </control>
+                </itemlayout>
+                <focusedlayout height="56" width="600">
+                    <control type="image">
+                        <texture colordiffuse="hf_timber" border="16">ui/rounded6.png</texture>
+                    </control>
+                    <control type="image">
+                        <width>3</width>
+                        <height>56</height>
+                        <texture colordiffuse="hf_ember">ui/white.png</texture>
+                    </control>
+                    <control type="label">
+                        <posx>24</posx>
+                        <width>552</width>
+                        <height>56</height>
+                        <aligny>center</aligny>
+                        <font>hf_label</font>
+                        <textcolor>hf_flame</textcolor>
+                        <label>$INFO[ListItem.Label]</label>
+                    </control>
+                </focusedlayout>
+            </control>
+        </control>
+    </controls>
+</window>

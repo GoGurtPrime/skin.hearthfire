@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- Hearth Card confirm/Yes-No/OK dialog. Required Kodi ids: 1 (heading), 9 (message
+    textbox), 10/11/12 (buttons - Kodi shows only the ones relevant to the call: OK uses 10 alone, Yes/No uses
+    10/11, three-way confirms use 10/11/12). -->
+<window>
+    <defaultcontrol always="true">10</defaultcontrol>
+    <controls>
+        <include content="hf_HearthCard_Confirm" />
+        <control type="label" id="1">
+            <posx>648</posx>
+            <posy>392</posy>
+            <width>624</width>
+            <height>48</height>
+            <font>hf_section</font>
+            <textcolor>hf_cream</textcolor>
+        </control>
+        <control type="textbox" id="9">
+            <posx>648</posx>
+            <posy>448</posy>
+            <width>624</width>
+            <height>120</height>
+            <font>hf_body</font>
+            <textcolor>hf_parchment</textcolor>
+            <autoscroll time="2000" delay="8000" repeat="5000">!System.ScreenSaverActive</autoscroll>
+        </control>
+        <control type="grouplist" id="9000">
+            <posx>648</posx>
+            <posy>640</posy>
+            <width>624</width>
+            <height>64</height>
+            <orientation>horizontal</orientation>
+            <itemgap>$CONST[hf_sp_3]</itemgap>
+            <align>right</align>
+            <control type="button" id="12">
+                <width>160</width>
+                <height>64</height>
+                <font>hf_label</font>
+                <align>center</align>
+                <aligny>center</aligny>
+                <texturenofocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturenofocus>
+                <texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus>
+                <textcolor>hf_cream</textcolor>
+                <focusedcolor>hf_flame</focusedcolor>
+            </control>
+            <control type="button" id="11">
+                <width>160</width>
+                <height>64</height>
+                <font>hf_label</font>
+                <align>center</align>
+                <aligny>center</aligny>
+                <texturenofocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturenofocus>
+                <texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus>
+                <textcolor>hf_cream</textcolor>
+                <focusedcolor>hf_flame</focusedcolor>
+            </control>
+            <control type="button" id="10">
+                <width>160</width>
+                <height>64</height>
+                <font>hf_label</font>
+                <align>center</align>
+                <aligny>center</aligny>
+                <texturenofocus colordiffuse="hf_ember" border="10">ui/rounded6.png</texturenofocus>
+                <texturefocus colordiffuse="hf_flame" border="10">ui/rounded6.png</texturefocus>
+                <textcolor>hf_char</textcolor>
+                <focusedcolor>hf_char</focusedcolor>
+            </control>
+        </control>
+    </controls>
+</window>

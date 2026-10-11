@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- Hearth Card numeric entry. Required ids: 1 heading, 4 value display, 10-19 digit buttons, 20 prev,
+    22 next, 23 backspace, 21 OK (defaultcontrol). -->
+<window>
+    <defaultcontrol always="true">21</defaultcontrol>
+    <controls>
+        <include content="hf_HearthCard_Confirm"><param name="height">520</param><param name="posy">280</param></include>
+        <control type="label" id="1">
+            <posx>648</posx><posy>312</posy><width>624</width><height>40</height>
+            <font>hf_section</font><textcolor>hf_cream</textcolor>
+        </control>
+        <control type="label" id="4">
+            <posx>648</posx><posy>360</posy><width>624</width><height>56</height>
+            <font>hf_numeral</font><textcolor>hf_flame</textcolor><align>center</align>
+        </control>
+        <control type="group">
+            <posx>648</posx><posy>440</posy>
+            <control type="grouplist">
+                <orientation>horizontal</orientation><itemgap>8</itemgap><width>624</width><height>56</height>
+                <control type="button" id="10"><width>56</width><height>56</height><label>0</label><font>hf_label</font><align>center</align><aligny>center</aligny><texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus><texturenofocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturenofocus></control>
+                <control type="button" id="11"><width>56</width><height>56</height><label>1</label><font>hf_label</font><align>center</align><aligny>center</aligny><texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus><texturenofocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturenofocus></control>
+                <control type="button" id="12"><width>56</width><height>56</height><label>2</label><font>hf_label</font><align>center</align><aligny>center</aligny><texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus><texturenofocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturenofocus></control>
+                <control type="button" id="13"><width>56</width><height>56</height><label>3</label><font>hf_label</font><align>center</align><aligny>center</aligny><texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus><texturenofocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturenofocus></control>
+                <control type="button" id="14"><width>56</width><height>56</height><label>4</label><font>hf_label</font><align>center</align><aligny>center</aligny><texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus><texturenofocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturenofocus></control>
+                <control type="button" id="15"><width>56</width><height>56</height><label>5</label><font>hf_label</font><align>center</align><aligny>center</aligny><texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus><texturenofocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturenofocus></control>
+                <control type="button" id="16"><width>56</width><height>56</height><label>6</label><font>hf_label</font><align>center</align><aligny>center</aligny><texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus><texturenofocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturenofocus></control>
+                <control type="button" id="17"><width>56</width><height>56</height><label>7</label><font>hf_label</font><align>center</align><aligny>center</aligny><texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus><texturenofocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturenofocus></control>
+                <control type="button" id="18"><width>56</width><height>56</height><label>8</label><font>hf_label</font><align>center</align><aligny>center</aligny><texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus><texturenofocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturenofocus></control>
+                <control type="button" id="19"><width>56</width><height>56</height><label>9</label><font>hf_label</font><align>center</align><aligny>center</aligny><texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus><texturenofocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturenofocus></control>
+                <control type="button" id="23"><width>80</width><height>56</height><label>31071</label><font>hf_meta</font><align>center</align><aligny>center</aligny><texturefocus colordiffuse="hf_bark" border="10">ui/rounded6.png</texturefocus><texturenofocus colordiffuse="hf_bark" border="10">ui/rounded6.png</texturenofocus></control>
+            </control>
+        </control>
+        <control type="grouplist">
+            <posx>648</posx><posy>512</posy><orientation>horizontal</orientation><itemgap>8</itemgap><width>624</width><height>56</height>
+            <control type="button" id="20"><width>120</width><height>56</height><label>31072</label><font>hf_label</font><align>center</align><aligny>center</aligny><texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus><texturenofocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturenofocus></control>
+            <control type="button" id="22"><width>120</width><height>56</height><label>31073</label><font>hf_label</font><align>center</align><aligny>center</aligny><texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus><texturenofocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturenofocus></control>
+            <control type="button" id="21"><width>160</width><height>56</height><label>186</label><font>hf_label</font><align>center</align><aligny>center</aligny><textcolor>hf_char</textcolor><focusedcolor>hf_char</focusedcolor><texturefocus colordiffuse="hf_flame" border="10">ui/rounded6.png</texturefocus><texturenofocus colordiffuse="hf_ember" border="10">ui/rounded6.png</texturenofocus></control>
+        </control>
+    </controls>
+</window>

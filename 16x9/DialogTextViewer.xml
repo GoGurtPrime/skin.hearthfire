@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- Hearth Card text viewer. Required ids: label id=1 (heading), textbox id=5 (body). -->
+<window>
+    <defaultcontrol always="true">5</defaultcontrol>
+    <controls>
+        <include content="hf_HearthCard_Info"><param name="height">820</param><param name="posy">130</param></include>
+        <control type="label" id="1">
+            <posx>360</posx>
+            <posy>170</posy>
+            <width>1200</width>
+            <height>48</height>
+            <font>hf_section</font>
+            <textcolor>hf_cream</textcolor>
+        </control>
+        <control type="textbox" id="5">
+            <posx>360</posx>
+            <posy>234</posy>
+            <width>1200</width>
+            <height>680</height>
+            <font>hf_body</font>
+            <textcolor>hf_parchment</textcolor>
+        </control>
+    </controls>
+</window>

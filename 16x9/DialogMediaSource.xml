@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- Required: id=2 heading, id=11 Browse, id=13 Add, id=14 Remove, id=10 path panel, id=0 name label,
+    id=12 name edit, id=18 OK, id=19 Cancel. -->
+<window>
+    <defaultcontrol always="true">11</defaultcontrol>
+    <controls>
+        <include content="hf_HearthCard_Select"><param name="height">680</param><param name="posy">200</param></include>
+        <control type="label" id="2">
+            <posx>520</posx><posy>232</posy><width>880</width><height>40</height>
+            <font>hf_section</font><textcolor>hf_cream</textcolor>
+        </control>
+        <control type="label" id="0">
+            <posx>520</posx><posy>288</posy><width>200</width><height>48</height>
+            <font>hf_label</font><textcolor>hf_parchment</textcolor><aligny>center</aligny><label>1021</label>
+        </control>
+        <control type="edit" id="12">
+            <posx>720</posx><posy>288</posy><width>680</width><height>48</height>
+            <font>hf_body</font><textcolor>hf_cream</textcolor>
+            <texturefocus colordiffuse="hf_soot" border="10">ui/rounded6.png</texturefocus>
+            <texturenofocus colordiffuse="hf_soot" border="10">ui/rounded6.png</texturenofocus>
+        </control>
+        <control type="panel" id="10">
+            <posx>520</posx><posy>352</posy><width>880</width><height>320</height>
+            <itemlayout height="56" width="880"><control type="label"><width>880</width><height>56</height><aligny>center</aligny><font>hf_label</font><label>$INFO[ListItem.Label]</label></control></itemlayout>
+            <focusedlayout height="56" width="880"><include content="hf_FocusFill" /><control type="label"><posx>16</posx><width>864</width><height>56</height><aligny>center</aligny><font>hf_label</font><textcolor>hf_flame</textcolor><label>$INFO[ListItem.Label]</label></control></focusedlayout>
+        </control>
+        <control type="grouplist">
+            <posx>520</posx><posy>684</posy><orientation>horizontal</orientation><itemgap>16</itemgap><width>880</width><height>56</height>
+            <control type="button" id="13"><width>160</width><height>56</height><label>20081</label><font>hf_label</font><align>center</align><aligny>center</aligny><texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus><texturenofocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturenofocus></control>
+            <control type="button" id="14"><width>160</width><height>56</height><label>20392</label><font>hf_label</font><align>center</align><aligny>center</aligny><texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus><texturenofocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturenofocus></control>
+            <control type="button" id="11"><width>160</width><height>56</height><label>20394</label><font>hf_label</font><align>center</align><aligny>center</aligny><texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus><texturenofocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturenofocus></control>
+            <control type="button" id="19"><width>160</width><height>56</height><label>222</label><font>hf_label</font><align>center</align><aligny>center</aligny><texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus><texturenofocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturenofocus></control>
+            <control type="button" id="18"><width>160</width><height>56</height><label>186</label><font>hf_label</font><align>center</align><aligny>center</aligny><textcolor>hf_char</textcolor><focusedcolor>hf_char</focusedcolor><texturefocus colordiffuse="hf_flame" border="10">ui/rounded6.png</texturefocus><texturenofocus colordiffuse="hf_ember" border="10">ui/rounded6.png</texturenofocus></control>
+        </control>
+    </controls>
+</window>

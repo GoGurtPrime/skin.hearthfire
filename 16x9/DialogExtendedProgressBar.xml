@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- Background task progress (library scan, etc). -->
+<window>
+    <controls>
+        <control type="group">
+            <posx>760</posx><posy>48</posy>
+            <control type="image"><width>400</width><height>72</height><texture colordiffuse="hf_walnut" border="16">ui/rounded6.png</texture></control>
+            <control type="label" id="1">
+                <posx>16</posx><posy>8</posy><width>368</width><height>28</height>
+                <font>hf_meta</font><textcolor>hf_parchment</textcolor>
+            </control>
+            <control type="progress" id="2">
+                <posx>16</posx><posy>44</posy><width>368</width><height>8</height>
+                <texturebg colordiffuse="hf_timber" border="3">ui/rounded6.png</texturebg>
+                <lefttexture colordiffuse="hf_ember" border="3">ui/rounded6.png</lefttexture>
+                <midtexture colordiffuse="hf_ember">ui/white.png</midtexture>
+                <righttexture colordiffuse="hf_flame" border="3">ui/rounded6.png</righttexture>
+            </control>
+        </control>
+    </controls>
+</window>
