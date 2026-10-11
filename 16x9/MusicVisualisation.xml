@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- Now Playing. -->
+<window>
+    <defaultcontrol always="true">32</defaultcontrol>
+    <controls>
+        <include>hf_BackdropStack</include>
+        <control type="image">
+            <posx>160</posx>
+            <posy>220</posy>
+            <width>640</width>
+            <height>640</height>
+            <aspectratio>scale</aspectratio>
+            <texture fallback="defaults/DefaultMusicAlbums.png">$INFO[MusicPlayer.Cover]</texture>
+        </control>
+        <control type="image">
+            <posx>160</posx>
+            <posy>220</posy>
+            <width>640</width>
+            <height>640</height>
+            <texture border="10">ui/rim_ember.png</texture>
+        </control>
+        <control type="label">
+            <posx>880</posx>
+            <posy>300</posy>
+            <width>880</width>
+            <height>64</height>
+            <font>hf_page</font>
+            <textcolor>hf_cream</textcolor>
+            <label>$INFO[MusicPlayer.Title]</label>
+        </control>
+        <control type="label">
+            <posx>880</posx>
+            <posy>372</posy>
+            <width>880</width>
+            <height>48</height>
+            <font>hf_section</font>
+            <textcolor>hf_parchment</textcolor>
+            <label>$INFO[MusicPlayer.Artist]</label>
+        </control>
+        <control type="label">
+            <posx>880</posx>
+            <posy>424</posy>
+            <width>880</width>
+            <height>32</height>
+            <font>hf_meta</font>
+            <textcolor>hf_smoke</textcolor>
+            <label>$INFO[MusicPlayer.Album] · $INFO[MusicPlayer.Year]</label>
+        </control>
+        <control type="group">
+            <posx>880</posx>
+            <posy>500</posy>
+            <include content="hf_ProgressBar"><param name="id">30</param><param name="info">Player.Progress</param><param name="height">8</param></include>
+            <control type="label">
+                <posy>16</posy>
+                <width>400</width>
+                <height>28</height>
+                <font>hf_meta</font>
+                <textcolor>hf_parchment</textcolor>
+                <label>$INFO[MusicPlayer.Time] / $INFO[MusicPlayer.Duration]</label>
+            </control>
+        </control>
+        <control type="grouplist">
+            <posx>880</posx>
+            <posy>580</posy>
+            <width>480</width>
+            <height>72</height>
+            <orientation>horizontal</orientation>
+            <itemgap>16</itemgap>
+            <include content="hf_ButtonIcon"><param name="id">31</param><param name="icon">skip_prev</param><param name="onclick">Action(SkipPrevious)</param></include>
+            <include content="hf_ButtonIcon"><param name="id">32</param><param name="icon">play_pause</param><param name="onclick">Action(PlayPause)</param></include>
+            <include content="hf_ButtonIcon"><param name="id">33</param><param name="icon">skip_next</param><param name="onclick">Action(SkipNext)</param></include>
+        </control>
+        <control type="label">
+            <posx>880</posx>
+            <posy>680</posy>
+            <width>480</width>
+            <height>32</height>
+            <font>hf_label</font>
+            <textcolor>hf_smoke</textcolor>
+            <label>31086</label>
+        </control>
+        <control type="list" id="40">
+            <posx>880</posx>
+            <posy>720</posy>
+            <width>880</width>
+            <height>216</height>
+            <itemlayout height="56" width="880">
+                <control type="label">
+                    <width>880</width>
+                    <height>56</height>
+                    <aligny>center</aligny>
+                    <font>hf_meta</font>
+                    <textcolor>hf_parchment</textcolor>
+                    <label>$INFO[ListItem.Label]</label>
+                </control>
+            </itemlayout>
+        </control>
+    </controls>
+</window>

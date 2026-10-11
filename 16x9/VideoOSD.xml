@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- Booth OSD. Fades in from the bottom, auto-hides after 5s idle (Kodi handles the OSD
+    auto-hide timing natively via the window's own visibility; the skin only supplies the content). -->
+<window>
+    <controls>
+        <include>hf_OSDGradient</include>
+        <include>hf_TitleBlock</include>
+        <include>hf_SeekRow</include>
+        <include>hf_TransportRow</include>
+        <control type="group">
+            <posx>1528</posx>
+            <posy>936</posy>
+            <width>300</width>
+            <height>72</height>
+            <control type="button" id="6020">
+                <width>300</width>
+                <height>32</height>
+                <font>hf_caption</font>
+                <align>right</align>
+                <aligny>center</aligny>
+                <textcolor>hf_parchment</textcolor>
+                <focusedcolor>hf_flame</focusedcolor>
+                <label>$INFO[VideoPlayer.AudioCodec] $INFO[VideoPlayer.AudioChannels]</label>
+                <onclick>ActivateWindow(audiosettings)</onclick>
+            </control>
+            <control type="button" id="6021">
+                <posy>36</posy>
+                <width>300</width>
+                <height>32</height>
+                <font>hf_caption</font>
+                <align>right</align>
+                <aligny>center</aligny>
+                <textcolor>hf_parchment</textcolor>
+                <focusedcolor>hf_flame</focusedcolor>
+                <label>$INFO[VideoPlayer.SubtitlesLanguage]</label>
+                <onclick>ActivateWindow(subtitlesearch)</onclick>
+            </control>
+        </control>
+        <include>hf_Intermission</include>
+    </controls>
+</window>

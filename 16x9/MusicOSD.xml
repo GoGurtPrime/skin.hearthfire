@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- Music OSD. defaultcontrol=602 matches the Play/Pause toggle,
+    consistent with reference-skin convention for this window. -->
+<window>
+    <defaultcontrol always="true">602</defaultcontrol>
+    <controls>
+        <include>hf_OSDGradient</include>
+        <control type="label">
+            <posx>$CONST[hf_margin_x]</posx><posy>800</posy><width>1200</width><height>48</height>
+            <font>hf_section</font><textcolor>hf_cream</textcolor><label>$INFO[MusicPlayer.Title]</label>
+        </control>
+        <control type="label">
+            <posx>$CONST[hf_margin_x]</posx><posy>848</posy><width>1200</width><height>32</height>
+            <font>hf_meta</font><textcolor>hf_smoke</textcolor><label>$INFO[MusicPlayer.Artist]</label>
+        </control>
+        <include>hf_SeekRow</include>
+        <control type="grouplist">
+            <posx>720</posx><posy>936</posy><orientation>horizontal</orientation><itemgap>16</itemgap><width>480</width><height>72</height>
+            <include content="hf_ButtonIcon"><param name="id">600</param><param name="icon">skip_prev</param><param name="onclick">Action(SkipPrevious)</param></include>
+            <include content="hf_ButtonIcon"><param name="id">602</param><param name="icon">play_pause</param><param name="onclick">Action(PlayPause)</param></include>
+            <include content="hf_ButtonIcon"><param name="id">603</param><param name="icon">skip_next</param><param name="onclick">Action(SkipNext)</param></include>
+            <control type="togglebutton" id="21">
+                <width>72</width><height>72</height>
+                <texturefocus colordiffuse="hf_ember">ui/circle.png</texturefocus>
+                <texturenofocus colordiffuse="hf_timber">ui/circle.png</texturenofocus>
+                <alttexturefocus colordiffuse="hf_ember">ui/circle.png</alttexturefocus>
+                <alttexturenofocus colordiffuse="hf_timber">ui/circle.png</alttexturenofocus>
+                <onclick>PlayerControl(RandomOn)</onclick>
+            </control>
+        </control>
+    </controls>
+</window>

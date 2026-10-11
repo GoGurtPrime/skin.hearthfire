@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<window>
+    <defaultcontrol always="true">1</defaultcontrol>
+    <controls>
+        <include content="hf_HearthCard_Confirm"><param name="height">300</param><param name="posy">390</param></include>
+        <control type="label">
+            <posx>648</posx><posy>430</posy><width>624</width><height>40</height>
+            <font>hf_section</font><textcolor>hf_cream</textcolor><label>35501</label>
+        </control>
+        <control type="grouplist">
+            <posx>648</posx><posy>500</posy><orientation>horizontal</orientation><itemgap>16</itemgap><width>624</width><height>56</height>
+            <control type="button" id="1"><width>280</width><height>56</height><label>35503</label><font>hf_label</font><align>center</align><aligny>center</aligny><texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus><texturenofocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturenofocus></control>
+            <control type="button" id="2"><width>280</width><height>56</height><label>35504</label><font>hf_label</font><align>center</align><aligny>center</aligny><texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus><texturenofocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturenofocus></control>
+        </control>
+    </controls>
+</window>

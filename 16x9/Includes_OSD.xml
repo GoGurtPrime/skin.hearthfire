@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- Shared Booth/OSD chrome, reused by VideoOSD.xml and MusicOSD.xml. -->
+<includes>
+    <include name="hf_OSDGradient">
+        <definition>
+            <control type="image">
+                <posy>720</posy>
+                <width>$CONST[hf_canvas_w]</width>
+                <height>360</height>
+                <texture colordiffuse="hf_scrim_70" flipy="true">ui/gradient_v.png</texture>
+            </control>
+        </definition>
+    </include>
+    <include name="hf_TransportRow">
+        <definition>
+            <control type="group">
+                <posy>936</posy>
+                <width>$CONST[hf_canvas_w]</width>
+                <height>72</height>
+                <control type="grouplist">
+                    <posx>720</posx>
+                    <width>480</width>
+                    <height>72</height>
+                    <itemgap>16</itemgap>
+                    <orientation>horizontal</orientation>
+                    <include content="hf_ButtonIcon"><param name="id">6001</param><param name="icon">skip_prev</param><param name="onclick">Action(SkipPrevious)</param></include>
+                    <include content="hf_ButtonIcon"><param name="id">6002</param><param name="icon">rewind</param><param name="onclick">Action(Rewind)</param></include>
+                    <include content="hf_ButtonIcon"><param name="id">6003</param><param name="icon">play_pause</param><param name="onclick">Action(PlayPause)</param></include>
+                    <include content="hf_ButtonIcon"><param name="id">6004</param><param name="icon">forward</param><param name="onclick">Action(FastForward)</param></include>
+                    <include content="hf_ButtonIcon"><param name="id">6005</param><param name="icon">skip_next</param><param name="onclick">Action(SkipNext)</param></include>
+                </control>
+            </control>
+        </definition>
+    </include>
+    <include name="hf_SeekRow">
+        <definition>
+            <control type="group">
+                <posy>880</posy>
+                <posx>$CONST[hf_margin_x]</posx>
+                <width>1728</width>
+                <height>32</height>
+                <include content="hf_ProgressBar"><param name="id">6010</param><param name="info">Player.Progress</param><param name="height">8</param></include>
+                <control type="label">
+                    <posy>12</posy>
+                    <width>400</width>
+                    <height>28</height>
+                    <font>hf_meta</font>
+                    <textcolor>hf_parchment</textcolor>
+                    <label>$INFO[Player.Time] / $INFO[Player.Duration]</label>
+                </control>
+                <control type="label">
+                    <posx>1528</posx>
+                    <posy>12</posy>
+                    <width>200</width>
+                    <align>right</align>
+                    <height>28</height>
+                    <font>hf_meta</font>
+                    <textcolor>hf_parchment</textcolor>
+                    <label>$INFO[Player.FinishTime]</label>
+                </control>
+            </control>
+        </definition>
+    </include>
+    <include name="hf_TitleBlock">
+        <definition>
+            <control type="group">
+                <posx>$CONST[hf_margin_x]</posx>
+                <posy>800</posy>
+                <control type="label">
+                    <width>1200</width>
+                    <height>48</height>
+                    <font>hf_section</font>
+                    <textcolor>hf_cream</textcolor>
+                    <label>$INFO[Player.Title]</label>
+                </control>
+                <control type="label">
+                    <posy>48</posy>
+                    <width>1200</width>
+                    <height>32</height>
+                    <font>hf_meta</font>
+                    <textcolor>hf_smoke</textcolor>
+                    <visible>!String.IsEmpty(VideoPlayer.EpisodeName)</visible>
+                    <label>$INFO[VideoPlayer.SeasonEpisode] · $INFO[VideoPlayer.EpisodeName]</label>
+                </control>
+            </control>
+        </definition>
+    </include>
+    <!-- Intermission (pause) ticket-stub card -->
+    <include name="hf_Intermission">
+        <definition>
+            <control type="group">
+                <visible>Player.Paused</visible>
+                <animation effect="fade" start="0" end="100" time="$CONST[hf_t_ui]">Visible</animation>
+                <posx>480</posx>
+                <posy>360</posy>
+                <width>960</width>
+                <height>360</height>
+                <control type="image">
+                    <width>960</width>
+                    <height>360</height>
+                    <texture colordiffuse="hf_walnut" border="16">ui/chip_notch.png</texture>
+                </control>
+                <control type="image">
+                    <posx>24</posx>
+                    <posy>30</posy>
+                    <width>200</width>
+                    <height>300</height>
+                    <aspectratio>scale</aspectratio>
+                    <texture fallback="defaults/DefaultVideo.png">$INFO[Player.Art(poster)]</texture>
+                </control>
+                <control type="label">
+                    <posx>248</posx>
+                    <posy>40</posy>
+                    <width>680</width>
+                    <height>44</height>
+                    <font>hf_page</font>
+                    <textcolor>hf_cream</textcolor>
+                    <label>$INFO[Player.Title]</label>
+                </control>
+                <control type="label">
+                    <posx>248</posx>
+                    <posy>96</posy>
+                    <width>680</width>
+                    <height>32</height>
+                    <font>hf_meta</font>
+                    <textcolor>hf_parchment</textcolor>
+                    <label>$LOCALIZE[31060] $INFO[Player.Time] · $INFO[Player.TimeRemaining] $LOCALIZE[31061] · $LOCALIZE[31062] $INFO[Player.FinishTime]</label>
+                </control>
+                <control type="label">
+                    <posx>248</posx>
+                    <posy>280</posy>
+                    <width>400</width>
+                    <height>32</height>
+                    <font>hf_label</font>
+                    <textcolor>hf_ember</textcolor>
+                    <label>$UPPERCASE[$LOCALIZE[31063]]</label>
+                </control>
+            </control>
+        </definition>
+    </include>
+</includes>

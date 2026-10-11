@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- The Booth : pure black letterbox. Lights Down/Up handled via the WindowOpen/Close
+    animation below (a brief fade-from-black instead of an instant cut, ). -->
+<window>
+    <controls>
+        <control type="image">
+            <width>$CONST[hf_canvas_w]</width>
+            <height>$CONST[hf_canvas_h]</height>
+            <texture colordiffuse="hf_char">ui/white.png</texture>
+            <visible>$EXP[hf_LightsOn]</visible>
+            <animation effect="fade" start="100" end="0" delay="0" time="$CONST[hf_t_lights]">WindowOpen</animation>
+            <animation effect="fade" start="0" end="100" time="$CONST[hf_t_lights]">WindowClose</animation>
+        </control>
+    </controls>
+</window>
