@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- Debug overlay stub (1100-1199 custom band, D5). Mirrors reference-skin convention; not user-facing. -->
+<window id="1199">
+    <controls>
+        <control type="label">
+            <posx>16</posx><posy>16</posy><width>600</width><height>24</height>
+            <font>hf_caption</font><textcolor>hf_moss</textcolor>
+            <label>FPS $INFO[System.FPS] · $INFO[System.CPUTemperature]</label>
+        </control>
+    </controls>
+</window>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+    Dev-only component showcase. Shows every shared UI component in every state so a visual check can be
+    done without navigating real library content. Reached only via Skin Settings > Atmosphere > "Dev tools"
+    (hidden unless Skin.HasSetting(hf.devtools)); never part of the normal navigation graph. -->
+<window id="1103">
+    <defaultcontrol always="true">1</defaultcontrol>
+    <controls>
+        <include>hf_BackdropStack</include>
+        <control type="label">
+            <posx>$CONST[hf_margin_x]</posx>
+            <posy>$CONST[hf_margin_top]</posy>
+            <width>900</width>
+            <height>48</height>
+            <font>hf_page</font>
+            <textcolor>hf_cream</textcolor>
+            <label>Hearthfire Style Tile</label>
+        </control>
+        <!-- Buttons -->
+        <control type="group">
+            <posx>$CONST[hf_margin_x]</posx>
+            <posy>160</posy>
+            <include content="hf_ButtonPrimary"><param name="id">1</param><param name="label">Primary</param><param name="onclick">noop</param></include>
+            <control type="group"><posx>216</posx>
+                <include content="hf_ButtonSecondary"><param name="id">2</param><param name="label">Secondary</param><param name="onclick">noop</param></include>
+            </control>
+            <control type="group"><posx>432</posx>
+                <include content="hf_ButtonGhost"><param name="id">3</param><param name="label">Ghost</param><param name="onclick">noop</param></include>
+            </control>
+            <control type="group"><posx>648</posx>
+                <include content="hf_ButtonIcon"><param name="id">4</param><param name="icon">play_pause</param><param name="onclick">noop</param></include>
+            </control>
+        </control>
+        <!-- Chip -->
+        <control type="group">
+            <posx>$CONST[hf_margin_x]</posx>
+            <posy>260</posy>
+            <include content="hf_Chip"><param name="label">2024 · 1h 52m · PG-13</param></include>
+        </control>
+        <!-- Progress bar -->
+        <control type="group">
+            <posx>$CONST[hf_margin_x]</posx>
+            <posy>320</posy>
+            <width>400</width>
+            <include content="hf_ProgressBar"><param name="id">10</param><param name="info">Player.Progress</param><param name="height">8</param></include>
+        </control>
+        <!-- Poster card with Ember Rim, focused -->
+        <control type="group">
+            <posx>$CONST[hf_margin_x]</posx>
+            <posy>380</posy>
+            <control type="image">
+                <width>$CONST[hf_poster_w]</width>
+                <height>$CONST[hf_poster_h]</height>
+                <texture colordiffuse="hf_timber" border="6">ui/rounded6.png</texture>
+            </control>
+            <control type="image">
+                <width>$CONST[hf_poster_w]</width>
+                <height>$CONST[hf_poster_h]</height>
+                <texture border="10">ui/rim_ember.png</texture>
+            </control>
+        </control>
+        <!-- Busy ring -->
+        <control type="group">
+            <posx>500</posx>
+            <posy>380</posy>
+            <include>hf_BusyRing</include>
+        </control>
+        <!-- Hearth Card preview (confirm size) -->
+        <control type="group">
+            <posx>700</posx>
+            <posy>380</posy>
+            <width>360</width>
+            <height>200</height>
+            <control type="image">
+                <width>360</width>
+                <height>200</height>
+                <texture colordiffuse="hf_walnut" border="24">ui/rounded10.png</texture>
+            </control>
+            <control type="image">
+                <width>360</width>
+                <height>2</height>
+                <texture colordiffuse="hf_flame">ui/gradient_h.png</texture>
+            </control>
+            <control type="label">
+                <posx>16</posx>
+                <posy>16</posy>
+                <width>328</width>
+                <height>32</height>
+                <font>hf_section</font>
+                <textcolor>hf_cream</textcolor>
+                <label>Hearth Card</label>
+            </control>
+        </control>
+        <!-- Type scale -->
+        <control type="group">
+            <posx>$CONST[hf_margin_x]</posx>
+            <posy>760</posy>
+            <control type="label"><width>800</width><height>40</height><font>hf_hero</font><textcolor>hf_cream</textcolor><label>Hero 88</label></control>
+            <control type="label"><posy>44</posy><width>800</width><height>40</height><font>hf_page</font><textcolor>hf_cream</textcolor><label>Page 64</label></control>
+            <control type="label"><posy>80</posy><width>800</width><height>40</height><font>hf_section</font><textcolor>hf_cream</textcolor><label>Section 40</label></control>
+            <control type="label"><posy>116</posy><width>800</width><height>40</height><font>hf_body</font><textcolor>hf_parchment</textcolor><label>Body 28 - the quick warm fox</label></control>
+            <control type="label"><posy>148</posy><width>800</width><height>40</height><font>hf_caption</font><textcolor>hf_smoke</textcolor><label>Caption 22 - minimum size</label></control>
+        </control>
+        <control type="button" id="1">
+            <posx>$CONST[hf_margin_x]</posx>
+            <posy>1000</posy>
+            <width>200</width>
+            <height>56</height>
+            <label>Close</label>
+            <font>hf_label</font>
+            <align>center</align>
+            <aligny>center</aligny>
+            <texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus>
+            <texturenofocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturenofocus>
+            <onclick>PreviousMenu</onclick>
+        </control>
+    </controls>
+</window>

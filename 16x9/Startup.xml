@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- Splash : hf_char + wordmark, one ember glow pulse, then Home fades in. Kodi's built-in
+    Startup window (no custom id needed - matches 3 of 4 reference skins' convention). -->
+<window>
+    <controls>
+        <control type="image">
+            <width>$CONST[hf_canvas_w]</width>
+            <height>$CONST[hf_canvas_h]</height>
+            <texture colordiffuse="hf_char">ui/white.png</texture>
+        </control>
+        <control type="image">
+            <posx>860</posx>
+            <posy>480</posy>
+            <width>200</width>
+            <height>120</height>
+            <texture colordiffuse="hf_glow_ember">ui/bloom_ember.png</texture>
+            <animation effect="fade" start="40" end="100" time="1200" condition="true" loop="true" tween="sine" easing="inout">Conditional</animation>
+        </control>
+        <control type="label">
+            <width>$CONST[hf_canvas_w]</width>
+            <align>center</align>
+            <posy>510</posy>
+            <height>60</height>
+            <font>hf_hero</font>
+            <textcolor>hf_cream</textcolor>
+            <label>31000</label>
+        </control>
+        <control type="label">
+            <width>$CONST[hf_canvas_w]</width>
+            <align>center</align>
+            <posy>600</posy>
+            <height>32</height>
+            <font>hf_tagline</font>
+            <textcolor>hf_smoke</textcolor>
+            <label>31001</label>
+        </control>
+    </controls>
+</window>
