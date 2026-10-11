@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- Home-screen building blocks. Self-contained menu : no script.skinshortcuts. -->
+<includes>
+    <!-- ============================== The Mantel (bottom nav rail) ============================== -->
+    <include name="hf_Mantel">
+        <definition>
+            <control type="group">
+                <posy>$CONST[hf_mantel_y]</posy>
+                <height>$CONST[hf_mantel_h]</height>
+                <!-- warm light spill rising above the rail -->
+                <control type="image">
+                    <posy>-$CONST[hf_mantel_glow_h]</posy>
+                    <width>$CONST[hf_canvas_w]</width>
+                    <height>$CONST[hf_mantel_glow_h]</height>
+                    <texture colordiffuse="$VAR[hf_MantelGlowColor]" flipy="true">ui/gradient_v.png</texture>
+                </control>
+                <control type="image">
+                    <width>$CONST[hf_canvas_w]</width>
+                    <height>$CONST[hf_mantel_h]</height>
+                    <texture colordiffuse="hf_soot">ui/white.png</texture>
+                </control>
+                <control type="image">
+                    <width>$CONST[hf_canvas_w]</width>
+                    <height>2</height>
+                    <texture colordiffuse="hf_bark">ui/white.png</texture>
+                </control>
+                <control type="image">
+                    <posy>2</posy>
+                    <width>$CONST[hf_canvas_w]</width>
+                    <height>1</height>
+                    <texture colordiffuse="hf_hair">ui/white.png</texture>
+                </control>
+                <control type="list" id="9000">
+                    <posx>$CONST[hf_margin_x]</posx>
+                    <width>1600</width>
+                    <height>$CONST[hf_mantel_h]</height>
+                    <orientation>horizontal</orientation>
+                    <itemgap>56</itemgap>
+                    <onright>9000</onright>
+                    <onleft>9000</onleft>
+                    <onup>5001</onup>
+                    <ondown>9000</ondown>
+                    <pulseonselect>false</pulseonselect>
+                    <itemlayout height="80" width="160">
+                        <control type="label">
+                            <align>center</align>
+                            <aligny>center</aligny>
+                            <width>160</width>
+                            <height>80</height>
+                            <font>hf_label</font>
+                            <textcolor>hf_smoke</textcolor>
+                            <label>$UPPERCASE[$INFO[ListItem.Label]]</label>
+                        </control>
+                    </itemlayout>
+                    <focusedlayout height="80" width="160">
+                        <control type="label">
+                            <align>center</align>
+                            <aligny>center</aligny>
+                            <width>160</width>
+                            <height>80</height>
+                            <font>hf_label</font>
+                            <textcolor>hf_cream</textcolor>
+                            <label>$UPPERCASE[$INFO[ListItem.Label]]</label>
+                        </control>
+                        <control type="image">
+                            <posy>60</posy>
+                            <width>56</width>
+                            <height>4</height>
+                            <align>center</align>
+                            <aligny>center</aligny>
+                            <centerleft>80</centerleft>
+                            <texture colordiffuse="hf_flame">ui/white.png</texture>
+                        </control>
+                    </focusedlayout>
+                    <content>
+                        <item id="1"><label>31010</label><property name="section">movies</property><visible>$EXP[hf_MenuMovies]</visible><onclick>ActivateWindow(Videos,MovieTitles,return)</onclick></item>
+                        <item id="2"><label>31011</label><property name="section">tvshows</property><visible>$EXP[hf_MenuTVShows]</visible><onclick>ActivateWindow(Videos,TVShowTitles,return)</onclick></item>
+                        <item id="3"><label>31012</label><property name="section">music</property><visible>$EXP[hf_MenuMusic]</visible><onclick>ActivateWindow(Music,MusicLibrary,return)</onclick></item>
+                        <item id="4"><label>31013</label><property name="section">livetv</property><visible>$EXP[hf_MenuLiveTV]</visible><onclick>ActivateWindow(TVChannels,return)</onclick></item>
+                        <item id="5"><label>31014</label><property name="section">addons</property><visible>$EXP[hf_MenuAddons]</visible><onclick>ActivateWindow(Addons,return)</onclick></item>
+                        <item id="6"><label>31015</label><property name="section">pictures</property><visible>$EXP[hf_MenuPictures]</visible><onclick>ActivateWindow(Pictures,return)</onclick></item>
+                        <item id="7"><label>31016</label><property name="section">weather</property><visible>$EXP[hf_MenuWeather]</visible><onclick>ActivateWindow(Weather,return)</onclick></item>
+                        <item id="8"><label>13013</label><property name="section">power</property><onclick>ActivateWindow(ShutdownMenu)</onclick></item>
+                    </content>
+                </control>
+            </control>
+        </definition>
+    </include>
+    <!-- ============================== Hero (focused shelf item summary) ============================== -->
+    <include name="hf_HomeHero">
+        <definition>
+            <control type="group">
+                <posx>$CONST[hf_margin_x]</posx>
+                <posy>120</posy>
+                <width>900</width>
+                <height>420</height>
+                <control type="label">
+                    <width>900</width>
+                    <height>96</height>
+                    <font>hf_hero</font>
+                    <textcolor>hf_cream</textcolor>
+                    <label>$VAR[hf_HeroTitle]</label>
+                </control>
+                <control type="label">
+                    <posy>116</posy>
+                    <width>900</width>
+                    <height>32</height>
+                    <font>hf_meta</font>
+                    <textcolor>hf_parchment</textcolor>
+                    <label>$INFO[Container(5001).ListItem.Year] · $VAR[hf_RuntimeLabel] · $INFO[Container(5001).ListItem.Mpaa]</label>
+                </control>
+                <control type="textbox">
+                    <posy>164</posy>
+                    <width>780</width>
+                    <height>120</height>
+                    <font>hf_body</font>
+                    <textcolor>hf_parchment</textcolor>
+                    <label>$INFO[Container(5001).ListItem.Plot]</label>
+                </control>
+                <control type="group">
+                    <posy>320</posy>
+                    <include content="hf_ButtonPrimary">
+                        <param name="id">5010</param>
+                        <param name="label">31020</param>
+                        <param name="onclick">PlayMedia(Container(5001).ListItem)</param>
+                    </include>
+                    <control type="button" id="5011">
+                        <posx>216</posx>
+                        <width>200</width>
+                        <height>72</height>
+                        <label>31021</label>
+                        <font>hf_label</font>
+                        <align>center</align>
+                        <aligny>center</aligny>
+                        <texturenofocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturenofocus>
+                        <texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus>
+                        <onclick>Action(Info)</onclick>
+                        <onup>9000</onup>
+                        <ondown>5001</ondown>
+                    </control>
+                </control>
+            </control>
+        </definition>
+    </include>
+    <!-- ============================== Status cluster (top-right) ============================== -->
+    <include name="hf_StatusCluster">
+        <definition>
+            <control type="group">
+                <posx>1500</posx>
+                <posy>$CONST[hf_margin_top]</posy>
+                <width>324</width>
+                <height>64</height>
+                <control type="label">
+                    <align>right</align>
+                    <width>324</width>
+                    <height>40</height>
+                    <font>hf_numeral</font>
+                    <textcolor>hf_cream</textcolor>
+                    <label>$INFO[System.Time]</label>
+                </control>
+                <control type="label">
+                    <posy>42</posy>
+                    <align>right</align>
+                    <width>324</width>
+                    <height>24</height>
+                    <font>hf_meta</font>
+                    <textcolor>hf_smoke</textcolor>
+                    <label>$INFO[System.Date] · $INFO[Weather.Temperature]</label>
+                </control>
+            </control>
+        </definition>
+    </include>
+</includes>

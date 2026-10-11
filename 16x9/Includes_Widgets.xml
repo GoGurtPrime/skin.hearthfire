@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- Home widget shelves. Ships 2 stacked shelves per menu item (primary focused, secondary peeking/dimmed)
+     rather than a full stack of 4 - a deliberate simplification for v1. -->
+<includes>
+    <include name="hf_ShelfA">
+        <definition>
+            <control type="group">
+                <posx>$CONST[hf_margin_x]</posx>
+                <posy>552</posy>
+                <control type="label">
+                    <width>900</width>
+                    <height>40</height>
+                    <font>hf_section</font>
+                    <textcolor>hf_cream</textcolor>
+                    <label>31030</label>
+                </control>
+                <control type="list" id="5001">
+                    <posy>56</posy>
+                    <width>1824</width>
+                    <height>$CONST[hf_poster_h]</height>
+                    <orientation>horizontal</orientation>
+                    <itemgap>$CONST[hf_sp_4]</itemgap>
+                    <onup>5011</onup>
+                    <ondown>5002</ondown>
+                    <onleft>5001</onleft>
+                    <onright>5001</onright>
+                    <content target="videodb">$VAR[hf_ShelfAPath]</content>
+                    <itemlayout height="324" width="240">
+                        <control type="image">
+                            <width>$CONST[hf_poster_w]</width>
+                            <height>$CONST[hf_poster_h]</height>
+                            <aspectratio>scale</aspectratio>
+                            <texture border="6" fallback="defaults/DefaultVideo.png">$VAR[hf_PosterImage]</texture>
+                        </control>
+                    </itemlayout>
+                    <focusedlayout height="324" width="240">
+                        <control type="image">
+                            <width>$CONST[hf_poster_w]</width>
+                            <height>$CONST[hf_poster_h]</height>
+                            <aspectratio>scale</aspectratio>
+                            <texture border="6" fallback="defaults/DefaultVideo.png">$VAR[hf_PosterImage]</texture>
+                        </control>
+                        <control type="image">
+                            <width>$CONST[hf_poster_w]</width>
+                            <height>$CONST[hf_poster_h]</height>
+                            <texture border="10">ui/rim_ember.png</texture>
+                        </control>
+                        <control type="label">
+                            <posy>332</posy>
+                            <width>$CONST[hf_poster_w]</width>
+                            <height>32</height>
+                            <align>center</align>
+                            <font>hf_card_title</font>
+                            <textcolor>hf_flame</textcolor>
+                            <scroll>true</scroll>
+                            <label>$INFO[ListItem.Label]</label>
+                        </control>
+                    </focusedlayout>
+                </control>
+            </control>
+        </definition>
+    </include>
+    <include name="hf_ShelfB">
+        <definition>
+            <control type="group">
+                <posx>$CONST[hf_margin_x]</posx>
+                <posy>872</posy>
+                <colordiffuse>hf_dim</colordiffuse>
+                <control type="label">
+                    <width>900</width>
+                    <height>32</height>
+                    <font>hf_section</font>
+                    <textcolor>hf_cream</textcolor>
+                    <label>31031</label>
+                </control>
+                <control type="list" id="5002">
+                    <posy>40</posy>
+                    <width>1824</width>
+                    <height>56</height>
+                    <orientation>horizontal</orientation>
+                    <itemgap>$CONST[hf_sp_4]</itemgap>
+                    <onup>5001</onup>
+                    <ondown>9000</ondown>
+                    <onleft>5002</onleft>
+                    <onright>5002</onright>
+                    <content target="videodb">$VAR[hf_ShelfBPath]</content>
+                    <itemlayout height="56" width="240">
+                        <control type="label">
+                            <width>240</width>
+                            <height>40</height>
+                            <font>hf_meta</font>
+                            <textcolor>hf_smoke</textcolor>
+                            <label>$INFO[ListItem.Label]</label>
+                        </control>
+                    </itemlayout>
+                    <focusedlayout height="56" width="240">
+                        <control type="label">
+                            <width>240</width>
+                            <height>40</height>
+                            <font>hf_meta</font>
+                            <textcolor>hf_cream</textcolor>
+                            <label>$INFO[ListItem.Label]</label>
+                        </control>
+                    </focusedlayout>
+                </control>
+            </control>
+        </definition>
+    </include>
+</includes>

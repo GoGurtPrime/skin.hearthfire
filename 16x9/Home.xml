@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+    Hearthfire Home.
+    Focus order: Mantel(9000) <-> Up: Shelf A(5001) <-> Up: Hero buttons(5010/5011); Down from Shelf A -> Shelf
+    B(5002) -> Mantel. Menu(C) on any element opens the context menu. Self-contained menu, no skinshortcuts. -->
+<window>
+    <defaultcontrol always="true">9000</defaultcontrol>
+    <controls>
+        <include>hf_BackdropStack</include>
+        <include>hf_HomeHero</include>
+        <include>hf_StatusCluster</include>
+        <include>hf_ShelfA</include>
+        <include>hf_ShelfB</include>
+        <include>hf_Mantel</include>
+        <!-- Empty-library fallback -->
+        <control type="group">
+            <visible>!Library.HasContent(movies) + !Library.HasContent(tvshows) + !Library.HasContent(music)</visible>
+            <posx>$CONST[hf_margin_x]</posx>
+            <posy>420</posy>
+            <control type="image">
+                <width>400</width>
+                <height>250</height>
+                <texture>special://skin/extras/empty/empty_library.png</texture>
+            </control>
+            <control type="label">
+                <posy>260</posy>
+                <width>700</width>
+                <height>48</height>
+                <font>hf_section</font>
+                <textcolor>hf_cream</textcolor>
+                <label>31040</label>
+            </control>
+            <control type="label">
+                <posy>312</posy>
+                <width>700</width>
+                <height>40</height>
+                <font>hf_body</font>
+                <textcolor>hf_parchment</textcolor>
+                <label>31041</label>
+            </control>
+            <include content="hf_ButtonPrimary">
+                <param name="id">5020</param>
+                <param name="label">31042</param>
+                <param name="onclick">ActivateWindow(AddonBrowser)</param>
+            </include>
+        </control>
+    </controls>
+</window>
