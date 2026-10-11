@@ -1,0 +1,138 @@
+# Asset ledger: prompt, model and status recorded per generated image. Status moves
+# planned -> generated -> graded -> integrated as each asset is produced, graded by
+# scripts/grade_image.py, then wired into the skin's XML.
+model: openai/gpt-image-2.5-sunburst
+seed: n/a (the OpenRouter Images API does not return a seed)
+
+assets:
+  - id: bg_home_default
+    candidate: backdrop_home_default.png
+    final: extras/backdrops/bg_home_default.jpg
+    prompt: >-
+      A vast warm ember glow pulsing low in a dark void, like firelight breathing in a black room; left half
+      of the frame stays almost pure dark near-black brown and nearly empty, right half gently brightens with
+      soft amber and ember light blooming outward, no shapes, pure atmosphere
+    status: graded
+
+  - id: bg_movies
+    candidate: backdrop_movies.png
+    final: extras/backdrops/bg_movies.jpg
+    prompt: >-
+      A deep warm amber light sweeping diagonally across near black, like a single shaft of projector light
+      cutting through dark haze; left half of frame stays dark and clean and empty, light and warm texture
+      concentrated on the right side
+    status: graded
+
+  - id: bg_tvshows
+    candidate: backdrop_tvshows.png
+    final: extras/backdrops/bg_tvshows.jpg
+    prompt: >-
+      Soft layered bands of warm ember and deep brown light, like dim firelight glowing through a row of
+      distant embers; left half of the frame dark and quiet, right half warmer and softly textured
+    status: graded
+
+  - id: bg_music
+    candidate: backdrop_music.png
+    final: extras/backdrops/bg_music.jpg
+    prompt: >-
+      A slow warm pulse of amber light radiating outward in soft concentric waves against near black, like
+      sound and firelight merging; left half of frame kept dark and clean, right half glowing warmer
+    status: graded
+
+  - id: bg_addons
+    candidate: backdrop_addons.png
+    final: extras/backdrops/bg_addons.jpg
+    prompt: >-
+      A faint warm glow catching the edge of smoke or haze drifting upward against near black, like embers
+      rising in still dark air; left half of frame dark and clean, right half softly warmer and textured
+    status: graded
+
+  - id: bg_pictures
+    candidate: backdrop_pictures.png
+    final: extras/backdrops/bg_pictures.jpg
+    prompt: >-
+      A thin warm line of light along a soft blurred horizon in near total darkness, like a sliver of
+      firelight under a door; left half of frame kept very dark and clean, right half gently warmer
+    status: graded
+
+  - id: bg_settings
+    candidate: backdrop_settings.png
+    final: extras/backdrops/bg_settings.jpg
+    prompt: >-
+      A quiet warm ember glow contained within a soft dark vignette, calm and still, like a single low coal in
+      a dark hearth; left half of frame dark and clean, right half softly warmer and textured, understated
+    status: graded
+
+  - id: settings_player
+    candidate: tile_settings_player.png
+    final: media/settings/settings_player.png
+    prompt: "A single soft arc of warm light curving like a play button silhouette dissolved into glow, abstract, centered"
+    status: graded
+
+  - id: settings_media
+    candidate: tile_settings_media.png
+    final: media/settings/settings_media.png
+    prompt: "A small cluster of soft warm light fragments, like scattered embers grouped together, abstract, centered"
+    status: graded
+
+  - id: settings_pvr
+    candidate: tile_settings_pvr.png
+    final: media/settings/settings_pvr.png
+    prompt: "A single thin horizontal band of warm light like a transmission signal glowing in the dark, abstract, centered"
+    status: graded
+
+  - id: settings_interface
+    candidate: tile_settings_interface.png
+    final: media/settings/settings_interface.png
+    prompt: "A soft warm square-ish glow with gently rounded corners, like a glowing pane of amber glass, abstract, centered"
+    status: graded
+
+  - id: settings_services
+    candidate: tile_settings_services.png
+    final: media/settings/settings_services.png
+    prompt: "Two small overlapping soft warm glows linked by a faint thread of light, like a quiet connection, abstract, centered"
+    status: graded
+
+  - id: settings_system
+    candidate: tile_settings_system.png
+    final: media/settings/settings_system.png
+    prompt: "A single steady warm glow like a low pilot light, grounded and still, abstract, centered"
+    status: graded
+
+  - id: settings_profiles
+    candidate: tile_settings_profiles.png
+    final: media/settings/settings_profiles.png
+    prompt: "A soft warm glow shaped like a gentle rounded silhouette dissolving into light, abstract, centered"
+    status: graded
+
+  - id: settings_skin
+    candidate: tile_settings_skin.png
+    final: media/settings/settings_skin.png
+    prompt: "A warm ember-to-flame gradient swirl, like a small flame curling in on itself, abstract, centered"
+    status: graded
+
+  - id: empty_library
+    candidate: empty_library.png
+    final: extras/empty/empty_library.png
+    prompt: "A single faint warm glow fading into darkness, quiet and still, mostly empty dark space, abstract"
+    status: graded
+
+  - id: empty_search
+    candidate: empty_search.png
+    final: extras/empty/empty_search.png
+    prompt: >-
+      A thin dim warm light, unlit and faint, like a lantern with almost no flame left, mostly empty dark
+      space, abstract
+    status: graded
+
+  - id: empty_error
+    candidate: empty_error.png
+    final: extras/empty/empty_error.png
+    prompt: "A single thin wisp of smoke rising from an extinguished warm glow, mostly empty dark space, abstract"
+    status: graded
+
+  - id: empty_offline
+    candidate: empty_offline.png
+    final: extras/empty/empty_offline.png
+    prompt: "A soft cool-tinged warm darkness, muted and faint, like a window gone quiet, mostly empty dark space, abstract"
+    status: graded
