@@ -1,0 +1,258 @@
+# Kodi Media Center language file
+msgid ""
+msgstr ""
+"Project-Id-Version: Hearthfire skin\n"
+"Report-Msgid-Bugs-To: translations@kodi.tv\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language-Team: English (United Kingdom)\n"
+"Language: en_gb\n"
+
+# Hearthfire skin strings. Block map (D6): 31000-09 splash/brand, 31010-19 mantel/menu, 31020-29 hero
+# buttons, 31030-39 shelf headings, 31040-49 empty states, 31050-59 view names, 31060-69 intermission,
+# 31070-79 numeric/power/misc dialog helpers, 31080-89 program card, 31200-09 settings category
+# descriptions, 31210-19 skin-settings tab names, 31220-29 atmosphere toggles, 31230-39 performance/info
+# toggles, 31240-49 accent presets, 31900 fontset display name.
+
+msgctxt "#31000"
+msgid "Hearthfire"
+msgstr ""
+
+msgctxt "#31001"
+msgid "A home theater lit by a fireplace"
+msgstr ""
+
+msgctxt "#31010"
+msgid "Movies"
+msgstr ""
+
+msgctxt "#31011"
+msgid "TV Shows"
+msgstr ""
+
+msgctxt "#31012"
+msgid "Music"
+msgstr ""
+
+msgctxt "#31013"
+msgid "Live TV"
+msgstr ""
+
+msgctxt "#31014"
+msgid "Add-ons"
+msgstr ""
+
+msgctxt "#31015"
+msgid "Pictures"
+msgstr ""
+
+msgctxt "#31016"
+msgid "Weather"
+msgstr ""
+
+msgctxt "#31020"
+msgid "Resume"
+msgstr ""
+
+msgctxt "#31021"
+msgid "Details"
+msgstr ""
+
+msgctxt "#31030"
+msgid "Now Showing"
+msgstr ""
+
+msgctxt "#31031"
+msgid "Fresh Off the Reel"
+msgstr ""
+
+msgctxt "#31040"
+msgid "Your library is empty"
+msgstr ""
+
+msgctxt "#31041"
+msgid "Add a video source or browse add-ons to get started."
+msgstr ""
+
+msgctxt "#31042"
+msgid "Browse Add-ons"
+msgstr ""
+
+msgctxt "#31043"
+msgid "Nothing here yet"
+msgstr ""
+
+msgctxt "#31050"
+msgid "Ledger"
+msgstr ""
+
+msgctxt "#31051"
+msgid "Wall"
+msgstr ""
+
+msgctxt "#31052"
+msgid "Shelf"
+msgstr ""
+
+msgctxt "#31053"
+msgid "Marquee"
+msgstr ""
+
+msgctxt "#31054"
+msgid "Spotlight"
+msgstr ""
+
+msgctxt "#31060"
+msgid "Paused at"
+msgstr ""
+
+msgctxt "#31061"
+msgid "left"
+msgstr ""
+
+msgctxt "#31062"
+msgid "Ends"
+msgstr ""
+
+msgctxt "#31063"
+msgid "Intermission"
+msgstr ""
+
+msgctxt "#31070"
+msgid "Lights Out?"
+msgstr ""
+
+msgctxt "#31071"
+msgid "Delete"
+msgstr ""
+
+msgctxt "#31072"
+msgid "Prev"
+msgstr ""
+
+msgctxt "#31073"
+msgid "Next"
+msgstr ""
+
+msgctxt "#31074"
+msgid "Flip Horizontal"
+msgstr ""
+
+msgctxt "#31082"
+msgid "Trailer"
+msgstr ""
+
+msgctxt "#31083"
+msgid "Watched"
+msgstr ""
+
+msgctxt "#31084"
+msgid "Favourite"
+msgstr ""
+
+msgctxt "#31085"
+msgid "Cast"
+msgstr ""
+
+msgctxt "#31086"
+msgid "Up Next"
+msgstr ""
+
+msgctxt "#31200"
+msgid "Playback behaviour, subtitles, language and region."
+msgstr ""
+
+msgctxt "#31201"
+msgid "Library sources, content scraping and file lists."
+msgstr ""
+
+msgctxt "#31202"
+msgid "Live TV, EPG and recording settings."
+msgstr ""
+
+msgctxt "#31203"
+msgid "Skin, screen and input preferences."
+msgstr ""
+
+msgctxt "#31204"
+msgid "Remote control and other network services."
+msgstr ""
+
+msgctxt "#31205"
+msgid "Power, storage and hardware information."
+msgstr ""
+
+msgctxt "#31206"
+msgid "Manage user profiles and login."
+msgstr ""
+
+msgctxt "#31207"
+msgid "Hearthfire's own look, feel and atmosphere settings."
+msgstr ""
+
+msgctxt "#31210"
+msgid "Menu & Widgets"
+msgstr ""
+
+msgctxt "#31211"
+msgid "Atmosphere"
+msgstr ""
+
+msgctxt "#31212"
+msgid "Performance & Info"
+msgstr ""
+
+msgctxt "#31213"
+msgid "Accent"
+msgstr ""
+
+msgctxt "#31220"
+msgid "Time-of-day warmth"
+msgstr ""
+
+msgctxt "#31221"
+msgid "Film grain"
+msgstr ""
+
+msgctxt "#31222"
+msgid "Ember specks"
+msgstr ""
+
+msgctxt "#31223"
+msgid "Lights Down / Lights Up"
+msgstr ""
+
+msgctxt "#31224"
+msgid "Dev tools"
+msgstr ""
+
+msgctxt "#31225"
+msgid "Open Style Tile"
+msgstr ""
+
+msgctxt "#31230"
+msgid "Performance mode"
+msgstr ""
+
+msgctxt "#31231"
+msgid "Show ratings and flags"
+msgstr ""
+
+msgctxt "#31232"
+msgid "Use themed labels (Now Showing, Intermission...)"
+msgstr ""
+
+msgctxt "#31240"
+msgid "Ember (default)"
+msgstr ""
+
+msgctxt "#31241"
+msgid "Amber"
+msgstr ""
+
+msgctxt "#31242"
+msgid "Copper"
+msgstr ""
+
+msgctxt "#31900"
+msgid "Hearthfire"
+msgstr ""
