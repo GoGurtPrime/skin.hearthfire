@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="skin.hearthfire" version="0.1.0" name="Hearthfire" provider-name="Hearthfire contributors">
+    <requires>
+        <import addon="xbmc.gui" version="5.17.0" />
+    </requires>
+    <extension point="xbmc.gui.skin" debugging="false" effectslowdown="1">
+        <res width="1920" height="1080" aspect="16:9" default="true" folder="16x9" />
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <platform>all</platform>
+        <license>CC-BY-SA-4.0</license>
+        <source>https://github.com/hearthfire-skin/skin.hearthfire</source>
+        <assets>
+            <icon>resources/icon.png</icon>
+            <fanart>resources/fanart.jpg</fanart>
+            <!-- <screenshot>resources/screenshot-01.jpg</screenshot> -->
+            <!-- Real device screenshots go in once captured; add the <screenshot> entries back once
+                 resources/screenshot-01.jpg etc. exist. -->
+        </assets>
+        <summary lang="en_GB">A rustic-cinema skin: dark, warm and image-rich, like a home theater lit by a fireplace.</summary>
+        <description lang="en_GB">Hearthfire turns Kodi into a log-cabin screening room. Ember Rim focus, a
+            timber-and-brass Mantel navigation rail, a unified Firelight fanart grade, Lights Down/Up theater ritual on
+            playback, and a considered ticket-stub Intermission screen replace the usual flat, cool, borrowed-art look of
+            most skins with one warm, confident, original design system. Built for a dark room, a big screen and a remote.</description>
+        <news>v0.1.0
+            - Initial foundation: tokens, fonts, colors, components, backdrop stack, Home, shared dialogs, Ledger settings
+            shell, Weather, library view family, playback Booth/OSD/Intermission, Skin Settings.
+        </news>
+    </extension>
+</addon>

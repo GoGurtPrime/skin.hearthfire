@@ -1,0 +1,9 @@
+dist/
+design/candidates/
+Textures.xbt
+scripts/.deploy.env
+
+.DS_Store
+Thumbs.db
+*.swp
+*:Zone.Identifier

@@ -1,0 +1,10 @@
+v0.1.0
+- Initial foundation release.
+- Tokens, colors, fonts (Fraunces/Figtree/Noto Sans static instances), Includes_Constants/Components/Backdrop.
+- Home (Mantel, hero, shelves, status cluster), style-tile dev window.
+- Shared Hearth Card dialog frame powering Confirm/Select/Context/Keyboard/Busy/Notification/Text Viewer.
+- Ledger settings shell (Settings, SettingsCategory) with Metropolis-style category imagery, Skin Settings.
+- Library view family: Ledger, Wall, Shelf, Marquee, Spotlight; Video Info Program Card.
+- Playback Booth: VideoFullScreen, VideoOSD with Intermission card.
+- Weather "Cabin Window", Pictures wall, Music Now Playing.
+- Power "Lights Out" dialog, Startup splash, Pointer.
