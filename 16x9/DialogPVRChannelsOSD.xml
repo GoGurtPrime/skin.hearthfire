@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- Required: id=11 fixedlist (channel OSD list). -->
+<window>
+    <defaultcontrol always="true">11</defaultcontrol>
+    <controls>
+        <control type="group">
+            <posx>1400</posx>
+            <control type="image"><width>520</width><height>$CONST[hf_canvas_h]</height><texture colordiffuse="hf_scrim_90">ui/white.png</texture></control>
+            <control type="fixedlist" id="11">
+                <posx>24</posx><posy>48</posy><width>472</width><height>1000</height>
+                <itemlayout height="64" width="472"><control type="label"><width>472</width><height>64</height><aligny>center</aligny><font>hf_label</font><label>$INFO[ListItem.Label]</label></control></itemlayout>
+                <focusedlayout height="64" width="472"><include content="hf_FocusFill" /><control type="label"><posx>16</posx><width>456</width><height>64</height><aligny>center</aligny><font>hf_label</font><textcolor>hf_flame</textcolor><label>$INFO[ListItem.Label]</label></control></focusedlayout>
+            </control>
+        </control>
+    </controls>
+</window>

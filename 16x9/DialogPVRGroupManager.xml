@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- Required: id=12 groups list, id=13 ungrouped/all channels list, id=11 group members list. -->
+<window>
+    <defaultcontrol always="true">12</defaultcontrol>
+    <controls>
+        <include content="hf_HearthCard_Info"><param name="height">860</param><param name="posy">110</param></include>
+        <control type="label" id="20"><posx>360</posx><posy>140</posy><width>500</width><height>40</height><font>hf_section</font><textcolor>hf_cream</textcolor><label>19141</label></control>
+        <control type="list" id="12">
+            <posx>360</posx><posy>200</posy><width>500</width><height>620</height>
+            <itemlayout height="56" width="500"><control type="label"><width>500</width><height>56</height><aligny>center</aligny><font>hf_label</font><label>$INFO[ListItem.Label]</label></control></itemlayout>
+            <focusedlayout height="56" width="500"><include content="hf_FocusFill" /><control type="label"><posx>16</posx><width>484</width><height>56</height><aligny>center</aligny><font>hf_label</font><textcolor>hf_flame</textcolor><label>$INFO[ListItem.Label]</label></control></focusedlayout>
+        </control>
+        <control type="label" id="21"><posx>900</posx><posy>140</posy><width>500</width><height>40</height><font>hf_section</font><textcolor>hf_cream</textcolor><label>19217</label></control>
+        <control type="list" id="11">
+            <posx>900</posx><posy>200</posy><width>500</width><height>620</height>
+            <itemlayout height="56" width="500"><control type="label"><width>500</width><height>56</height><aligny>center</aligny><font>hf_label</font><label>$INFO[ListItem.Label]</label></control></itemlayout>
+            <focusedlayout height="56" width="500"><include content="hf_FocusFill" /><control type="label"><posx>16</posx><width>484</width><height>56</height><aligny>center</aligny><font>hf_label</font><textcolor>hf_flame</textcolor><label>$INFO[ListItem.Label]</label></control></focusedlayout>
+        </control>
+        <control type="label" id="22"><posx>1440</posx><posy>140</posy><width>340</width><height>40</height><font>hf_section</font><textcolor>hf_cream</textcolor><label>19219</label></control>
+        <control type="list" id="13">
+            <posx>1440</posx><posy>200</posy><width>340</width><height>620</height>
+            <itemlayout height="56" width="340"><control type="label"><width>340</width><height>56</height><aligny>center</aligny><font>hf_meta</font><label>$INFO[ListItem.Label]</label></control></itemlayout>
+        </control>
+        <control type="grouplist" id="9000">
+            <posx>360</posx><posy>900</posy><orientation>horizontal</orientation><itemgap>16</itemgap><width>1420</width><height>56</height>
+            <control type="button" id="26"><width>180</width><height>56</height><label>19213</label><font>hf_label</font><align>center</align><aligny>center</aligny><texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus><texturenofocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturenofocus></control>
+            <control type="button" id="27"><width>180</width><height>56</height><label>19214</label><font>hf_label</font><align>center</align><aligny>center</aligny><texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus><texturenofocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturenofocus></control>
+            <control type="button" id="28"><width>180</width><height>56</height><label>19215</label><font>hf_label</font><align>center</align><aligny>center</aligny><texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus><texturenofocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturenofocus></control>
+            <control type="button" id="29"><width>180</width><height>56</height><label>186</label><font>hf_label</font><align>center</align><aligny>center</aligny><textcolor>hf_char</textcolor><focusedcolor>hf_char</focusedcolor><texturefocus colordiffuse="hf_flame" border="10">ui/rounded6.png</texturefocus><texturenofocus colordiffuse="hf_ember" border="10">ui/rounded6.png</texturenofocus></control>
+        </control>
+    </controls>
+</window>

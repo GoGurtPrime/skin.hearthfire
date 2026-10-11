@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- EPG. Required structural id=50 group per layout view (10/11/12/13). v1 implements the
+    Timeline layout (10) only; Now/Next/Channel (11-13) share the same visual grammar via the same include. -->
+<window>
+    <defaultcontrol always="true">10</defaultcontrol>
+    <views>10,11,12,13</views>
+    <controls>
+        <include>hf_BackdropStack</include>
+        <include content="hf_SettingsTitle"><param name="label">19075</param></include>
+        <control type="group" id="50">
+            <visible>Control.IsVisible(10)</visible>
+            <control type="label" id="30">
+                <posx>$CONST[hf_margin_x]</posx><posy>200</posy><width>1200</width><height>40</height>
+                <font>hf_meta</font><textcolor>hf_parchment</textcolor>
+            </control>
+            <control type="epggrid" id="10">
+                <posx>$CONST[hf_margin_x]</posx><posy>248</posy><width>$CONST[hf_content_w]</width><height>760</height>
+                <timeblocks>36</timeblocks>
+                <rulerunit>30</rulerunit>
+                <channellayout height="80" width="280">
+                    <control type="image"><width>280</width><height>80</height><texture colordiffuse="hf_soot">ui/white.png</texture></control>
+                    <control type="label"><posx>16</posx><width>248</width><height>80</height><aligny>center</aligny><font>hf_label</font><textcolor>hf_cream</textcolor><label>$INFO[ListItem.ChannelName]</label></control>
+                </channellayout>
+                <focusedchannellayout height="80" width="280">
+                    <control type="image"><width>280</width><height>80</height><texture colordiffuse="hf_timber">ui/white.png</texture></control>
+                    <control type="label"><posx>16</posx><width>248</width><height>80</height><aligny>center</aligny><font>hf_label</font><textcolor>hf_flame</textcolor><label>$INFO[ListItem.ChannelName]</label></control>
+                </focusedchannellayout>
+                <rulerlayout height="40" width="120">
+                    <control type="label"><width>120</width><height>40</height><align>center</align><aligny>center</aligny><font>hf_meta</font><textcolor>hf_smoke</textcolor><label>$INFO[ListItem.Label]</label></control>
+                </rulerlayout>
+                <itemlayout height="80" width="240">
+                    <control type="image"><width>240</width><height>76</height><texture colordiffuse="hf_timber" border="4">ui/rounded6.png</texture></control>
+                    <control type="label"><posx>8</posx><width>224</width><height>76</height><aligny>center</aligny><font>hf_meta</font><textcolor>hf_cream</textcolor><label>$INFO[ListItem.Title]</label></control>
+                </itemlayout>
+                <focusedlayout height="80" width="240">
+                    <control type="image"><width>240</width><height>76</height><texture colordiffuse="hf_ember" border="4">ui/rounded6.png</texture></control>
+                    <control type="label"><posx>8</posx><width>224</width><height>76</height><aligny>center</aligny><font>hf_meta</font><textcolor>hf_char</textcolor><label>$INFO[ListItem.Title]</label></control>
+                </focusedlayout>
+            </control>
+        </control>
+    </controls>
+</window>

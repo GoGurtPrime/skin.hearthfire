@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- Required: id=9 search-string edit. -->
+<window>
+    <defaultcontrol always="true">9</defaultcontrol>
+    <controls>
+        <include content="hf_HearthCard_Info"><param name="height">820</param><param name="posy">130</param></include>
+        <control type="label"><posx>360</posx><posy>160</posy><width>1200</width><height>40</height><font>hf_section</font><textcolor>hf_cream</textcolor><label>19133</label></control>
+        <control type="edit" id="9">
+            <posx>360</posx><posy>220</posy><width>1200</width><height>56</height>
+            <font>hf_body</font><textcolor>hf_cream</textcolor>
+            <texturefocus colordiffuse="hf_soot" border="10">ui/rounded6.png</texturefocus>
+            <texturenofocus colordiffuse="hf_soot" border="10">ui/rounded6.png</texturenofocus>
+        </control>
+        <control type="grouplist" id="9000">
+            <posx>360</posx><posy>886</posy><orientation>horizontal</orientation><itemgap>16</itemgap><width>1200</width><height>56</height><align>right</align>
+            <control type="button" id="25"><width>180</width><height>56</height><label>222</label><font>hf_label</font><align>center</align><aligny>center</aligny><texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus><texturenofocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturenofocus></control>
+            <control type="button" id="28"><width>180</width><height>56</height><label>137</label><font>hf_label</font><align>center</align><aligny>center</aligny><textcolor>hf_char</textcolor><focusedcolor>hf_char</focusedcolor><texturefocus colordiffuse="hf_flame" border="10">ui/rounded6.png</texturefocus><texturenofocus colordiffuse="hf_ember" border="10">ui/rounded6.png</texturenofocus></control>
+        </control>
+    </controls>
+</window>

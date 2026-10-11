@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- Required: id=20 fixedlist (channel list). Edit fields/buttons (7-14,30-34) and id=9000/9002 groups are
+    structural convention (must be wired internally, numbers not core-mandated beyond list id=20). -->
+<window>
+    <defaultcontrol always="true">20</defaultcontrol>
+    <controls>
+        <include content="hf_HearthCard_Info"><param name="height">860</param><param name="posy">110</param></include>
+        <control type="fixedlist" id="20">
+            <posx>360</posx><posy>140</posy><width>700</width><height>700</height>
+            <itemlayout height="56" width="700"><control type="label"><width>700</width><height>56</height><aligny>center</aligny><font>hf_label</font><label>$INFO[ListItem.Label]</label></control></itemlayout>
+            <focusedlayout height="56" width="700"><include content="hf_FocusFill" /><control type="label"><posx>16</posx><width>684</width><height>56</height><aligny>center</aligny><font>hf_label</font><textcolor>hf_flame</textcolor><label>$INFO[ListItem.Label]</label></control></focusedlayout>
+        </control>
+        <control type="group" id="9002">
+            <posx>1100</posx><posy>140</posy>
+            <control type="radiobutton" id="7"><width>440</width><height>48</height><label>19074</label><font>hf_label</font><align>left</align><aligny>center</aligny><texturenofocus colordiffuse="00FFFFFF">ui/white.png</texturenofocus><texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus></control>
+            <control type="edit" id="8"><posy>56</posy><width>440</width><height>48</height><font>hf_body</font><textcolor>hf_cream</textcolor><texturefocus colordiffuse="hf_soot" border="10">ui/rounded6.png</texturefocus><texturenofocus colordiffuse="hf_soot" border="10">ui/rounded6.png</texturenofocus></control>
+        </control>
+        <control type="grouplist" id="9000">
+            <posx>360</posx><posy>900</posy><orientation>horizontal</orientation><itemgap>16</itemgap><width>700</width><height>56</height>
+            <control type="button" id="6"><width>160</width><height>56</height><label>222</label><font>hf_label</font><align>center</align><aligny>center</aligny><texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus><texturenofocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturenofocus></control>
+            <control type="button" id="5"><width>160</width><height>56</height><label>186</label><font>hf_label</font><align>center</align><aligny>center</aligny><texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus><texturenofocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturenofocus></control>
+            <control type="button" id="4"><width>160</width><height>56</height><label>186</label><font>hf_label</font><align>center</align><aligny>center</aligny><textcolor>hf_char</textcolor><focusedcolor>hf_char</focusedcolor><texturefocus colordiffuse="hf_flame" border="10">ui/rounded6.png</texturefocus><texturenofocus colordiffuse="hf_ember" border="10">ui/rounded6.png</texturenofocus></control>
+        </control>
+    </controls>
+</window>

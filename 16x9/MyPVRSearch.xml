@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<window>
+    <defaultcontrol always="true">50</defaultcontrol>
+    <views>50</views>
+    <controls>
+        <include>hf_BackdropStack</include>
+        <include content="hf_SettingsTitle"><param name="label">137</param></include>
+        <control type="list" id="50">
+            <posx>$CONST[hf_margin_x]</posx><posy>200</posy><width>$CONST[hf_content_w]</width><height>800</height>
+            <itemlayout height="72" width="1728"><include content="hf_ListRow" /><control type="label"><posx>16</posx><width>1700</width><height>72</height><aligny>center</aligny><font>hf_label</font><label>$INFO[ListItem.Label]</label></control></itemlayout>
+            <focusedlayout height="72" width="1728"><include content="hf_FocusFill" /><control type="label"><posx>16</posx><width>1700</width><height>72</height><aligny>center</aligny><font>hf_label</font><textcolor>hf_flame</textcolor><label>$INFO[ListItem.Label]</label></control></focusedlayout>
+        </control>
+    </controls>
+</window>

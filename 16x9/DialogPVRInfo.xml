@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- Required: id=2 title label, id=400 plot textbox, id=9000 action grouplist (5 switch, 10 play program,
+    4 find similar, 8 play recording, 6 record, 9 add timer). -->
+<window>
+    <defaultcontrol always="true">9000</defaultcontrol>
+    <controls>
+        <include content="hf_HearthCard_Select"><param name="height">600</param><param name="posy">240</param></include>
+        <control type="label" id="2">
+            <posx>520</posx><posy>272</posy><width>880</width><height>48</height>
+            <font>hf_section</font><textcolor>hf_cream</textcolor>
+        </control>
+        <control type="textbox" id="400">
+            <posx>520</posx><posy>332</posy><width>880</width><height>240</height>
+            <font>hf_body</font><textcolor>hf_parchment</textcolor>
+        </control>
+        <control type="grouplist" id="9000">
+            <posx>520</posx><posy>600</posy><orientation>horizontal</orientation><itemgap>16</itemgap><width>880</width><height>56</height>
+            <control type="button" id="5"><width>160</width><height>56</height><label>19233</label><font>hf_label</font><align>center</align><aligny>center</aligny><texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus><texturenofocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturenofocus></control>
+            <control type="button" id="10"><width>160</width><height>56</height><label>208</label><font>hf_label</font><align>center</align><aligny>center</aligny><texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus><texturenofocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturenofocus></control>
+            <control type="button" id="6"><width>160</width><height>56</height><label>264</label><font>hf_label</font><align>center</align><aligny>center</aligny><texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus><texturenofocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturenofocus></control>
+            <control type="button" id="9"><width>160</width><height>56</height><label>19026</label><font>hf_label</font><align>center</align><aligny>center</aligny><texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus><texturenofocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturenofocus></control>
+        </control>
+    </controls>
+</window>
