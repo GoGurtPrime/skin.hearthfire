@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+    Hearthfire component library. Screens compose these; they never restyle them.
+    Sprites referenced below live in media/ui/ and are authored (not AI-generated) by scripts/render_sprites.py. -->
+<includes>
+    <!-- ============================== 7.1 Ember Rim (focus) ============================== -->
+    <!-- Usage: place inside the item's focusedlayout, positioned over the item. $PARAM[width]/[height] are the
+        ITEM's own size; the caller also passes the already-inflated bloom_width/bloom_height (item size + 48,
+        Kodi XML has no runtime arithmetic) and bloom_offset (always -24) for the glow layer underneath. -->
+    <include name="hf_EmberRim">
+        <param name="width" />
+        <param name="height" />
+        <param name="bloom_width" />
+        <param name="bloom_height" />
+        <definition>
+            <control type="group">
+                <width>$PARAM[width]</width>
+                <height>$PARAM[height]</height>
+                <animation effect="fade" start="0" end="100" time="$CONST[hf_t_focus]" tween="cubic" easing="out">WindowOpen</animation>
+                <control type="image">
+                    <posx>-24</posx>
+                    <posy>-24</posy>
+                    <width>$PARAM[bloom_width]</width>
+                    <height>$PARAM[bloom_height]</height>
+                    <texture colordiffuse="hf_glow_ember">ui/bloom_ember.png</texture>
+                </control>
+                <control type="image">
+                    <width>$PARAM[width]</width>
+                    <height>$PARAM[height]</height>
+                    <texture border="10">ui/rim_ember.png</texture>
+                </control>
+            </control>
+        </definition>
+    </include>
+    <!-- Underline variant: Mantel items, tabs. A 4px flame bar that slides between items. -->
+    <include name="hf_FocusUnderline">
+        <param name="width" default="64" />
+        <definition>
+            <control type="image">
+                <height>4</height>
+                <width>$PARAM[width]</width>
+                <texture colordiffuse="hf_flame">ui/white.png</texture>
+                <animation effect="fade" start="0" end="100" time="$CONST[hf_t_focus]">WindowOpen</animation>
+            </control>
+        </definition>
+    </include>
+    <!-- Fill variant: list rows / settings rows. hf_timber fill + left 3px ember bar + 40%-alpha Rim. -->
+    <include name="hf_FocusFill">
+        <definition>
+            <control type="group">
+                <control type="image">
+                    <texture colordiffuse="hf_timber">ui/white.png</texture>
+                </control>
+                <control type="image">
+                    <width>3</width>
+                    <texture colordiffuse="hf_ember">ui/white.png</texture>
+                </control>
+                <control type="image">
+                    <texture border="10" colordiffuse="60FFFFFF">ui/rim_ember.png</texture>
+                </control>
+            </control>
+        </definition>
+    </include>
+    <!-- ============================== 7.2 Buttons ============================== -->
+    <include name="hf_ButtonPrimary">
+        <param name="id" />
+        <param name="label" />
+        <param name="onclick" />
+        <definition>
+            <control type="button" id="$PARAM[id]">
+                <height>72</height>
+                <label>$PARAM[label]</label>
+                <font>hf_label</font>
+                <textoffsetx>32</textoffsetx>
+                <align>center</align>
+                <aligny>center</aligny>
+                <texturenofocus colordiffuse="hf_ember" border="10">ui/rounded6.png</texturenofocus>
+                <texturefocus colordiffuse="hf_flame" border="10">ui/rounded6.png</texturefocus>
+                <textcolor>hf_char</textcolor>
+                <focusedcolor>hf_char</focusedcolor>
+                <onclick>$PARAM[onclick]</onclick>
+            </control>
+        </definition>
+    </include>
+    <include name="hf_ButtonSecondary">
+        <param name="id" />
+        <param name="label" />
+        <param name="onclick" />
+        <definition>
+            <control type="button" id="$PARAM[id]">
+                <height>64</height>
+                <label>$PARAM[label]</label>
+                <font>hf_label</font>
+                <textoffsetx>32</textoffsetx>
+                <align>center</align>
+                <aligny>center</aligny>
+                <texturenofocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturenofocus>
+                <texturefocus colordiffuse="hf_timber" border="10">ui/rounded6.png</texturefocus>
+                <textcolor>hf_cream</textcolor>
+                <onclick>$PARAM[onclick]</onclick>
+            </control>
+        </definition>
+    </include>
+    <include name="hf_ButtonGhost">
+        <param name="id" />
+        <param name="label" />
+        <param name="onclick" />
+        <definition>
+            <control type="button" id="$PARAM[id]">
+                <height>64</height>
+                <label>$PARAM[label]</label>
+                <font>hf_label</font>
+                <align>center</align>
+                <aligny>center</aligny>
+                <texturenofocus colordiffuse="hf_bark" border="10">ui/rounded6_outline.png</texturenofocus>
+                <texturefocus colordiffuse="hf_flame" border="10">ui/rounded6_outline.png</texturefocus>
+                <textcolor>hf_parchment</textcolor>
+                <onclick>$PARAM[onclick]</onclick>
+            </control>
+        </definition>
+    </include>
+    <!-- Icon transport button (OSD) -->
+    <include name="hf_ButtonIcon">
+        <param name="id" />
+        <param name="icon" />
+        <param name="onclick" />
+        <definition>
+            <control type="button" id="$PARAM[id]">
+                <width>72</width>
+                <height>72</height>
+                <texturenofocus colordiffuse="hf_timber">ui/circle.png</texturenofocus>
+                <texturefocus colordiffuse="hf_ember">ui/circle.png</texturefocus>
+                <onclick>$PARAM[onclick]</onclick>
+                <control type="image">
+                    <width>32</width>
+                    <height>32</height>
+                    <align>center</align>
+                    <aligny>center</aligny>
+                    <centerleft>36</centerleft>
+                    <centertop>36</centertop>
+                    <texture colordiffuse="hf_cream">icons/$PARAM[icon].png</texture>
+                </control>
+            </control>
+        </definition>
+    </include>
+    <!-- ============================== 7.8 Chips ("ticket stubs") ============================== -->
+    <include name="hf_Chip">
+        <param name="label" />
+        <definition>
+            <control type="label">
+                <height>40</height>
+                <font>hf_meta</font>
+                <textcolor>hf_cream</textcolor>
+                <align>center</align>
+                <aligny>center</aligny>
+                <texturebg colordiffuse="hf_timber" border="12">ui/chip_notch.png</texturebg>
+                <label>$PARAM[label]</label>
+            </control>
+        </definition>
+    </include>
+    <!-- ============================== 7.10 Progress bar ============================== -->
+    <!-- $PARAM[info] is any Kodi percent-valued info label, e.g. Player.Progress or ListItem.PercentPlayed. -->
+    <include name="hf_ProgressBar">
+        <param name="info" default="Player.Progress" />
+        <param name="height" default="6" />
+        <definition>
+            <control type="progress" id="$PARAM[id]">
+                <height>$PARAM[height]</height>
+                <info>$PARAM[info]</info>
+                <texturebg colordiffuse="hf_timber" border="3">ui/rounded6.png</texturebg>
+                <lefttexture colordiffuse="hf_ember" border="3">ui/rounded6.png</lefttexture>
+                <midtexture colordiffuse="hf_ember">ui/white.png</midtexture>
+                <righttexture colordiffuse="hf_flame" border="3">ui/rounded6.png</righttexture>
+            </control>
+        </definition>
+    </include>
+    <!-- ============================== 7.13 Dialog card ("hearth card") ============================== -->
+    <!-- The single shared frame every Hearthfire dialog uses: scrim + walnut card + ember->flame top edge.
+        Kodi XML has no arithmetic in <posx>/<posy>, so callers pass an already-centered posx/posy/width/height
+        (the three canonical sizes are provided as ready-made wrappers below). -->
+    <include name="hf_HearthCardFrame">
+        <param name="posx" default="480" />
+        <param name="posy" default="240" />
+        <param name="width" default="960" />
+        <param name="height" default="600" />
+        <definition>
+            <control type="group">
+                <control type="image">
+                    <width>$CONST[hf_canvas_w]</width>
+                    <height>$CONST[hf_canvas_h]</height>
+                    <texture colordiffuse="hf_scrim_90">ui/white.png</texture>
+                    <animation effect="fade" start="0" end="100" time="$CONST[hf_t_ui]">WindowOpen</animation>
+                    <animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
+                </control>
+                <control type="group">
+                    <posx>$PARAM[posx]</posx>
+                    <posy>$PARAM[posy]</posy>
+                    <width>$PARAM[width]</width>
+                    <height>$PARAM[height]</height>
+                    <animation effect="fade" start="0" end="100" time="$CONST[hf_t_ui]" tween="cubic" easing="out">WindowOpen</animation>
+                    <animation effect="slide" start="0,16" end="0,0" time="$CONST[hf_t_ui]" tween="cubic" easing="out">WindowOpen</animation>
+                    <control type="image">
+                        <width>$PARAM[width]</width>
+                        <height>$PARAM[height]</height>
+                        <texture colordiffuse="hf_walnut" border="24">ui/rounded10.png</texture>
+                    </control>
+                    <control type="image">
+                        <width>$PARAM[width]</width>
+                        <height>2</height>
+                        <texture colordiffuse="hf_flame">ui/gradient_h.png</texture>
+                    </control>
+                    <control type="image">
+                        <width>$PARAM[width]</width>
+                        <height>$PARAM[height]</height>
+                        <texture border="24" colordiffuse="hf_hair">ui/panel_inner_stroke.png</texture>
+                    </control>
+                </control>
+            </control>
+        </definition>
+    </include>
+    <!-- Ready-made centered wrappers for the three canonical widths. Height is per-dialog;
+        pass it through. -->
+    <include name="hf_HearthCard_Confirm">
+        <param name="height" default="360" />
+        <param name="posy" default="360" />
+        <definition>
+            <include content="hf_HearthCardFrame">
+                <param name="posx">600</param>
+                <param name="posy">$PARAM[posy]</param>
+                <param name="width">720</param>
+                <param name="height">$PARAM[height]</param>
+            </include>
+        </definition>
+    </include>
+    <include name="hf_HearthCard_Select">
+        <param name="height" default="600" />
+        <param name="posy" default="240" />
+        <definition>
+            <include content="hf_HearthCardFrame">
+                <param name="posx">480</param>
+                <param name="posy">$PARAM[posy]</param>
+                <param name="width">960</param>
+                <param name="height">$PARAM[height]</param>
+            </include>
+        </definition>
+    </include>
+    <include name="hf_HearthCard_Info">
+        <param name="height" default="800" />
+        <param name="posy" default="140" />
+        <definition>
+            <include content="hf_HearthCardFrame">
+                <param name="posx">320</param>
+                <param name="posy">$PARAM[posy]</param>
+                <param name="width">1280</param>
+                <param name="height">$PARAM[height]</param>
+            </include>
+        </definition>
+    </include>
+    <!-- ============================== 7.14 Toasts ============================== -->
+    <include name="hf_ToastFrame">
+        <param name="accent" default="hf_ember" />
+        <definition>
+            <control type="group">
+                <width>480</width>
+                <control type="image">
+                    <texture colordiffuse="hf_walnut" border="16">ui/rounded6.png</texture>
+                </control>
+                <control type="image">
+                    <width>4</width>
+                    <texture colordiffuse="$PARAM[accent]">ui/white.png</texture>
+                </control>
+            </control>
+        </definition>
+    </include>
+    <!-- ============================== 7.15 Busy indicator ============================== -->
+    <include name="hf_BusyRing">
+        <definition>
+            <control type="group">
+                <width>96</width>
+                <height>96</height>
+                <control type="image">
+                    <width>96</width>
+                    <height>96</height>
+                    <texture colordiffuse="hf_ember">ui/busy_ring.png</texture>
+                    <animation effect="rotate" start="0" end="360" time="1200" condition="true" loop="true" tween="linear">Conditional</animation>
+                </control>
+            </control>
+        </definition>
+    </include>
+    <!-- ============================== Lists / settings rows (7.12) ============================== -->
+    <include name="hf_ListRow">
+        <param name="height" default="$CONST[hf_row_h]" />
+        <definition>
+            <control type="group">
+                <height>$PARAM[height]</height>
+                <control type="image">
+                    <height>1</height>
+                    <posy>$PARAM[height]-1</posy>
+                    <texture colordiffuse="hf_bark">ui/white.png</texture>
+                </control>
+            </control>
+        </definition>
+    </include>
+</includes>

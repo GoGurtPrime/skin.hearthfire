@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- Skin-wide default control properties (applied as the Kodi <defaultcontrol>/per-type default mechanism:
+    every control of a given type inherits these unless it overrides them). Keeps the "warm, never pure
+    white/blue" rule enforced structurally rather than by convention alone. -->
+<includes>
+    <default type="label">
+        <textcolor>hf_cream</textcolor>
+        <font>hf_body</font>
+        <scroll>false</scroll>
+    </default>
+    <default type="button">
+        <font>hf_label</font>
+        <textcolor>hf_cream</textcolor>
+        <disabledcolor>hf_smoke</disabledcolor>
+        <textoffsetx>0</textoffsetx>
+    </default>
+    <default type="list">
+        <scrolltime>$CONST[hf_t_ui]</scrolltime>
+    </default>
+    <default type="panel">
+        <scrolltime>$CONST[hf_t_ui]</scrolltime>
+    </default>
+    <default type="wraplist">
+        <scrolltime>$CONST[hf_t_ui]</scrolltime>
+    </default>
+    <default type="edit">
+        <font>hf_body</font>
+        <textcolor>hf_cream</textcolor>
+    </default>
+    <default type="textbox">
+        <font>hf_body</font>
+        <textcolor>hf_parchment</textcolor>
+    </default>
+</includes>

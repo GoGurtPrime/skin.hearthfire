@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- Reusable boolean condition shortcuts, referenced elsewhere via the $EXP[...] syntax. Keep value-selection
+    logic in Variables.xml instead; this file is for true/false reuse only (see ). -->
+<includes>
+    <expression name="hf_PerfMode">Skin.HasSetting(hf.performance_mode)</expression>
+    <expression name="hf_AtmosphereOn">!$EXP[hf_PerfMode]</expression>
+    <expression name="hf_GrainOn">$EXP[hf_AtmosphereOn] + !Skin.HasSetting(hf.grain_off)</expression>
+    <expression name="hf_LightsOn">!Skin.HasSetting(hf.lights_off)</expression>
+    <expression name="hf_TimeOfDayOn">$EXP[hf_AtmosphereOn] + !Skin.HasSetting(hf.timeofday_off)</expression>
+    <expression name="hf_EmberSpecksOn">$EXP[hf_AtmosphereOn] + Skin.HasSetting(hf.ember_specks)</expression>
+    <expression name="hf_ThemedLabels">Skin.HasSetting(hf.themed_labels)</expression>
+    <expression name="hf_IsGoldenHour">System.Time(17,00) + !System.Time(21,00)</expression>
+    <expression name="hf_IsDeepEmber">System.Time(21,00) | System.Time(00,00,06,00)</expression>
+    <expression name="hf_HasClearlogo">!String.IsEmpty(ListItem.Art(clearlogo)) | !String.IsEmpty(Container.ListItem.Art(clearlogo))</expression>
+    <expression name="hf_PlayerActive">Player.HasVideo | Player.HasAudio</expression>
+    <expression name="hf_ShowNowPlayingChip">$EXP[hf_PlayerActive] + !Window.IsActive(fullscreenvideo) + !Window.IsActive(visualisation)</expression>
+    <expression name="hf_MenuMovies">!Skin.HasSetting(hf.menu.movies.hide)</expression>
+    <expression name="hf_MenuTVShows">!Skin.HasSetting(hf.menu.tvshows.hide)</expression>
+    <expression name="hf_MenuMusic">!Skin.HasSetting(hf.menu.music.hide)</expression>
+    <expression name="hf_MenuLiveTV">!Skin.HasSetting(hf.menu.livetv.hide) + System.HasPVRAddon</expression>
+    <expression name="hf_MenuAddons">!Skin.HasSetting(hf.menu.addons.hide)</expression>
+    <expression name="hf_MenuPictures">!Skin.HasSetting(hf.menu.pictures.hide)</expression>
+    <expression name="hf_MenuWeather">!Skin.HasSetting(hf.menu.weather.hide)</expression>
+</includes>

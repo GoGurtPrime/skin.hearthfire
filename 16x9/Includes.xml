@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- Root aggregator. Kodi auto-loads this file; every other include file is pulled in from here so window
+    files only ever reference named includes/variables/expressions/constants, never <include file="..."/>
+    themselves (see "consensus conventions"). -->
+<includes>
+    <include file="Includes_Constants.xml" />
+    <include file="Includes_Expressions.xml" />
+    <include file="Variables.xml" />
+    <include file="Defaults.xml" />
+    <include file="Includes_Components.xml" />
+    <include file="Includes_Backdrop.xml" />
+    <include file="Includes_MediaFlags.xml" />
+    <include file="Includes_OSD.xml" />
+    <include file="Includes_Home.xml" />
+    <include file="Includes_Widgets.xml" />
+    <include file="Includes_Views.xml" />
+    <include file="Includes_Settings.xml" />
+</includes>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+    Hearthfire type scale. One fontset; role-based names per (never size-based, so the scale can
+    be retuned without touching window XML). Display = Fraunces SemiBold (opsz 72, SOFT 50, WONK 0), falls back
+    to DM Serif Display if an instance is ever missing. UI = Figtree Medium/SemiBold. Fallback/Unicode = Noto
+    Sans Regular. -->
+<fontset id="Default" idloc="31900">
+    <font><name>hf_hero</name><filename>Fraunces-SemiBold.ttf</filename><size>88</size><linespacing>1.09</linespacing></font>
+    <font><name>hf_page</name><filename>Fraunces-SemiBold.ttf</filename><size>64</size><linespacing>1.125</linespacing></font>
+    <font><name>hf_section</name><filename>Fraunces-SemiBold.ttf</filename><size>40</size><linespacing>1.2</linespacing></font>
+    <font><name>hf_numeral</name><filename>Fraunces-SemiBold.ttf</filename><size>56</size><linespacing>1.07</linespacing></font>
+    <font><name>hf_tagline</name><filename>DMSerifDisplay-Italic.ttf</filename><size>28</size><linespacing>1.3</linespacing></font>
+    <font><name>hf_card_title</name><filename>Figtree-SemiBold.ttf</filename><size>30</size><linespacing>1.27</linespacing></font>
+    <font><name>hf_label</name><filename>Figtree-SemiBold.ttf</filename><size>26</size><linespacing>1.31</linespacing></font>
+    <font><name>hf_body</name><filename>Figtree-Medium.ttf</filename><size>28</size><linespacing>1.43</linespacing></font>
+    <font><name>hf_meta</name><filename>Figtree-Medium.ttf</filename><size>24</size><linespacing>1.33</linespacing></font>
+    <font><name>hf_caption</name><filename>Figtree-Medium.ttf</filename><size>22</size><linespacing>1.27</linespacing></font>
+    <font><name>hf_mono</name><filename>NotoSans-Regular.ttf</filename><size>24</size><linespacing>1.33</linespacing></font>
+    <font><name>hf_fallback</name><filename>NotoSans-Regular.ttf</filename><size>28</size><linespacing>1.43</linespacing></font>
+</fontset>

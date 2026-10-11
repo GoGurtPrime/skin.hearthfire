@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- The Firelight grade backdrop stack. Every window that wants a full backdrop includes
+    hf_BackdropStack once, behind everything else (z-order layer 1, ). -->
+<includes>
+    <include name="hf_BackdropStack">
+        <definition>
+            <control type="group">
+                <!-- 1. hf_char base -->
+                <control type="image">
+                    <width>$CONST[hf_canvas_w]</width>
+                    <height>$CONST[hf_canvas_h]</height>
+                    <texture colordiffuse="hf_char">ui/white.png</texture>
+                </control>
+                <!-- 2. Fanart, warm-biased, crossfading -->
+                <control type="image">
+                    <width>$CONST[hf_canvas_w]</width>
+                    <height>$CONST[hf_canvas_h]</height>
+                    <aspectratio aligny="center" align="center">scale</aspectratio>
+                    <texture colordiffuse="hf_warmbias" fallback="special://skin/extras/backdrops/bg_home_default.jpg">$VAR[hf_BackdropImage]</texture>
+                    <animation effect="fade" start="0" end="100" time="$CONST[hf_t_backdrop]">WindowOpen</animation>
+                </control>
+                <!-- 3. Horizontal protect-left scrim -->
+                <control type="image">
+                    <width>$CONST[hf_canvas_w]</width>
+                    <height>$CONST[hf_canvas_h]</height>
+                    <texture colordiffuse="hf_scrim_90" flipx="false">ui/gradient_h.png</texture>
+                </control>
+                <!-- 4. Vertical protect-bottom scrim -->
+                <control type="image">
+                    <width>$CONST[hf_canvas_w]</width>
+                    <height>$CONST[hf_canvas_h]</height>
+                    <texture colordiffuse="hf_scrim_90" flipy="true">ui/gradient_v.png</texture>
+                </control>
+                <!-- 5. Vignette -->
+                <control type="image">
+                    <width>$CONST[hf_canvas_w]</width>
+                    <height>$CONST[hf_canvas_h]</height>
+                    <texture>ui/vignette.png</texture>
+                </control>
+                <!-- 6. Grain (perf-mode gated) -->
+                <control type="image">
+                    <visible>$EXP[hf_GrainOn]</visible>
+                    <width>$CONST[hf_canvas_w]</width>
+                    <height>$CONST[hf_canvas_h]</height>
+                    <texture colordiffuse="30FFFFFF">ui/grain.png</texture>
+                </control>
+                <!-- 7. Time-of-day veil -->
+                <control type="image">
+                    <visible>$EXP[hf_TimeOfDayOn]</visible>
+                    <width>$CONST[hf_canvas_w]</width>
+                    <height>$CONST[hf_canvas_h]</height>
+                    <texture colordiffuse="$VAR[hf_TimeOfDayVeilAlpha]F5A33B">ui/white.png</texture>
+                </control>
+            </control>
+        </definition>
+    </include>
+    <!-- Variant for non-media/system windows: always the curated bg_* image, no item-fanart layer. -->
+    <include name="hf_BackdropStackCurated">
+        <param name="image" />
+        <definition>
+            <control type="group">
+                <control type="image">
+                    <width>$CONST[hf_canvas_w]</width>
+                    <height>$CONST[hf_canvas_h]</height>
+                    <texture colordiffuse="hf_char">ui/white.png</texture>
+                </control>
+                <control type="image">
+                    <width>$CONST[hf_canvas_w]</width>
+                    <height>$CONST[hf_canvas_h]</height>
+                    <aspectratio aligny="center" align="center">scale</aspectratio>
+                    <texture colordiffuse="hf_warmbias">$PARAM[image]</texture>
+                    <animation effect="fade" start="0" end="100" time="$CONST[hf_t_backdrop]">WindowOpen</animation>
+                </control>
+                <control type="image">
+                    <width>$CONST[hf_canvas_w]</width>
+                    <height>$CONST[hf_canvas_h]</height>
+                    <texture colordiffuse="hf_scrim_70" flipy="true">ui/gradient_v.png</texture>
+                </control>
+                <control type="image">
+                    <width>$CONST[hf_canvas_w]</width>
+                    <height>$CONST[hf_canvas_h]</height>
+                    <texture>ui/vignette.png</texture>
+                </control>
+            </control>
+        </definition>
+    </include>
+</includes>

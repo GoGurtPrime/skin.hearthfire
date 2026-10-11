@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+    Hearthfire constants: spacing, margins, radii and timing tokens from Referenced skin-wide
+    via the $CONST[...] syntax. No arbitrary/magic numbers belong in window XML - if a number isn't here, add
+    it here first.
+    === Control / window ID registry ===
+    Windows (custom, 1100-1199 band):
+    1101 Custom_1101_Startup.xml splash screen
+    1103 Custom_1103_StyleTile.xml dev-only component showcase (hidden unless Skin.HasSetting(hf.devtools))
+    1104 Custom_1104_SkinSettings.xml Hearthfire skin settings hub (ActivateWindow(SkinSettings) alias)
+    1199 Custom_1199_DebugOverlay.xml mirrors reference-skin convention; stub
+    Kodi built-ins reused as-is (no custom id needed): shutdownmenu (111, via DialogButtonMenu.xml) hosts
+    the "Lights Out?" power dialog ; no bespoke window required.
+    View ids (50-59 primary band, table): 50 Ledger, 51 Wall, 52 Shelf, 53 Marquee, 54 Spotlight.
+    Home (Mantel) control ids:
+    9000 main Mantel list (horizontal)
+    5001 Shelf A (focused/primary widget content)
+    5002 Shelf B (peek/secondary widget content, dimmed)
+    5010 Hero primary button (Resume/Play)
+    5011 Hero secondary button (Details)
+    Settings window required ids (Kodi core expects these exact numbers in SettingsCategory.xml):
+    2 category label, 3 category grouplist (left), 5 settings grouplist (right), 6/7/8/9/10/13/14/15/20
+    per-type control templates (button/radiobutton/spin/slider/separator/edit/colorbutton/settings-level).
+    Settings.xml category picker: 60 (category wraplist, Metropolis-style imagery pattern, /D13). -->
+<includes>
+    <!-- Spacing (8px base unit) -->
+    <constant name="hf_sp_1">4</constant>
+    <constant name="hf_sp_2">8</constant>
+    <constant name="hf_sp_3">16</constant>
+    <constant name="hf_sp_4">24</constant>
+    <constant name="hf_sp_5">32</constant>
+    <constant name="hf_sp_6">48</constant>
+    <constant name="hf_sp_7">64</constant>
+    <constant name="hf_sp_8">96</constant>
+    <!-- Canvas / safe margins -->
+    <constant name="hf_canvas_w">1920</constant>
+    <constant name="hf_canvas_h">1080</constant>
+    <constant name="hf_margin_x">96</constant>
+    <constant name="hf_margin_top">64</constant>
+    <constant name="hf_margin_bottom">64</constant>
+    <constant name="hf_content_w">1728</constant>
+    <constant name="hf_content_right">1824</constant>
+    <!-- Radii (pre-rendered 9-slice textures use these as a naming cue, not a live GPU radius) -->
+    <constant name="hf_rad_card">6</constant>
+    <constant name="hf_rad_dialog">10</constant>
+    <!-- Media cell sizes -->
+    <constant name="hf_poster_w">216</constant>
+    <constant name="hf_poster_h">324</constant>
+    <constant name="hf_landscape_w">384</constant>
+    <constant name="hf_landscape_h">216</constant>
+    <constant name="hf_landscape_lg_w">480</constant>
+    <constant name="hf_landscape_lg_h">270</constant>
+    <constant name="hf_album_sq">252</constant>
+    <constant name="hf_cast_sq">160</constant>
+    <!-- Mantel -->
+    <constant name="hf_mantel_h">80</constant>
+    <constant name="hf_mantel_y">968</constant>
+    <constant name="hf_mantel_glow_h">160</constant>
+    <!-- Row heights -->
+    <constant name="hf_row_h">72</constant>
+    <constant name="hf_row_h_rich">96</constant>
+    <!-- Dialog widths (Hearth Card, ) -->
+    <constant name="hf_dlg_w_confirm">720</constant>
+    <constant name="hf_dlg_w_select">960</constant>
+    <constant name="hf_dlg_w_info">1280</constant>
+    <!-- Motion timing (ms, ) -->
+    <constant name="hf_t_fast">120</constant>
+    <constant name="hf_t_focus">160</constant>
+    <constant name="hf_t_ui">240</constant>
+    <constant name="hf_t_page">320</constant>
+    <constant name="hf_t_backdrop">500</constant>
+    <constant name="hf_t_lights">700</constant>
+</includes>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- Centralized value/string selection, referenced elsewhere via the $VAR[...] syntax. Art/label fallback
+    chains live here once each (lesson from Arctic Zephyr Mod's WidgetImage/GlobalFanart variables, see
+    ) so a new fallback priority is only ever added in one place. -->
+<includes>
+    <!-- Backdrop source for the currently relevant item: focused shelf item on Home, current ListItem in
+        library windows, else the curated section backdrop. -->
+    <variable name="hf_BackdropImage">
+        <value condition="Window.IsActive(home) + !String.IsEmpty(Container(5001).ListItem.Art(fanart))">$INFO[Container(5001).ListItem.Art(fanart)]</value>
+        <value condition="Window.IsActive(home) + String.IsEmpty(Container(5001).ListItem.Art(fanart))">special://skin/extras/backdrops/bg_home_default.jpg</value>
+        <value condition="!String.IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
+        <value condition="Container.Content(movies)">special://skin/extras/backdrops/bg_movies.jpg</value>
+        <value condition="Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)">special://skin/extras/backdrops/bg_tvshows.jpg</value>
+        <value condition="Container.Content(albums) | Container.Content(artists) | Container.Content(songs)">special://skin/extras/backdrops/bg_music.jpg</value>
+        <value condition="Container.Content(addons)">special://skin/extras/backdrops/bg_addons.jpg</value>
+        <value condition="Container.Content(images)">special://skin/extras/backdrops/bg_pictures.jpg</value>
+        <value condition="Window.IsActive(settings) | Window.IsActive(systemsettings) | Window.IsActive(skinsettings)">special://skin/extras/backdrops/bg_settings.jpg</value>
+        <value condition="Window.IsActive(weather)">special://skin/extras/backdrops/bg_home_default.jpg</value>
+        <value>special://skin/extras/backdrops/bg_home_default.jpg</value>
+    </variable>
+    <!-- Poster/thumb art fallback chain for media cells. -->
+    <variable name="hf_PosterImage">
+        <value condition="!String.IsEmpty(ListItem.Art(poster))">$INFO[ListItem.Art(poster)]</value>
+        <value condition="!String.IsEmpty(ListItem.Art(tvshow.poster))">$INFO[ListItem.Art(tvshow.poster)]</value>
+        <value condition="!String.IsEmpty(ListItem.Art(thumb))">$INFO[ListItem.Art(thumb)]</value>
+        <value>$INFO[ListItem.Icon]</value>
+    </variable>
+    <variable name="hf_HeroTitle">
+        <value condition="$EXP[hf_HasClearlogo]">$INFO[Container(5001).ListItem.Art(clearlogo), [hf_clearlogo]]</value>
+        <value>$INFO[Container(5001).ListItem.Label]</value>
+    </variable>
+    <variable name="hf_RuntimeLabel">
+        <value condition="!String.IsEmpty(ListItem.Duration)">$INFO[ListItem.Duration,h]</value>
+        <value></value>
+    </variable>
+    <!-- Time-of-day veil -->
+    <variable name="hf_TimeOfDayVeilAlpha">
+        <value condition="!$EXP[hf_TimeOfDayOn]">00</value>
+        <value condition="$EXP[hf_IsGoldenHour]">1F</value>
+        <value condition="$EXP[hf_IsDeepEmber]">2E</value>
+        <value>00</value>
+    </variable>
+    <variable name="hf_MantelGlowColor">
+        <value>hf_glow_flame</value>
+    </variable>
+    <!-- Home widget shelf content paths, keyed on the focused Mantel item's "section" property. v1 ships one
+         library smart-path per section per shelf; a user-configurable "pick up to 4 widgets" picker is a
+         stretch goal for later. -->
+    <variable name="hf_ShelfAPath">
+        <value condition="String.IsEqual(Container(9000).ListItem.Property(section),movies)">videodb://movies/titles/?setFilter=recentlyadded</value>
+        <value condition="String.IsEqual(Container(9000).ListItem.Property(section),tvshows)">videodb://inprogresstvshows/</value>
+        <value condition="String.IsEqual(Container(9000).ListItem.Property(section),music)">musicdb://recentlyaddedalbums/</value>
+        <value condition="String.IsEqual(Container(9000).ListItem.Property(section),addons)">addons://user/</value>
+        <value condition="String.IsEqual(Container(9000).ListItem.Property(section),pictures)">special://skin/extras/genres/</value>
+        <value>videodb://recentlyaddedmovies/</value>
+    </variable>
+    <variable name="hf_ShelfBPath">
+        <value condition="String.IsEqual(Container(9000).ListItem.Property(section),movies)">videodb://movies/titles/?setFilter=recentlyadded</value>
+        <value condition="String.IsEqual(Container(9000).ListItem.Property(section),tvshows)">videodb://recentlyaddedepisodes/</value>
+        <value condition="String.IsEqual(Container(9000).ListItem.Property(section),music)">musicdb://recentlyplayedalbums/</value>
+        <value>videodb://movies/titles/?setFilter=recentlyadded</value>
+    </variable>
+</includes>
